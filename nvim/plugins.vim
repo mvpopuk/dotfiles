@@ -1,17 +1,6 @@
 " ------------------------------------------------------------------------------
-" # Plugins
-" ------------------------------------------------------------------------------
-" # All your plugin definitions go in this file! Don't worry about these
-" # being separate from related config. Sourcery provides mappings to
-" # easily jump between plugin definitions, mappings, and configs.
-" #
-" # More info: https://github.com/jesseleite/vim-sourcery#jumping-between-files
-
-" ------------------------------------------------------------------------------
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
-" # Note: You may use any plugin manager you wish! In the below examples,
-" # we're using `junegunn/vim-plug` to install and source our plugins.
 
     " NERDTree 
     Plug 'preservim/nerdtree' 

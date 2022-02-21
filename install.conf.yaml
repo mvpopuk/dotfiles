@@ -9,17 +9,15 @@
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: git/gitconfig
-    ~/.gitignore_global: git/gitignore_global
-    ~/.zshrc: zsh/zshrc
+    ~/.gitconfig: git/.gitconfig
+    ~/.zshrc: zsh/.zshrc
     ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf: tmux/.tmux.conf
     ~/.composer/composer.json: composer/composer.json
-    ~/.composer/config.json: composer/config.json
 
 - create:
-    - ~/downloads
-    - ~/.vim/undo-history
+    - ~/Code
+    - ~/.config/nvim/undo
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

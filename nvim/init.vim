@@ -1,6 +1,6 @@
 " Source plugins
 call plug#begin()
-  source ~/.dotfiles/vim/plugins.vim
+  source ~/.dotfiles/nvim/plugins.vim
 call plug#end()
 
 " Initialize sourcery
