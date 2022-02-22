@@ -11,7 +11,7 @@ call plug#begin()
 call plug#end()
 
 " Load Bufferline at the end of the stack
-call sourcery#source_path('config/bufferline.lua')
+call sourcery#source_defer('config/bufferline.lua')
 
 " Initialize sourcery
 call sourcery#init()
