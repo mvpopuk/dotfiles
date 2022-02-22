@@ -24,9 +24,10 @@ nnoremap <leader>git <cmd>:FloatermNew lazygit<cr>
 
 nnoremap <C-_> <cmd>:noh<cr>
 
-nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>ev :e ~/.dotfiles/nvim/init.vim<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>pl :e ~/.config/nvim/vim-plug/plugins.vim<cr>
+nnoremap <leader>pl :e ~/.dotfiles/nvim/plugins.vim<cr>
+nnoremap <leader>mx :e ~/.dotfiles/tmux/.tmux.conf<cr>
 
 nnoremap <leader><Right> :bn<CR>
 nnoremap <leader><Left> :bp<CR>
