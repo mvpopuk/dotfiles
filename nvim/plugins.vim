@@ -84,6 +84,9 @@
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
     
+    "Carbon Theme
+    Plug 'michaeldyrynda/carbon'
+
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
     
