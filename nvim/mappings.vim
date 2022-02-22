@@ -10,6 +10,8 @@
 nnoremap <SPACE> <Nop>
 let mapleader = ' '
 
+" Mappings: telescope
+nnoremap <Leader><Leader>v :Telescope sourcery<CR>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
@@ -37,6 +39,13 @@ let g:floaterm_keymap_toggle = '<F12>'
 nnoremap H gT
 nnoremap L gt
 nmap <Leader>t <Plug>TinkerayOpen
+
+
+function! SourceryMappings()
+  nmap <buffer> gp <Plug>SourceryGoToRelatedPluginDefinition
+  nmap <buffer> gm <Plug>SourceryGoToRelatedMappings
+  nmap <buffer> gc <Plug>SourceryGoToRelatedConfig
+endfunction
 
 " -------------------------------- LSP Saga Mappings --------------------------- "                                  
 

@@ -83,13 +83,13 @@
  
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
-
+    
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
-
+    
     " Buffer Line
     Plug 'akinsho/bufferline.nvim'
-
+ 
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
 

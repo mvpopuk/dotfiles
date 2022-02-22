@@ -1,43 +1,27 @@
-local lspconfig = require'lspconfig'
+local lspconfig = require('lspconfig')
+
 local cmp = require'cmp'
 
-require('lspconfig').intelephense.setup{}
-
-require('lspconfig').html.setup{
-  capabilities = capabilities,
-    cmd = { "vscode-html-language-server", "--stdio" },
-    filetypes = { "html", "blade", "antlers" },
-}
-
-require('lspconfig').tailwindcss.setup{}
-
-require('lspconfig').stylelint_lsp.setup{}
-
-
-local on_attach = function(_, bufnr)
-  require('cmp').on_attach()
-  --- In lsp attach function
-  local map = nvim_buf_set_keymap,
-  map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
-  map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
-  map(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
-  map(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
-  map(0, "n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
-  map(0, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
-  map(0, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
-  map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>")
-  map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>")
-end
-
-local servers = {'intelephense', 'tailwindcss', 'html'}
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-  }
-end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+  local on_attach = function(_, bufnr)
+    require('cmp').on_attach()
+    --- In lsp attach function
+    local map = nvim_buf_set_keymap,
+    map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
+    map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
+    map(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
+    map(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
+    map(0, "n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
+    map(0, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
+    map(0, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
+    map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>")
+    map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>")
+  end
+  local servers = {'intelephense', 'tailwindcss', 'html'}
+  for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+      on_attach = on_attach,
+    }
+  end
 
 local lsp_symbols = {
     Text = "   (Text) ",
@@ -66,6 +50,21 @@ local lsp_symbols = {
     Operator = "   (Operator)",
     TypeParameter = "   (TypeParameter)",
 },
+
+require('lspconfig').intelephense.setup{}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require('lspconfig').html.setup{
+  capabilities = capabilities,
+    cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html", "blade", "antlers" },
+}
+
+require('lspconfig').tailwindcss.setup{}
+
+require('lspconfig').stylelint_lsp.setup{}
 
 cmp.setup({
     experimental = {
@@ -132,14 +131,66 @@ cmp.setup({
     })
   })
 
-
   -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  
--- update diagnostics icons
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+ --   require('lspconfig')['intelephense'].setup {
+   --   capabilities = capabilities
+  -- }
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+-- update diagnostics icons
+    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
     for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end                                  
+      end                                  
+
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+
+local lspsaga = require 'lspsaga'
+lspsaga.setup { -- defaults ...
+  debug = false,
+  use_saga_diagnostic_sign = true,
+  -- diagnostic sign
+  error_sign = "",
+  warn_sign = "",
+  hint_sign = "",
+  infor_sign = "",
+  diagnostic_header_icon = "   ",
+  -- code action title icon
+  code_action_icon = " ",
+  code_action_prompt = {
+    enable = true,
+    sign = true,
+    sign_priority = 40,
+    virtual_text = true,
+  },
+  finder_definition_icon = "  ",
+  finder_reference_icon = "  ",
+  max_preview_lines = 10,
+  finder_action_keys = {
+    open = "o",
+    vsplit = "s",
+    split = "i",
+    quit = "q",
+    scroll_down = "<C-f>",
+    scroll_up = "<C-b>",
+  },
+  code_action_keys = {
+    quit = "q",
+    exec = "<CR>",
+  },
+  rename_action_keys = {
+    quit = "<C-c>",
+    exec = "<CR>",
+  },
+  definition_preview_icon = "  ",
+  border_style = "single",
+  rename_prompt_prefix = "➤",
+  server_filetype_map = {},
+  diagnostic_prefix_format = "%d. ",
+}

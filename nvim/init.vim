@@ -10,6 +10,13 @@ call plug#begin()
   source ~/.dotfiles/nvim/plugins.vim
 call plug#end()
 
+let g:sourcery#sourced_paths = [
+  \ sourcery#vim_dotfiles_path('mappings.vim'),
+  \ sourcery#vim_dotfiles_path('plugins.vim'),
+  \ sourcery#vim_dotfiles_path('config'),
+  \ sourcery#vim_dotfiles_path('config/bufferline.lua'),
+  \ ]
+
 " Initialize sourcery
 call sourcery#init()
 

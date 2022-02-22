@@ -12,6 +12,7 @@
     ~/.gitconfig: git/.gitconfig
     ~/.zshrc: zsh/.zshrc
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/colors: nvim/colors
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.composer/composer.json: composer/composer.json
 
