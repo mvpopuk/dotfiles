@@ -1,1 +1,1 @@
-![]((https://github.com/mvpopuk/dotfiles/screenshot.png)
+![]((https://github.com/mvpopuk/dotfiles/blob/main/screenshot.png)
