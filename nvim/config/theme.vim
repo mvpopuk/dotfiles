@@ -1,3 +1,5 @@
+colorscheme carbon
+
 function! CarbonOverrides() abort
     highlight Normal guibg=None guifg=None
     highlight EndOfBuffer guifg=#1B253B

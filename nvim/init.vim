@@ -47,10 +47,6 @@ set shiftwidth=4
 set expandtab
 set modifiable
 
-" ------------------------------------- Color Scheme ------------------------------ "                                  
-
-colorscheme carbon
-
 " ------------------------------ Iceberg Theme Overrides --------------------------- "                                  
 
 " function! IcebergOverrides() abort

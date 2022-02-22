@@ -127,24 +127,3 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 
 let g:NERDTreeStatusline = '%#NonText#'
 
-" Config: neoscroll
-lua << EOF
-require('neoscroll').setup{}
-EOF
-
-" Config: indent-blankline
-lua << EOF
-require("indent_blankline").setup {
-    show_current_context = true,
-    indent_blankline_show_current_context = true,
-}
-EOF
-
-" Config: trouble
-lua << EOF
-  require("trouble").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-EOF
