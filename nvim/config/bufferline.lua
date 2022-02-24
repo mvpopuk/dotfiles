@@ -25,26 +25,31 @@ require('bufferline').setup {
     custom_areas = {
       left = function()
         return {
-          { text = '    ', guifg = '#10737B',  },
+          { text = '    ', guifg = '#78AAB5',  },
         }
       end,
     },
   },
- highlights = {
-    background = {
-      guibg = { attribute = 'bg', highlight = 'TabLineFill' },
-    },
-    close_button = {
-      guibg = { attribute = 'bg', highlight = 'TabLineFill' },
-    },
+  highlights = {
     separator = {
-      guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
-    },
-    modified = {
-      guifg = { attribute = 'fg', highlight = 'LineNr' },
-    },
-    modified_selected = {
-      guifg = { attribute = 'fg', highlight = 'DiffAdd' },
+        guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
     },
   },
+ -- highlights = {
+   -- background = {
+     -- guibg = { attribute = 'bg', highlight = 'TabLineFill' },
+    -- },
+    -- close_button = {
+      -- guibg = { attribute = 'bg', highlight = 'TabLineFill' },
+    -- },
+    -- separator = {
+      -- guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
+    -- },
+    -- modified = {
+      -- guifg = { attribute = 'fg', highlight = 'LineNr' },
+    -- },
+    -- modified_selected = {
+      -- guifg = { attribute = 'fg', highlight = 'DiffAdd' },
+    -- },
+  -- },
 }
