@@ -7,7 +7,6 @@
 " #
 " # More info: https://github.com/jesseleite/vim-sourcery#jumping-between-files
 
-nnoremap <SPACE> <Nop>
 let mapleader = ' '
 
 " Mappings: telescope
