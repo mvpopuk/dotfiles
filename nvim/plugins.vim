@@ -117,6 +117,10 @@ let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
 
 " Config: nerdtree
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+autocmd VimEnter * NERDTree
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeWinPos = "left"
 :let g:NERDTreeWinSize=35
 let g:NERDTreeGitStatusUseNerdFonts = 1
