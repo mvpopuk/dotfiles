@@ -1,7 +1,8 @@
 local actions = require("telescope.actions")
 local trouble = require("trouble.providers.telescope")
-
 local telescope = require("telescope")
+
+require('telescope').load_extension('sourcery')
 
 telescope.setup {
   defaults = {
@@ -28,4 +29,3 @@ pickers = {
   },
 }
 
-require('telescope').load_extension('sourcery')
