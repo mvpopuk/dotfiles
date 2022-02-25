@@ -31,6 +31,7 @@ nnoremap <leader>mx :e ~/.dotfiles/tmux/.tmux.conf<cr>
 nnoremap <leader><Right> :bn<CR>
 nnoremap <leader><Left> :bp<CR>
 
+" Mappings:floaterm
 let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
@@ -38,8 +39,12 @@ let g:floaterm_keymap_toggle = '<F12>'
 
 nnoremap H gT
 nnoremap L gt
+
+" Mappings: tinkeray
 nmap <Leader>t <Plug>TinkerayOpen
 
+" Mappings: tagbar
+nmap <F2> :TagbarToggle<CR>
 
 function! SourceryMappings()
   nmap <buffer> gp <Plug>SourceryGoToRelatedPluginDefinition
