@@ -2,9 +2,9 @@
 
 function! IcebergOverrides() abort
 highlight Normal guibg=None guifg=None
-" highlight NonText guibg=None guifg=None
+highlight NonText guibg=None guifg=None
 highlight SignColumn guibg=None guifg=None
-highlight EndOfBuffer guifg=#111219
+highlight EndOfBuffer guifg=#161821
 highlight LineNr guibg=None guifg=#33344A
 highlight CursorLineNr guibg=#1E2132 guifg=#BABBC7
 highlight VertSplit gui=NONE guibg=None guifg=#262639
@@ -21,6 +21,9 @@ highlight SignifySignAdd guibg=none guifg=green
 highlight SignifySignChange guibg=none guifg=yellow
 highlight SignifySignDelete guibg=none guifg=red
 highlight BufferLineSeparator guifg=#161821
+highlight TroubleSignOther guibg=None guifg=green
+highlight TroubleFoldIcon guifg=None
+highlight TroubleCount guibg=None
 endfunction
 
 augroup Colors
