@@ -9,17 +9,28 @@
 
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-unimpaired'
+    
+    " Vim Surround
+    Plug 'tpope/vim-surround'
 
-    " PHP Syntax
-    Plug 'StanAngeloff/php.vim'
+    " Git Integrations
+    Plug 'tpope/vim-fugitive'
 
-    " Blade Syntax
-    Plug 'jwalton512/vim-blade'
-
+    " Enhance Syntax Highlight
+    Plug 'sheerun/vim-polyglot'
+    
     " Testing
     Plug 'vim-test/vim-test'
+
+    " Vim Commentary
+    Plug 'tpope/vim-commentary'
+
+    " Vim Startify
+    Plug 'mhinz/vim-startify'
+
+    " Tagbar
+    Plug 'preservim/tagbar'
 
     " Tinkeray
     Plug 'jesseleite/vim-tinkeray'
@@ -53,7 +64,7 @@
     else
         Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
     endif
-
+    
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -106,7 +117,7 @@ let g:floaterm_height=0.9
 let floaterm_title='($1/$2)'
 
 " Config: indent-blankline
-let g:indent_blankline_filetype_exclude = ['dashboard', 'floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
+let g:indent_blankline_filetype_exclude = ['dashboard',  'startify', 'floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
 let g:indent_blankline_use_treesitter = v:true
 
 " Config: vim-signify
@@ -117,8 +128,8 @@ let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
 
 " Config: nerdtree
-autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
-autocmd VimEnter * NERDTree
+" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" autocmd VimEnter * NERDTree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeWinPos = "left"
@@ -138,4 +149,29 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ }
 
 let g:NERDTreeStatusline = '%#NonText#'
+
+" Config:startify
+
+autocmd VimEnter *
+            \   if !argc()
+            \ |   Startify
+            \ |   NERDTree
+            \ |   wincmd w
+            \ | endif
+
+let g:startify_lists = [
+    \ { 'type': 'files',     'header': ['   Recently opened files']                    },
+    \ { 'type': 'dir',       'header': ['   Recently opened project files '. getcwd()] },
+    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                                },
+    \ { 'type': 'commands',  'header': ['   Commands']                                 },
+    \ ]
+
+let g:startify_bookmarks = [
+  \ '~/.dotfiles/tmux/.tmux.conf',
+  \ '~/.dotfiles/install.conf.yaml',
+\ ]
+
+let g:startify_custom_header = [
+    \       '      Project Explorer     ',
+    \ ]
 
