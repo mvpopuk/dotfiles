@@ -29,9 +29,6 @@
     " Vim Startify
     Plug 'mhinz/vim-startify'
 
-    " Tagbar
-    Plug 'preservim/tagbar'
-
     " Tinkeray
     Plug 'jesseleite/vim-tinkeray'
 

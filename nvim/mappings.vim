@@ -43,9 +43,6 @@ nnoremap L gt
 " Mappings: tinkeray
 nmap <Leader>t <Plug>TinkerayOpen
 
-" Mappings: tagbar
-nmap <F2> :TagbarToggle<CR>
-
 function! SourceryMappings()
   nmap <buffer> gp <Plug>SourceryGoToRelatedPluginDefinition
   nmap <buffer> gm <Plug>SourceryGoToRelatedMappings
