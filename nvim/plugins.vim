@@ -94,6 +94,9 @@
     
     "Carbon Theme
     Plug 'michaeldyrynda/carbon'
+    
+    " Nightfly Theme
+    Plug 'bluz71/vim-nightfly-guicolors'
 
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
@@ -125,7 +128,7 @@ let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
 
 " Config: nerdtree
-let g:NERDTreeMinimalUI = 1
+" let g:NERDTreeMinimalUI = 1
 " autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " autocmd VimEnter * NERDTree
 let g:NERDTreeDirArrowExpandable = ''
@@ -173,4 +176,13 @@ let g:startify_bookmarks = [
 let g:startify_custom_header = [
     \       '      Project Explorer     ',
     \ ]
+
+" Config:netrw
+
+nnoremap <leader>b :Lexplore<CR>
+let g:netrw_sort_options = "i"
+let g:netrw_winsize = -28
+let g:netrw_banner = 0
+let g:netrw_liststyle = 1
+let g:netrw_browse_split = 4
 
