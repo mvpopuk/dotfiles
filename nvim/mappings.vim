@@ -12,9 +12,11 @@ let mapleader = ' '
 " Mappings: telescope
 nnoremap <Leader><Leader>v :Telescope sourcery<CR>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>p <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>e <cmd>lua require('telescope.builtin').oldfiles()<cr>
 nnoremap <leader>app <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>
 
 nnoremap <leader>2 <cmd>:tabnew<cr>
@@ -24,7 +26,7 @@ nnoremap <leader>git <cmd>:FloatermNew lazygit<cr>
 nnoremap <C-_> <cmd>:noh<cr>
 
 nnoremap <leader>ev :e ~/.dotfiles/nvim/init.vim<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr> 
 nnoremap <leader>pl :e ~/.dotfiles/nvim/plugins.vim<cr>
 nnoremap <leader>mx :e ~/.dotfiles/tmux/.tmux.conf<cr>
 

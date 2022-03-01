@@ -1,13 +1,12 @@
+local telescope = require("telescope")
 local actions = require("telescope.actions")
 local trouble = require("trouble.providers.telescope")
-local telescope = require("telescope")
-
-require('telescope').load_extension('sourcery')
 
 telescope.setup {
   defaults = {
     shorten_path = true,
     preview = false,
+    file_ignore_patterns = { 'node_modules', 'vendor' },
     mappings = {
       i = { ["<c-t>"] = trouble.open_with_trouble },
       n = { ["<c-t>"] = trouble.open_with_trouble },
@@ -15,17 +14,33 @@ telescope.setup {
   },
 pickers = {
     find_files = {
-      theme = "dropdown",
+      prompt_title = 'All Files',
+      find_command = {'rg', '--files', '--no-ignore', '--hidden'},
+      theme = 'dropdown',
+    },
+    git_files = {
+      prompt_title = 'Project Files',
+      find_command = {'rg', '--files'},
+      theme = 'dropdown',
+    },
+    current_buffer_fuzzy_find = {
+      prompt_title = 'Current buffer',
+      sorting_strategy = 'descending'
+    },
+    oldfiles = {
+        prompt_title = "Recently Opened",
+        theme = 'dropdown',
     },
     buffers = {
-      theme = "dropdown",
-    },
-    live_grep = {
-      theme = "dropdown",
-    },
-  oldfiles = {
-      theme = "dropdown",
-    }
-  },
+      sort_lastused = true,
+      theme = 'dropdown',
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer",
+        }
+      }
+    } 
+},
 }
 
+require('telescope').load_extension('sourcery')
