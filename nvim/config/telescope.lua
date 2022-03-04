@@ -19,8 +19,7 @@ pickers = {
       theme = 'dropdown',
     },
     git_files = {
-      prompt_title = 'Project Files',
-      find_command = {'rg', '--files'},
+      prompt_title = 'Git Files',
       theme = 'dropdown',
     },
     current_buffer_fuzzy_find = {
@@ -28,6 +27,7 @@ pickers = {
       sorting_strategy = 'descending'
     },
     oldfiles = {
+        sort_lastused = true,
         prompt_title = "Recently Opened",
         theme = 'dropdown',
     },

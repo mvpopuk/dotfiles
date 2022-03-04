@@ -42,7 +42,7 @@ require('lualine').setup {
         },
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
+    disabled_filetypes = {'netrw'},
     always_divide_middle = true,
   },
   sections = {
@@ -51,7 +51,7 @@ require('lualine').setup {
     lualine_c = {
       {
       'filename', 
-      path=1
+      show_filename_only = true,
       }
     },
     lualine_x = {'diagnostics'},
