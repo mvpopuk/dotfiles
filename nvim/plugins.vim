@@ -3,9 +3,9 @@
 " ------------------------------------------------------------------------------
 
     " NERDTree 
-    Plug 'preservim/nerdtree' 
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " Plug 'preservim/nerdtree' 
+    " Plug 'Xuyuanp/nerdtree-git-plugin'
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
@@ -102,7 +102,7 @@
     Plug 'lukas-reineke/indent-blankline.nvim'
     
     " Buffer Line
-    Plug 'akinsho/bufferline.nvim'
+    " Plug 'akinsho/bufferline.nvim'
  
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
@@ -126,6 +126,11 @@ let g:signify_sign_add = '▍'
 let g:signify_sign_change = '▍'
 let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
+
+" Config:netrw
+
+nnoremap <leader>b :Explore<CR>
+let g:netrw_banner=0
 
 " Config: nerdtree
 " let g:NERDTreeMinimalUI = 1
@@ -156,7 +161,7 @@ let g:NERDTreeStatusline = '%#NonText#'
 autocmd VimEnter *
             \   if !argc()
             \ |   Startify
-            \ |   NERDTree
+            " \ |   NERDTree
             \ |   wincmd w
             \ | endif
 
@@ -176,13 +181,3 @@ let g:startify_bookmarks = [
 let g:startify_custom_header = [
     \       '      Project Explorer     ',
     \ ]
-
-" Config:netrw
-
-nnoremap <leader>b :Lexplore<CR>
-let g:netrw_sort_options = "i"
-let g:netrw_winsize = -28
-let g:netrw_banner = 0
-let g:netrw_liststyle = 1
-let g:netrw_browse_split = 4
-
