@@ -11,6 +11,9 @@
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-unimpaired'
     
+    " Vinegar
+    Plug 'tpope/vim-vinegar'
+
     " Vim Surround
     Plug 'tpope/vim-surround'
 
@@ -19,7 +22,7 @@
 
     " Enhance Syntax Highlight
     Plug 'sheerun/vim-polyglot'
-    
+
     " Testing
     Plug 'vim-test/vim-test'
 
@@ -102,7 +105,7 @@
     Plug 'lukas-reineke/indent-blankline.nvim'
     
     " Buffer Line
-    " Plug 'akinsho/bufferline.nvim'
+    Plug 'akinsho/bufferline.nvim'
  
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
@@ -129,8 +132,10 @@ let g:signify_sign_delete = '▁'
 
 " Config:netrw
 
-nnoremap <leader>b :Explore<CR>
+nnoremap <leader>b :Lexplore<CR>
 let g:netrw_banner=0
+let g:netrw_winsize = -28
+let g:netrw_browse_split = 4
 
 " Config: nerdtree
 " let g:NERDTreeMinimalUI = 1

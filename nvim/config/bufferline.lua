@@ -31,28 +31,28 @@ require('bufferline').setup {
     },
   },
  -- Hightlight for Iceberg Theme
-  -- highlights = {
-  --   separator = {
-  --       guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
-  --   },
-  -- },
-  
-  -- Hightlights for Carbon Theme 
   highlights = {
-   background = {
-     guibg = { attribute = 'bg', highlight = 'TabLineFill' },
-    },
-    close_button = {
-      guibg = { attribute = 'bg', highlight = 'TabLineFill' },
-    },
     separator = {
-      guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
-    },
-    modified = {
-      guifg = { attribute = 'fg', highlight = 'LineNr' },
-    },
-    modified_selected = {
-      guifg = { attribute = 'fg', highlight = 'DiffAdd' },
+        guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
     },
   },
+  
+  -- Hightlights for Carbon Theme 
+  -- highlights = {
+  --  background = {
+  --    guibg = { attribute = 'bg', highlight = 'TabLineFill' },
+  --   },
+  --   close_button = {
+  --     guibg = { attribute = 'bg', highlight = 'TabLineFill' },
+  --   },
+  --   separator = {
+  --     guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
+  --   },
+  --   modified = {
+  --     guifg = { attribute = 'fg', highlight = 'LineNr' },
+  --   },
+  --   modified_selected = {
+  --     guifg = { attribute = 'fg', highlight = 'DiffAdd' },
+  --   },
+  -- },
 }
