@@ -14,6 +14,7 @@ highlight GitGutterChangeDelete guibg=NONE guifg=#89b8c2
 highlight GitGutterDelete guibg=NONE guifg=#e27878
 highlight DiagnosticSignError guibg=NONE guifg=#e27878
 highlight DiagnosticSignWarn guibg=NONE guifg=#e27878
+highlight DiagnosticSignHint guibg=NONE
 highlight IndentBlanklineChar guifg=#1C1F2D gui=nocombine
 highlight IndentBlanklineContextChar guifg=#25293C gui=nocombine
 highlight FloatermBorder guibg=NONE guifg=#9EAA6B
