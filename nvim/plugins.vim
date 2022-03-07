@@ -132,10 +132,8 @@ let g:signify_sign_delete = '▁'
 
 " Config:netrw
 
-nnoremap <leader>b :Lexplore<CR>
+nnoremap <leader>b :Explore<CR>
 let g:netrw_banner=0
-let g:netrw_winsize = -28
-let g:netrw_browse_split = 4
 
 " Config: nerdtree
 " let g:NERDTreeMinimalUI = 1
