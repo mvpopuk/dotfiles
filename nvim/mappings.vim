@@ -31,6 +31,13 @@ nnoremap <silent> <leader>dg :Telescope diagnostics bufnr=0<cr>
 nnoremap <silent><leader>pm :call phpactor#ContextMenu()<cr>
 nnoremap <silent><leader>u :call phpactor#ImportClass()<cr>
 
+" Mapping: Testing
+nmap <silent> <leader>tn :w<cr>:TestNearest<cr>
+nmap <silent> <leader>tf :w<cr>:TestFile<cr>
+nmap <silent> <leader>ts :w<cr>:TestSuite<cr>
+nmap <silent> <leader>tl :w<cr>:TestLast<cr>
+nmap <silent> <leader>tv :w<cr>:TestVisit<cr>
+
 " Mappings: Tabs
 nnoremap <leader>2 <cmd>:tabnew<cr>
 nnoremap <leader>w <cmd>:bd<cr>

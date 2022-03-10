@@ -26,11 +26,11 @@
     " Testing
     Plug 'vim-test/vim-test'
 
+    "Vimux
+    Plug 'preservim/vimux'
+
     " Vim Commentary
     Plug 'tpope/vim-commentary'
-
-    " Vim Startify
-    Plug 'mhinz/vim-startify'
 
     " Tinkeray
     Plug 'jesseleite/vim-tinkeray'
@@ -98,14 +98,14 @@
     "Carbon Theme
     Plug 'michaeldyrynda/carbon'
     
-    " Nightfly Theme
-    Plug 'bluz71/vim-nightfly-guicolors'
+    " Github Theme
+    Plug 'projekt0n/github-nvim-theme'
 
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
     
     " Buffer Line
-    Plug 'akinsho/bufferline.nvim'
+    " Plug 'akinsho/bufferline.nvim'
  
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
@@ -113,6 +113,11 @@
 " ------------------------------------------------------------------------------
 " # Plugins Config
 " ------------------------------------------------------------------------------
+
+" Config: vim-test
+let test#strategy = 'vimux'
+let test#php#phpunit#executable = 'php artisan test'
+let test#project_root = getcwd()
 
 " Config: floaterm
 let g:floaterm_width=0.9
@@ -130,10 +135,13 @@ let g:signify_sign_change = '▍'
 let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
 
-" Config:netrw
+" Config: netrw
 
 nnoremap <leader>b :Explore<CR>
-let g:netrw_banner=0
+let g:netrw_winsize = -28
+let g:netrw_preview = 1
+let g:netrw_keepdir = 0
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " Config: nerdtree
 " let g:NERDTreeMinimalUI = 1
@@ -161,12 +169,12 @@ let g:NERDTreeStatusline = '%#NonText#'
 
 " Config:startify
 
-autocmd VimEnter *
-            \   if !argc()
-            \ |   Startify
-            " \ |   NERDTree
-            \ |   wincmd w
-            \ | endif
+" autocmd VimEnter *
+"             \   if !argc()
+"             \ |   Startify
+"             " \ |   NERDTree
+"             \ |   wincmd w
+"             \ | endif
 
 let g:startify_lists = [
     \ { 'type': 'files',     'header': ['   Recently opened files']                    },
