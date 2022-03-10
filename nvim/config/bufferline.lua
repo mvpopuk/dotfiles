@@ -25,17 +25,56 @@ require('bufferline').setup {
     custom_areas = {
       left = function()
         return {
-          { text = '    ', guifg = '#72a5a5',  },
+          { text = '    ', guifg = '#128A27',  },
         }
       end,
     },
   },
+ -- Highlight for Inspired Github
+    highlights = {
+        background = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            guifg = { attribute = 'fg', highlight = 'LineNr' },
+        },
+        fill = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
+        },
+        separator = {
+            guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+        },
+        close_button = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            guifg = { attribute = 'fg', highlight = 'LineNr' },
+        },
+        close_button_visible = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            guifg = { attribute = 'fg', highlight = 'LineNr' },
+        },
+        close_button_selected = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            guifg = { attribute = 'fg', highlight = 'LineNr' },
+        },
+        buffer_visible = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            guifg = { attribute = 'fg', highlight = 'LineNr' },
+        },
+        modified = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+        },
+        modified_visible = {
+            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+        },
+
+    },   
+
  -- Hightlight for Iceberg Theme
-  highlights = {
-    separator = {
-        guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
-    },
-  },
+  -- highlights = {
+  --   separator = {
+  --       guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
+  --   },
+  -- }, e
   
   -- Hightlights for Carbon Theme 
   -- highlights = {
