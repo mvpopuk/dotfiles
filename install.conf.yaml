@@ -16,6 +16,7 @@
     ~/.config/kitty: kitty
     ~/.tmux/mvpop_statusbar.tmux.conf: tmux/mvpop_statusbar.tmux.conf
     ~/.tmux/inspired_github.tmux.conf: tmux/inspired_github.tmux.conf
+    ~/.tmux/carbon.tmux.conf: tmux/carbon.tmux.conf
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.composer/composer.json: composer/composer.json
 
