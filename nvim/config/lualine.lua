@@ -1,14 +1,30 @@
+-- Inspired Github Colors
+-- local colors = {
+--   red = '#ca1243',
+--   grey = '#f5f5f5',
+--   light_grey = '#979BAC',
+--   black = '#383a42',
+--   white = '#ffffff',
+--   light_green = '#83a598',
+--   orange = '#fe8019',
+--   green = '#8ec07c',
+--   yellow = '#f8eec7',
+--   cyan = '#489FC1',
+-- }
+
+-- Carbon Colors
 local colors = {
-  red = '#ca1243',
+  red = '#db6e89',
   grey = '#f5f5f5',
   light_grey = '#979BAC',
-  black = '#383a42',
+  black = '#243354',
+  transparent = '#172030',
   white = '#ffffff',
   light_green = '#83a598',
-  orange = '#fe8019',
-  green = '#8ec07c',
-  yellow = '#f8eec7',
-  cyan = '#489FC1',
+  orange = '#ffae8f',
+  green = '#73a7a7',
+  yellow = '#ffae8f',
+  cyan = '#03858e',
 }
 
 local inspired_github = {
@@ -18,9 +34,21 @@ local inspired_github = {
     c = { fg = colors.black, bg = colors.white },
     z = { fg = colors.white, bg = colors.black },
   },
-  insert = { a = { fg = colors.black, bg = colors.yellow } },
+  insert = { a = { fg = colors.black, bg = colors.green } },
   visual = { a = { fg = colors.white, bg = colors.cyan } },
   replace = { a = { fg = colors.black, bg = colors.green } },
+}
+
+local carbon = {
+  normal = {
+    a = { fg = colors.transparent, bg = colors.green, gui = 'bold' },
+    b = { fg = colors.white,  bg = colors.black, },
+    c = { fg = colors.black, bg = colors.transparent, },
+    z = { fg = colors.white, bg = colors.black, },
+  },
+  insert = { a = { fg = colors.transparent, bg = colors.orange, gui = 'bold' } },
+  visual = { a = { fg = colors.transparent, bg = colors.red, gui = 'bold' } },
+  replace = { a = { fg = colors.black, bg = colors.green, gui = 'bold' } },
 }
 
 local empty = require('lualine.component'):extend()
@@ -37,14 +65,14 @@ local function process_sections(sections)
   for name, section in pairs(sections) do
     local left = name:sub(9, 10) < 'x'
     for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
-      table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = colors.white } })
+      table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = colors.transparent } })
     end
     for id, comp in ipairs(section) do
       if type(comp) ~= 'table' then
         comp = { comp }
         section[id] = comp
       end
-      comp.separator = left and { right = '' } or { left = '' }
+      comp.separator = left and { right = '' } or { left = '' }
     end
   end
   return sections
@@ -73,10 +101,11 @@ end
 
 require('lualine').setup {
   options = {
-    theme = inspired_github,
+    theme = carbon,
     component_separators = '',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = ''},
   },
+  -- process_sections
   sections = process_sections {
     lualine_a = { 'mode' },
     lualine_b = {
