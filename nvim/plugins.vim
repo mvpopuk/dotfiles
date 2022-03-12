@@ -136,7 +136,6 @@ let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
 
 " Config: netrw
-
 nnoremap <leader>b :Explore<CR>
 let g:netrw_winsize = -28
 let g:netrw_preview = 1
