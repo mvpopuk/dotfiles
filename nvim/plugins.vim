@@ -7,6 +7,9 @@
     " Plug 'Xuyuanp/nerdtree-git-plugin'
     " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+    "Vimade
+    Plug 'TaDaa/vimade'
+
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-unimpaired'
@@ -105,7 +108,7 @@
     Plug 'lukas-reineke/indent-blankline.nvim'
     
     " Buffer Line
-    " Plug 'akinsho/bufferline.nvim'
+    Plug 'akinsho/bufferline.nvim'
  
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'

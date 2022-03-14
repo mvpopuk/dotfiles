@@ -1,40 +1,41 @@
--- Inspired Github Colors
--- local colors = {
---   red = '#ca1243',
---   grey = '#f5f5f5',
---   light_grey = '#979BAC',
---   black = '#383a42',
---   white = '#ffffff',
---   light_green = '#83a598',
---   orange = '#fe8019',
---   green = '#8ec07c',
---   yellow = '#f8eec7',
---   cyan = '#489FC1',
--- }
-
--- Carbon Colors
+-- -- Inspired Github Colors
 local colors = {
-  red = '#db6e89',
+  red = '#ca1243',
   grey = '#f5f5f5',
   light_grey = '#979BAC',
-  black = '#243354',
-  transparent = '#172030',
+  black = '#383a42',
   white = '#ffffff',
+  transparent = '#ffffff',
   light_green = '#83a598',
-  orange = '#ffae8f',
-  green = '#73a7a7',
-  yellow = '#ffae8f',
-  cyan = '#03858e',
+  orange = '#fe8019',
+  green = '#8ec07c',
+  yellow = '#f8eec7',
+  cyan = '#489FC1',
 }
+
+-- Carbon Colors
+-- local colors = {
+--   red = '#db6e89',
+--   grey = '#f5f5f5',
+--   light_grey = '#979BAC',
+--   black = '#243354',
+--   transparent = '#172030',
+--   white = '#ffffff',
+--   light_green = '#83a598',
+--   orange = '#ffae8f',
+--   green = '#73a7a7',
+--   yellow = '#ffae8f',
+--   cyan = '#03858e',
+-- }
 
 local inspired_github = {
   normal = {
     a = { fg = colors.white, bg = colors.red },
-    b = { fg = colors.light_grey,  bg = colors.grey },
-    c = { fg = colors.black, bg = colors.white },
+    b = { fg = colors.black,  bg = colors.grey },
+    c = { fg = colors.light_grey, bg = colors.white },
     z = { fg = colors.white, bg = colors.black },
   },
-  insert = { a = { fg = colors.black, bg = colors.green } },
+  insert = { a = { fg = colors.black, bg = colors.yellow } },
   visual = { a = { fg = colors.white, bg = colors.cyan } },
   replace = { a = { fg = colors.black, bg = colors.green } },
 }
@@ -72,7 +73,8 @@ local function process_sections(sections)
         comp = { comp }
         section[id] = comp
       end
-      comp.separator = left and { right = '' } or { left = '' }
+      comp.separator = left and { right = '' } or { left = '' }
+      -- comp.separator = left and { right = '' } or { left = '' }
     end
   end
   return sections
@@ -101,9 +103,10 @@ end
 
 require('lualine').setup {
   options = {
-    theme = carbon,
+    theme = inspired_github,
     component_separators = '',
-    section_separators = { left = '', right = ''},
+    section_separators = { left = '', right = '' },
+    -- section_separators = { left = '', right = ''},
   },
   -- process_sections
   sections = process_sections {

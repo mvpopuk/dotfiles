@@ -53,5 +53,5 @@ augroup END
 
 " -------------------------------------- Color Scheme --------------------------------- "                                  
 
-colorscheme carbon
+colorscheme inspired-github
 
