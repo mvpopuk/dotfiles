@@ -1,4 +1,31 @@
--- -- Inspired Github Colors
+-- Vscode Colors
+-- local colors = {
+--   red = '#f6645d',
+--   grey = '#f5f5f5',
+--   black = '#383a42',
+--   blk = '#000000',
+--   white = '#ffffff',
+--   transparent = '#1e1e1e',
+--   green = '#00c48b',
+--   yellow = '#dcdcaa',
+--   cyan = '#4ec9b0',
+--   blue = '#9cdcfe',
+--   magenta = '#df89dd'
+-- }
+
+-- local vscode = {
+--   normal = {
+--     a = { fg = colors.blk, bg = colors.blue },
+--     b = { fg = colors.gray,  bg = colors.black },
+--     c = { fg = colors.light_grey, bg = colors.transparent },
+--     z = { fg = colors.gray, bg = colors.black },
+--   },
+--   insert = { a = { fg = colors.blk, bg = colors.yellow } },
+--   visual = { a = { fg = colors.blk, bg = colors.green } },
+--   replace = { a = { fg = colors.blk, bg = colors.green } },
+-- }
+
+-- Inspired Github Colors
 local colors = {
   red = '#ca1243',
   grey = '#f5f5f5',
@@ -11,6 +38,18 @@ local colors = {
   green = '#8ec07c',
   yellow = '#f8eec7',
   cyan = '#489FC1',
+}
+
+local inspired_github = {
+  normal = {
+    a = { fg = colors.white, bg = colors.red },
+    b = { fg = colors.black,  bg = colors.grey },
+    c = { fg = colors.light_grey, bg = colors.white },
+    z = { fg = colors.white, bg = colors.black },
+  },
+  insert = { a = { fg = colors.black, bg = colors.yellow } },
+  visual = { a = { fg = colors.white, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors.green } },
 }
 
 -- Carbon Colors
@@ -28,29 +67,17 @@ local colors = {
 --   cyan = '#03858e',
 -- }
 
-local inspired_github = {
-  normal = {
-    a = { fg = colors.white, bg = colors.red },
-    b = { fg = colors.black,  bg = colors.grey },
-    c = { fg = colors.light_grey, bg = colors.white },
-    z = { fg = colors.white, bg = colors.black },
-  },
-  insert = { a = { fg = colors.black, bg = colors.yellow } },
-  visual = { a = { fg = colors.white, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.green } },
-}
-
-local carbon = {
-  normal = {
-    a = { fg = colors.transparent, bg = colors.green, gui = 'bold' },
-    b = { fg = colors.white,  bg = colors.black, },
-    c = { fg = colors.black, bg = colors.transparent, },
-    z = { fg = colors.white, bg = colors.black, },
-  },
-  insert = { a = { fg = colors.transparent, bg = colors.orange, gui = 'bold' } },
-  visual = { a = { fg = colors.transparent, bg = colors.red, gui = 'bold' } },
-  replace = { a = { fg = colors.black, bg = colors.green, gui = 'bold' } },
-}
+-- local carbon = {
+--   normal = {
+--     a = { fg = colors.transparent, bg = colors.green, gui = 'bold' },
+--     b = { fg = colors.white,  bg = colors.black, },
+--     c = { fg = colors.black, bg = colors.transparent, },
+--     z = { fg = colors.white, bg = colors.black, },
+--   },
+--   insert = { a = { fg = colors.transparent, bg = colors.orange, gui = 'bold' } },
+--   visual = { a = { fg = colors.transparent, bg = colors.red, gui = 'bold' } },
+--   replace = { a = { fg = colors.black, bg = colors.green, gui = 'bold' } },
+-- }
 
 local empty = require('lualine.component'):extend()
 function empty:draw(default_highlight)
@@ -105,8 +132,6 @@ require('lualine').setup {
   options = {
     theme = inspired_github,
     component_separators = '',
-    section_separators = { left = '', right = '' },
-    -- section_separators = { left = '', right = ''},
   },
   -- process_sections
   sections = process_sections {
@@ -132,7 +157,7 @@ require('lualine').setup {
         sections = { 'hint' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
-      { modified, color = { bg = colors.yellow } },
+      { modified, color = { fg = colors.blk, bg = colors.yellow } },
     },
     lualine_c = {},
     lualine_x = {},
