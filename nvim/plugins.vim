@@ -3,13 +3,18 @@
 " ------------------------------------------------------------------------------
 
     " NERDTree 
-    " Plug 'preservim/nerdtree' 
-    " Plug 'Xuyuanp/nerdtree-git-plugin'
-    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'preservim/nerdtree' 
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+    " Startify
+    Plug 'mhinz/vim-startify'
 
     "Vimade
     Plug 'TaDaa/vimade'
-
+    
+    " LSP Signature
+    Plug 'ray-x/lsp_signature.nvim'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-unimpaired'
@@ -95,6 +100,9 @@
     Plug 'onsails/lspkind-nvim'
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
  
+    " Inspired Github Theme
+    Plug 'mvpopuk/inspired-github.vim'
+
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
     
@@ -103,6 +111,9 @@
     
     " Github Theme
     Plug 'projekt0n/github-nvim-theme'
+
+    " Vscode Theme
+    Plug 'Mofiqul/vscode.nvim'
 
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
@@ -130,6 +141,7 @@ let floaterm_title='($1/$2)'
 " Config: indent-blankline
 let g:indent_blankline_filetype_exclude = ['dashboard',  'startify', 'floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
 let g:indent_blankline_use_treesitter = v:true
+let g:NERDTreeWinPos = "right"
 
 " Config: vim-signify
 let g:signify_priority = 1
@@ -144,15 +156,15 @@ let g:netrw_winsize = -28
 let g:netrw_preview = 1
 let g:netrw_keepdir = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_localrmdir='rm -r'
 
 " Config: nerdtree
-" let g:NERDTreeMinimalUI = 1
 " autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " autocmd VimEnter * NERDTree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
-let g:NERDTreeWinPos = "left"
-:let g:NERDTreeWinSize=35
+let g:NERDTreeWinPos = "right"
+:let g:NERDTreeWinSize=40
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
@@ -170,13 +182,12 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 let g:NERDTreeStatusline = '%#NonText#'
 
 " Config:startify
-
-" autocmd VimEnter *
-"             \   if !argc()
-"             \ |   Startify
-"             " \ |   NERDTree
-"             \ |   wincmd w
-"             \ | endif
+autocmd VimEnter *
+            \   if !argc()
+            \ |   Startify
+            \ |   NERDTree
+            \ |   wincmd w
+            \ | endif
 
 let g:startify_lists = [
     \ { 'type': 'files',     'header': ['   Recently opened files']                    },
