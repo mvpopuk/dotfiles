@@ -11,10 +11,11 @@
     Plug 'mhinz/vim-startify'
 
     "Vimade
-    Plug 'TaDaa/vimade'
+    " Plug 'TaDaa/vimade'
     
     " LSP Signature
     Plug 'ray-x/lsp_signature.nvim'
+    
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-unimpaired'
