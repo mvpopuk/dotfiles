@@ -1,5 +1,4 @@
 " ------------------------------ Iceberg Theme Overrides --------------------------- "                                  
-
 " function! IcebergOverrides() abort
 " highlight Normal guibg=None guifg=None
 " highlight NonText guibg=None guifg=None
@@ -46,9 +45,12 @@
 "     autocmd!
 "     autocmd ColorScheme vscode call CarbonOverrides()
 " augroup END
+
 " -------------------------------------- Color Scheme --------------------------------- "                                  
+
 " let g:vscode_style = "dark"
 colorscheme inspired-github
+
 " --------------------------------- Carbon Theme Overrides ---------------------------- "                                  
 
 " function! CarbonOverrides() abort
