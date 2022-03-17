@@ -1,16 +1,43 @@
--- Vscode Colors
+-- Iceberg Colors
 -- local colors = {
---   red = '#f6645d',
+--   red = '#f44747',
 --   grey = '#f5f5f5',
---   black = '#383a42',
+--   black = '#1e2132',
 --   blk = '#000000',
 --   white = '#ffffff',
---   transparent = '#1e1e1e',
---   green = '#00c48b',
---   yellow = '#dcdcaa',
---   cyan = '#4ec9b0',
---   blue = '#9cdcfe',
+--   transparent = '#161821',
+--   green = '#b1bb80',
+--   yellow = '#f2b589',
+--   cyan = '#8ab8c2',
+--   blue = '#84a0c6',
 --   magenta = '#df89dd'
+-- }
+
+-- local iceberg_dark = {
+--   normal = {
+--     a = { fg = colors.blk, bg = colors.cyan },
+--     b = { fg = colors.gray,  bg = colors.black },
+--     c = { fg = colors.light_grey, bg = colors.transparent },
+--     z = { fg = colors.gray, bg = colors.black },
+--   },
+--   insert = { a = { fg = colors.blk, bg = colors.yellow } },
+--   visual = { a = { fg = colors.blk, bg = colors.green } },
+--   replace = { a = { fg = colors.blk, bg = colors.green } },
+-- }
+
+-- Vscode Colors
+-- local colors = {
+  -- red = '#f44747',
+  -- grey = '#f5f5f5',
+  -- black = '#383a42',
+  -- blk = '#000000',
+ -- white = '#ffffff',
+  -- transparent = '#1e1e1e',
+  -- green = '#00c48b',
+  -- yellow = '#ffaf00',
+  -- cyan = '#4ec9b0',
+  -- blue = '#0a7aca',
+  -- magenta = '#df89dd'
 -- }
 
 -- local vscode = {
