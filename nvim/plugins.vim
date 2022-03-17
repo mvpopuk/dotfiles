@@ -103,6 +103,9 @@
     " Inspired Github Theme
     Plug 'mvpopuk/inspired-github.vim'
 
+    " Nord Theme
+    Plug 'arcticicestudio/nord-vim'
+
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
     
