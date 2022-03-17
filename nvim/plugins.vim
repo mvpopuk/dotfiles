@@ -11,7 +11,7 @@
     Plug 'mhinz/vim-startify'
 
     "Vimade
-    " Plug 'TaDaa/vimade'
+    Plug 'TaDaa/vimade'
     
     " LSP Signature
     Plug 'ray-x/lsp_signature.nvim'
