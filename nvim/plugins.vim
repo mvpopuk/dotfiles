@@ -1,6 +1,18 @@
 " ------------------------------------------------------------------------------
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
+    
+    " Aerial Symbols
+    Plug 'stevearc/aerial.nvim'
+
+    " Colorizer
+    Plug 'norcalli/nvim-colorizer.lua'
+
+    " Inline git blame
+    Plug 'APZelos/blamer.nvim' 
+
+    " Close buffer without closing window or split
+    Plug 'moll/vim-bbye'
 
     " NERDTree 
     Plug 'preservim/nerdtree' 
@@ -11,7 +23,10 @@
     Plug 'mhinz/vim-startify'
 
     "Vimade
-    Plug 'TaDaa/vimade'
+    " Plug 'TaDaa/vimade'
+    
+    " Neoformat
+    Plug 'sbdchd/neoformat'
     
     " LSP Signature
     Plug 'ray-x/lsp_signature.nvim'
@@ -30,7 +45,7 @@
     Plug 'tpope/vim-fugitive'
 
     " Enhance Syntax Highlight
-    Plug 'sheerun/vim-polyglot'
+    " Plug 'sheerun/vim-polyglot'
 
     " Testing
     Plug 'vim-test/vim-test'
@@ -209,3 +224,11 @@ let g:startify_bookmarks = [
 let g:startify_custom_header = [
     \       '      Project Explorer     ',
     \ ]
+
+" Config: blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_relative_time = 1
+let g:blamer_prefix = '    ■ '
+let g:blamer_template = '<committer>, <committer-time>: <summary>'
+let g:blamer_show_in_insert_modes = 0

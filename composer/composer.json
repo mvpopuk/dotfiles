@@ -5,6 +5,7 @@
         "statamic/cli": "^2.0",
         "squizlabs/php_codesniffer": "^3.6",
         "phpstan/phpstan": "^0.12.99",
-        "beyondcode/expose": "^2.0"
+        "beyondcode/expose": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.8"
     }
 }

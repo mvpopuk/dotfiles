@@ -25,7 +25,7 @@ require('bufferline').setup {
     custom_areas = {
       left = function()
         return {
-          { text = '    ', guifg = '#029632',  },
+          { text = '    ', guifg = '#28a745',  },
         }
       end,
     },

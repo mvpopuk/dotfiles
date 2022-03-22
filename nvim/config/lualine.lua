@@ -1,3 +1,30 @@
+-- -- Nord Colors
+-- local colors = {
+--   red = '#bf6069',
+--   grey = '#f5f5f5',
+--   black = '#566179',
+--   blk = '#000000',
+--   white = '#ffffff',
+--   transparent = '#2e3440',
+--   green = '#a3be8b',
+--   yellow = '#eacb8a',
+--   cyan = '#8ab8c2',
+--   blue = '#84a0c6',
+--   magenta = '#df89dd'
+-- }
+
+-- local nord = {
+--   normal = {
+--     a = { fg = colors.blk, bg = colors.cyan },
+--     b = { fg = colors.gray,  bg = colors.black },
+--     c = { fg = colors.light_grey, bg = colors.transparent },
+--     z = { fg = colors.gray, bg = colors.black },
+--   },
+--   insert = { a = { fg = colors.blk, bg = colors.yellow } },
+--   visual = { a = { fg = colors.blk, bg = colors.green } },
+--   replace = { a = { fg = colors.blk, bg = colors.green } },
+-- }
+
 -- Iceberg Colors
 -- local colors = {
 --   red = '#f44747',
@@ -27,17 +54,17 @@
 
 -- Vscode Colors
 -- local colors = {
-  -- red = '#f44747',
-  -- grey = '#f5f5f5',
-  -- black = '#383a42',
-  -- blk = '#000000',
- -- white = '#ffffff',
-  -- transparent = '#1e1e1e',
-  -- green = '#00c48b',
-  -- yellow = '#ffaf00',
-  -- cyan = '#4ec9b0',
-  -- blue = '#0a7aca',
-  -- magenta = '#df89dd'
+--   red = '#f44747',
+--   grey = '#f5f5f5',
+--   black = '#383a42',
+--   blk = '#000000',
+--  white = '#ffffff',
+--   transparent = '#1e1e1e',
+--   green = '#00c48b',
+--   yellow = '#ffaf00',
+--   cyan = '#4ec9b0',
+--   blue = '#0a7aca',
+--   magenta = '#df89dd'
 -- }
 
 -- local vscode = {
@@ -127,8 +154,8 @@ local function process_sections(sections)
         comp = { comp }
         section[id] = comp
       end
-      comp.separator = left and { right = '' } or { left = '' }
-      -- comp.separator = left and { right = '' } or { left = '' }
+      -- comp.separator = left and { right = '' } or { left = '' }
+      comp.separator = left and { right = '' } or { left = '' }
     end
   end
   return sections
@@ -156,9 +183,11 @@ local function modified()
 end
 
 require('lualine').setup {
-  options = {
+  
+    options = {
     theme = inspired_github,
     component_separators = '',
+    globalstatus = true,
   },
   -- process_sections
   sections = process_sections {
@@ -168,19 +197,19 @@ require('lualine').setup {
       { 'filename', file_status = false, path = 3 },
       {
         'diagnostics',
-        source = { 'intelephense' },
+        source = { 'intelephense', 'quick-lint-js' },
         sections = { 'error' },
         diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
       },
       {
         'diagnostics',
-        source = { 'intelephense' },
+        source = { 'intelephense', 'quick-lint-js' },
         sections = { 'warn' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
       {
         'diagnostics',
-        source = { 'intelephense' },
+        source = { 'intelephense', 'quick-lint-js' },
         sections = { 'hint' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },

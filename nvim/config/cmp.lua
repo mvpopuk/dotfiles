@@ -17,7 +17,7 @@ local cmp = require'cmp'
     map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>")
     map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>")
   end
-  local servers = {'intelephense', 'tailwindcss', 'html', 'eslint'}
+  local servers = {'intelephense', 'tailwindcss', 'html' }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
       on_attach = on_attach,
@@ -52,7 +52,9 @@ local lsp_symbols = {
     TypeParameter = "   (TypeParameter)",
 },
 
-require('lspconfig').intelephense.setup{}
+require('lspconfig').intelephense.setup{
+    on_attach = require("aerial").on_attach,
+}
 
  cfg = {
     debug = false, -- set to true to enable debug logging
@@ -115,11 +117,15 @@ require('lspconfig').html.setup{
     filetypes = { "html", "blade", "antlers" },
 }
 
-require('lspconfig').tailwindcss.setup{}
-
-require('lspconfig').stylelint_lsp.setup{}
-
-require('lspconfig').eslint.setup{}
+require('lspconfig').tailwindcss.setup{
+    on_attach = require("aerial").on_attach,
+}
+require('lspconfig').stylelint_lsp.setup{
+    on_attach = require("aerial").on_attach,
+}
+require('lspconfig').quick_lint_js.setup{
+    on_attach = require("aerial").on_attach,
+}
 
 cmp.setup({
     experimental = {
@@ -249,3 +255,16 @@ lspsaga.setup { -- defaults ...
   server_filetype_map = {},
   diagnostic_prefix_format = "%d. ",
 }
+
+require("aerial").setup({
+  on_attach = function(bufnr)
+    -- Toggle the aerial window with <leader>a
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
+    -- Jump forwards/backwards with '{' and '}'
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+    -- Jump up the tree with '[[' or ']]'
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
+  end
+})

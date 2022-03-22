@@ -7,11 +7,12 @@ endif
 
 " Source plugins
 call plug#begin()
-  source ~/.dotfiles/nvim/plugins.vim
+source ~/.dotfiles/nvim/plugins.vim
 call plug#end()
 
 " Load Bufferline at the end of the stack
-" call sourcery#source_defer('config/bufferline.lua')
+call sourcery#source_defer('config/bufferline.lua')
+call sourcery#source_defer('config/colorizer.vim')
 
 " Initialize sourcery
 call sourcery#init()
