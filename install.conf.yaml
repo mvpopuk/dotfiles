@@ -9,17 +9,12 @@
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: git/.gitconfig
-    ~/.zshrc: zsh/.zshrc
     ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.config/nvim/colors: nvim/colors
     ~/.config/kitty: kitty
     ~/.tmux/iceberg.tmux.conf: tmux/iceberg.tmux.conf
     ~/.tmux/inspired_github.tmux.conf: tmux/inspired_github.tmux.conf
-    ~/.tmux/vscode.tmux.conf: tmux/vscode.tmux.conf
     ~/.tmux/carbon.tmux.conf: tmux/carbon.tmux.conf
     ~/.tmux.conf: tmux/.tmux.conf
-    ~/.composer/composer.json: composer/composer.json
 
 - create:
     - ~/Code
