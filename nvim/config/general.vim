@@ -3,7 +3,7 @@ set laststatus=3
 set mouse=a
 set autowriteall
 set completeopt=menu,menuone,noselect
-" set colorcolumn=120
+set colorcolumn=120
 set expandtab
 set ignorecase
 set matchpairs+=<:>
