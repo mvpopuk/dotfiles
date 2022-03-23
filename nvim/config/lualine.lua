@@ -215,7 +215,7 @@ require('lualine').setup {
       },
       { modified, color = { fg = colors.blk, bg = colors.yellow } },
     },
-    lualine_c = {},
+    lualine_c = {'aerial'},
     lualine_x = {},
     lualine_y = { search_result, 'filetype' },
     lualine_z = { '%l:%c', '%p%%/%L' },
