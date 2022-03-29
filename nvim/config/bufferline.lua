@@ -1,7 +1,7 @@
 require('bufferline').setup {
   options = {
     indicator_icon = ' ',
-    numbers = "buffer_id",
+    numbers = "none",
     diagnostics = "nvim-cmp",
     diagnostics_update_in_insert = true,
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -30,68 +30,47 @@ require('bufferline').setup {
       end,
     },
   },
- -- Highlight for Inspired Github
+ -- Highlight for Iceberg
     highlights = {
-        background = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
-        },
-        fill = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
-        },
         separator = {
-            guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
         },
-        close_button = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
-        },
-        close_button_visible = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
-        },
-        close_button_selected = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
-        },
-        buffer_visible = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
-        },
-        modified = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-        },
-        modified_visible = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-        },
-
-    },   
-
- -- Hightlight for Iceberg Theme
-  -- highlights = {
-  --   separator = {
-  --       guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
-  --   },
-  -- }, e
-  
-  -- Hightlights for Carbon Theme 
-  -- highlights = {
-  --  background = {
-  --    guibg = { attribute = 'bg', highlight = 'TabLineFill' },
-  --   },
-  --   close_button = {
-  --     guibg = { attribute = 'bg', highlight = 'TabLineFill' },
-  --   },
-  --   separator = {
-  --     guifg = { attribute = 'fg', highlight = 'BufferLineSeparator' },
-  --   },
-  --   modified = {
-  --     guifg = { attribute = 'fg', highlight = 'LineNr' },
-  --   },
-  --   modified_selected = {
-  --     guifg = { attribute = 'fg', highlight = 'DiffAdd' },
-  --   },
-  -- },
+    },
+  -- Highlight for Inspired Github
+    -- -- highlights = {
+    --     background = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --         guifg = { attribute = 'fg', highlight = 'LineNr' },
+    --     },
+    --     fill = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --         guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
+    --     },
+    --     separator = {
+    --         guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --     },
+    --     close_button = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --         guifg = { attribute = 'fg', highlight = 'LineNr' },
+    --     },
+    --     close_button_visible = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --         guifg = { attribute = 'fg', highlight = 'LineNr' },
+    --     },
+    --     close_button_selected = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --         guifg = { attribute = 'fg', highlight = 'LineNr' },
+    --     },
+    --     buffer_visible = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --         guifg = { attribute = 'fg', highlight = 'LineNr' },
+    --     },
+    --     modified = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --     },
+    --     modified_visible = {
+    --         guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+    --     },
+    -- }
 }

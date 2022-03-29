@@ -123,7 +123,7 @@ require('lspconfig').tailwindcss.setup{
 require('lspconfig').stylelint_lsp.setup{
     on_attach = require("aerial").on_attach,
 }
-require('lspconfig').quick_lint_js.setup{
+require('lspconfig').tsserver.setup{
     on_attach = require("aerial").on_attach,
 }
 

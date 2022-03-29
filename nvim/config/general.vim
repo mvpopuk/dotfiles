@@ -17,6 +17,7 @@ set shiftround
 set showmatch
 set smartcase
 set smartindent
+set autoindent
 set splitbelow
 set splitright
 set termguicolors
@@ -32,4 +33,27 @@ set shiftwidth=4
 set expandtab
 set modifiable
 set clipboard=unnamed
-autocmd VimResized * :wincmd =
+packadd! matchit
+"" Highlight on yank
+augroup highlight_on_yank
+  autocmd!
+  autocmd TextYankPost * lua vim.highlight.on_yank {
+    \ higroup = "IncSearch",
+    \ timeout = 150,
+    \ on_macro = true
+    \ }
+augroup END Remember last cursor position
+augroup neovim_last_position
+  autocmd!
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+    \ |   exe "normal! g`\""
+    \ | endif
+augroup END" Automatically resize vim's windows when resizing vim
+augroup equalize_windows_on_resize
+  autocmd!
+  autocmd VimResized * exec "normal \<c-w>="
+augroup END
+" Persistent undo
+let &undodir=sourcery#system_vimfiles_path('undo')
+set undofile

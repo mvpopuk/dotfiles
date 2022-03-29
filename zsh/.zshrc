@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias a="php artisan"
 alias fresh="rm -rf storage/logs/laravel.log && rm -rf vendor/ && composer install && php artisan migrate:fresh --seed"
 
-export TERM=xterm-256color
+export TERM="xterm-256color"
 
 export NVM_DIR="/Users/mvpop/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -117,4 +117,4 @@ prompt spaceship
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-[[ $TMUX != "" ]] && export TERM="screen-256color"
+# [[ $TMUX != "" ]] && export TERM="screen-256color"

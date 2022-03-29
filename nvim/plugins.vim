@@ -1,15 +1,15 @@
 " ------------------------------------------------------------------------------
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
-    
+
+    " Git Messenger
+    Plug 'rhysd/git-messenger.vim'
+
     " Aerial Symbols
     Plug 'stevearc/aerial.nvim'
 
-    " Colorizer
-    Plug 'norcalli/nvim-colorizer.lua'
-
     " Inline git blame
-    Plug 'APZelos/blamer.nvim' 
+    Plug 'f-person/git-blame.nvim'
 
     " Close buffer without closing window or split
     Plug 'moll/vim-bbye'
@@ -19,12 +19,6 @@
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-    " Startify
-    Plug 'mhinz/vim-startify'
-
-    "Vimade
-    " Plug 'TaDaa/vimade'
-    
     " Neoformat
     Plug 'sbdchd/neoformat'
     
@@ -43,9 +37,6 @@
 
     " Git Integrations
     Plug 'tpope/vim-fugitive'
-
-    " Enhance Syntax Highlight
-    " Plug 'sheerun/vim-polyglot'
 
     " Testing
     Plug 'vim-test/vim-test'
@@ -119,26 +110,14 @@
     " Inspired Github Theme
     Plug 'mvpopuk/inspired-github.vim'
 
-    " Nord Theme
-    Plug 'arcticicestudio/nord-vim'
-
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
     
-    "Carbon Theme
-    Plug 'michaeldyrynda/carbon'
-    
-    " Github Theme
-    Plug 'projekt0n/github-nvim-theme'
-
-    " Vscode Theme
-    Plug 'Mofiqul/vscode.nvim'
-
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
     
     " Buffer Line
-    Plug 'akinsho/bufferline.nvim'
+    " Plug 'akinsho/bufferline.nvim'
  
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
@@ -148,7 +127,7 @@
 " ------------------------------------------------------------------------------
 
 " Config: vim-test
-let test#strategy = 'vimux'
+let test#strategy = 'floaterm'
 let test#php#phpunit#executable = 'php artisan test'
 let test#project_root = getcwd()
 
@@ -201,12 +180,12 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 let g:NERDTreeStatusline = '%#NonText#'
 
 " Config:startify
-autocmd VimEnter *
-            \   if !argc()
-            \ |   Startify
-            \ |   NERDTree
-            \ |   wincmd w
-            \ | endif
+" autocmd VimEnter *
+"             \   if !argc()
+"             \ |   Startify
+"             \ |   NERDTree
+"             \ |   wincmd w
+"             \ | endif
 
 let g:startify_lists = [
     \ { 'type': 'files',     'header': ['   Recently opened files']                    },
@@ -225,10 +204,13 @@ let g:startify_custom_header = [
     \       '      Project Explorer     ',
     \ ]
 
-" Config: blamer
-let g:blamer_enabled = 1
-let g:blamer_delay = 500
-let g:blamer_relative_time = 1
-let g:blamer_prefix = '    ■ '
-let g:blamer_template = '<committer>, <committer-time>: <summary>'
-let g:blamer_show_in_insert_modes = 0
+" Config: f-person
+let g:gitblame_enabled = 1
+let g:gitblame_highlight_group = "FPerson"
+let g:gitblame_date_format = '%r'
+
+" Config: git-messenger
+let g:git_messenger_include_diff = 'none'
+let g:git_messenger_floating_win_opts = { 'border': 'single' }
+let g:git_messenger_popup_content_margins = v:false
+let g:git_messenger_always_into_popup = v:true

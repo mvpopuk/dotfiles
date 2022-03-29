@@ -1,30 +1,3 @@
--- -- Nord Colors
--- local colors = {
---   red = '#bf6069',
---   grey = '#f5f5f5',
---   black = '#566179',
---   blk = '#000000',
---   white = '#ffffff',
---   transparent = '#2e3440',
---   green = '#a3be8b',
---   yellow = '#eacb8a',
---   cyan = '#8ab8c2',
---   blue = '#84a0c6',
---   magenta = '#df89dd'
--- }
-
--- local nord = {
---   normal = {
---     a = { fg = colors.blk, bg = colors.cyan },
---     b = { fg = colors.gray,  bg = colors.black },
---     c = { fg = colors.light_grey, bg = colors.transparent },
---     z = { fg = colors.gray, bg = colors.black },
---   },
---   insert = { a = { fg = colors.blk, bg = colors.yellow } },
---   visual = { a = { fg = colors.blk, bg = colors.green } },
---   replace = { a = { fg = colors.blk, bg = colors.green } },
--- }
-
 -- Iceberg Colors
 local colors = {
   red = '#f44747',
@@ -32,7 +5,7 @@ local colors = {
   black = '#1e2132',
   blk = '#000000',
   white = '#ffffff',
-  transparent = '#17181f',
+  transparent = '#161821',
   green = '#b1bb80',
   yellow = '#f2b589',
   cyan = '#8ab8c2',
@@ -77,33 +50,6 @@ local iceberg_dark = {
 --   insert = { a = { fg = colors.black, bg = colors.yellow } },
 --   visual = { a = { fg = colors.white, bg = colors.cyan } },
 --   replace = { a = { fg = colors.black, bg = colors.green } },
--- }
-
--- Carbon Colors
--- local colors = {
---   red = '#db6e89',
---   grey = '#f5f5f5',
---   light_grey = '#979BAC',
---   black = '#243354',
---   transparent = '#172030',
---   white = '#ffffff',
---   light_green = '#83a598',
---   orange = '#ffae8f',
---   green = '#73a7a7',
---   yellow = '#ffae8f',
---   cyan = '#03858e',
--- }
-
--- local carbon = {
---   normal = {
---     a = { fg = colors.transparent, bg = colors.green, gui = 'bold' },
---     b = { fg = colors.white,  bg = colors.black, },
---     c = { fg = colors.black, bg = colors.transparent, },
---     z = { fg = colors.white, bg = colors.black, },
---   },
---   insert = { a = { fg = colors.transparent, bg = colors.orange, gui = 'bold' } },
---   visual = { a = { fg = colors.transparent, bg = colors.red, gui = 'bold' } },
---   replace = { a = { fg = colors.black, bg = colors.green, gui = 'bold' } },
 -- }
 
 local empty = require('lualine.component'):extend()
@@ -155,8 +101,10 @@ local function modified()
   return ''
 end
 
+vim.g.gitblame_display_virtual_text = 0
+local git_blame = require('gitblame')
+
 require('lualine').setup {
-  
     options = {
     theme = iceberg_dark,
     component_separators = '',
@@ -182,14 +130,14 @@ require('lualine').setup {
       },
       {
         'diagnostics',
-        source = { 'intelephense', 'quick-lint-js' },
+        source = { 'intelephense', 'tsserver' },
         sections = { 'hint' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
       { modified, color = { fg = colors.blk, bg = colors.yellow } },
     },
-    lualine_c = {'aerial'},
-    lualine_x = {},
+    lualine_c = {'aerial' },
+    lualine_x = {{ git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available  }},
     lualine_y = { search_result, 'filetype' },
     lualine_z = { '%l:%c', '%p%%/%L' },
   },

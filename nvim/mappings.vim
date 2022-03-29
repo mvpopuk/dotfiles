@@ -18,7 +18,7 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>e <cmd>lua require('telescope.builtin').oldfiles()<cr>
 nnoremap <leader>app <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>
-nnoremap <silent> <leader>a <cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>
+nnoremap <silent> <leader><leader>a <cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>
 nnoremap <silent> <leader>gd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
 nnoremap <silent> <leader>gv <cmd>lua require'telescope.builtin'.lsp_definitions{jump_type="vsplit"}<cr>
 nnoremap <silent> <leader>gi <cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>
