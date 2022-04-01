@@ -12,12 +12,14 @@ let g:neoformat_only_msg_on_error = 1
 let g:neoformat_enabled_php = ['phpcsfixer']
 let g:neoformat_enabled_js = ['prettier']
 let g:neoformat_enabled_html = ['prettier']
+let g:neoformat_enabled_md = ['prettier']
 
 augroup neoformat_on_save
     autocmd!
     autocmd BufWritePre *.php call RunNeoformat()
     autocmd BufWritePre *.js call RunNeoformat()
     autocmd BufWritePre *.html call RunNeoformat()
+    autocmd BufWritePre *.md call RunNeoformat()
 augroup END
 
 " ------------------------------------------------------------------------------
