@@ -41,6 +41,7 @@ nmap <silent> <leader>tv :w<cr>:TestVisit<cr>
 " Mappings: Tabs
 nnoremap <leader>2 <cmd>:tabnew<cr>
 nnoremap <leader>w <cmd>:Bdelete<cr>
+nnoremap <leader>q <cmd>:bd!<cr>
 nnoremap <leader><Right> :bn<CR>
 nnoremap <leader><Left> :bp<CR>
 
