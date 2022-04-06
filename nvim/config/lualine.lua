@@ -128,8 +128,8 @@ local function process_sections(sections)
         comp = { comp }
         section[id] = comp
       end
-      -- comp.separator = left and { right = '' } or { left = '' }
-      comp.separator = left and { right = '' } or { left = '' }
+      comp.separator = left and { right = '' } or { left = '' }
+      -- comp.separator = left and { right = '' } or { left = '' }
     end
   end
   return sections

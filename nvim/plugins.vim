@@ -1,6 +1,9 @@
 " ------------------------------------------------------------------------------
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
+    
+    " Vim Polyglot 
+    " Plug 'sheerun/vim-polyglot'
 
     " Bufferline
     Plug 'akinsho/bufferline.nvim'
@@ -154,9 +157,6 @@ let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
 
 " Config: netrw
-nnoremap <leader>b :Lexplore<CR>
-let g:netrw_winsize = -40
-let g:netrw_preview = 1
 let g:netrw_keepdir = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_localrmdir='rm -r'

@@ -114,7 +114,7 @@ lua << EOF
 require("onedarkpro").setup({
   plugins = { -- Override which plugins highlight groups are loaded
       native_lsp = true,
-      polygot = false,
+      polygot = true,
       treesitter = true,
       -- NOTE: Other plugins have been omitted for brevity
   },
@@ -129,7 +129,7 @@ require("onedarkpro").setup({
       bold = false, -- Use the themes opinionated bold styles?
       italic = true, -- Use the themes opinionated italic styles?
       underline = true, -- Use the themes opinionated underline styles?
-      undercurl = true, -- Use the themes opinionated undercurl styles?
+      undercurl = false, -- Use the themes opinionated undercurl styles?
       cursorline = true, -- Use cursorline highlighting?
       transparency = false, -- Use a transparent background?
       terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?

@@ -3,7 +3,7 @@ set laststatus=3
 set mouse=a
 set autowriteall
 set completeopt=menu,menuone,noselect
-set colorcolumn=120
+" set colorcolumn=120
 set expandtab
 set ignorecase
 set matchpairs+=<:>
@@ -21,6 +21,7 @@ set autoindent
 set splitbelow
 set splitright
 set termguicolors
+set background=dark
 set signcolumn=yes:1
 set timeoutlen=300
 set updatetime=300
