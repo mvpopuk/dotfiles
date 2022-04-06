@@ -2,6 +2,9 @@
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
 
+    " Bufferline
+    Plug 'akinsho/bufferline.nvim'
+
     " Git Messenger
     Plug 'rhysd/git-messenger.vim'
 
@@ -15,9 +18,9 @@
     Plug 'moll/vim-bbye'
 
     " NERDTree 
-    Plug 'preservim/nerdtree' 
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " Plug 'preservim/nerdtree' 
+    " Plug 'Xuyuanp/nerdtree-git-plugin'
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
     " Neoformat
     Plug 'sbdchd/neoformat'
@@ -53,9 +56,6 @@
     " Vim Sourcery
     Plug 'jesseleite/vim-sourcery'
     
-    " Surround
-    Plug 'tpope/vim-surround'
-
     " Emmet
     Plug 'mattn/emmet-vim'
  
@@ -106,7 +106,16 @@
     Plug 'folke/trouble.nvim'
     Plug 'onsails/lspkind-nvim'
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
- 
+
+    " One Dark Pro
+    Plug 'olimorris/onedarkpro.nvim'
+
+    " Gruvbox Original
+    Plug 'morhetz/gruvbox'
+
+    " Gruvbox Material
+    Plug 'sainnhe/gruvbox-material'
+
     " Inspired Github Theme
     Plug 'mvpopuk/inspired-github.vim'
 
@@ -115,9 +124,6 @@
     
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
-    
-    " Buffer Line
-    " Plug 'akinsho/bufferline.nvim'
  
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
@@ -137,9 +143,8 @@ let g:floaterm_height=0.9
 let floaterm_title='($1/$2)'
 
 " Config: indent-blankline
-let g:indent_blankline_filetype_exclude = ['dashboard',  'startify', 'floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
+let g:indent_blankline_filetype_exclude = ['floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
 let g:indent_blankline_use_treesitter = v:true
-let g:NERDTreeWinPos = "right"
 
 " Config: vim-signify
 let g:signify_priority = 1
@@ -149,8 +154,8 @@ let g:signify_sign_delete_first_line = '▔'
 let g:signify_sign_delete = '▁'
 
 " Config: netrw
-nnoremap <leader>b :Explore<CR>
-let g:netrw_winsize = -28
+nnoremap <leader>b :Lexplore<CR>
+let g:netrw_winsize = -40
 let g:netrw_preview = 1
 let g:netrw_keepdir = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -178,6 +183,19 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ }
 
 let g:NERDTreeStatusline = '%#NonText#'
+let g:NERDTreeMinimalUI = 1
+
+augroup nerdtreeconcealbrackets
+      autocmd!
+      autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
+      autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
+      autocmd FileType nerdtree setlocal conceallevel=3
+      autocmd FileType nerdtree setlocal concealcursor=nvic
+augroup END
+augroup nerdtreehidecwd
+	autocmd!
+	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
+augroup end
 
 " Config:startify
 " autocmd VimEnter *

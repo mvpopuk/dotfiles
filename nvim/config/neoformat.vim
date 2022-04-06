@@ -11,16 +11,26 @@ let g:neoformat_only_msg_on_error = 1
 
 let g:neoformat_enabled_php = ['phpcsfixer']
 let g:neoformat_enabled_js = ['prettier']
-let g:neoformat_enabled_html = ['prettier']
+let g:neoformat_enabled_html = ['antlersformat']
 let g:neoformat_enabled_md = ['prettier']
 
 augroup neoformat_on_save
     autocmd!
-    autocmd BufWritePre *.php call RunNeoformat()
+  autocmd BufWritePre *.php if expand('%:t') !~ '.blade.php' | call RunNeoformat()
     autocmd BufWritePre *.js call RunNeoformat()
-    autocmd BufWritePre *.html call RunNeoformat()
+    autocmd BufWritePre *.antlers.html call RunNeoformat()
     autocmd BufWritePre *.md call RunNeoformat()
 augroup END
+
+" ------------------------------------------------------------------------------
+" # Custom Formatters
+" ------------------------------------------------------------------------------
+
+let g:neoformat_html_antlersformat = {
+  \ 'exe': 'antlersformat',
+  \ 'args': ['format'],
+  \ 'replace': 1,
+  \ }
 
 " ------------------------------------------------------------------------------
 " # Toggle Neoformat

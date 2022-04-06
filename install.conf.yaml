@@ -13,7 +13,7 @@
     ~/.config/kitty: kitty
     ~/.tmux/iceberg.tmux.conf: tmux/iceberg.tmux.conf
     ~/.tmux/inspired_github.tmux.conf: tmux/inspired_github.tmux.conf
-    ~/.tmux/carbon.tmux.conf: tmux/carbon.tmux.conf
+    ~/.tmux/onedarkpro.tmux.conf: tmux/onedarkpro.tmux.conf
     ~/.tmux.conf: tmux/.tmux.conf
 
 - create:
