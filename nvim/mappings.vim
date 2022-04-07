@@ -27,6 +27,14 @@ nnoremap <silent> <leader>f <cmd>lua require'telescope.builtin'.lsp_document_sym
 nnoremap <silent> <leader>fm <cmd>lua require'telescope.builtin'.lsp_document_symbols{symbols="method"}<cr>
 nnoremap <silent> <leader>dg :Telescope diagnostics bufnr=0<cr>
 
+" Mapping: Folding
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
 " Mappings: PhpActor
 nnoremap <silent><leader>pm :call phpactor#ContextMenu()<cr>
 nnoremap <silent><leader>u :call phpactor#ImportClass()<cr>

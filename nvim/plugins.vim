@@ -3,7 +3,7 @@
 " ------------------------------------------------------------------------------
     
     " Vim Polyglot 
-    " Plug 'sheerun/vim-polyglot'
+    Plug 'sheerun/vim-polyglot'
 
     " Bufferline
     Plug 'akinsho/bufferline.nvim'
@@ -116,9 +116,6 @@
     " Gruvbox Original
     Plug 'morhetz/gruvbox'
 
-    " Gruvbox Material
-    Plug 'sainnhe/gruvbox-material'
-
     " Inspired Github Theme
     Plug 'mvpopuk/inspired-github.vim'
 
@@ -159,7 +156,7 @@ let g:signify_sign_delete = '▁'
 " Config: netrw
 let g:netrw_keepdir = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_localrmdir='rm -r'
+let g:netrw_localrmdir="rm -r"
 
 " Config: nerdtree
 " autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif

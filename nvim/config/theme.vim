@@ -115,7 +115,7 @@ require("onedarkpro").setup({
   plugins = { -- Override which plugins highlight groups are loaded
       native_lsp = true,
       polygot = true,
-      treesitter = true,
+      treesitter = false,
       -- NOTE: Other plugins have been omitted for brevity
   },
   styles = {
@@ -138,4 +138,5 @@ require("onedarkpro").setup({
 })
 EOF
 
+syntax on
 colorscheme onedarkpro

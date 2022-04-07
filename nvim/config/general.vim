@@ -26,6 +26,7 @@ set signcolumn=yes:1
 set timeoutlen=300
 set updatetime=300
 set lazyredraw
+set nocompatible
 set cursorline
 set scrolloff=8
 set encoding=utf8
@@ -34,6 +35,12 @@ set shiftwidth=4
 set expandtab
 set modifiable
 set clipboard=unnamed
+set foldmethod=manual
+augroup remember_folds
+  autocmd!
+  au BufWinLeave ?* mkview 1
+  au BufWinEnter ?* silent! loadview 1
+augroup END
 packadd! matchit
 " Highlight on yank
 augroup highlight_on_yank
