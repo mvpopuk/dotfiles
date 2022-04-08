@@ -94,6 +94,20 @@ function! OneDarkProOverrides() abort
      autocmd ColorScheme onedarkpro call OneDarkProOverrides()
  augroup END
 
+" --------------------------------- Nord Theme Overrides ---------------------------- "
+
+ " function! NordOverrides() abort
+ "     highlight IndentBlanklineChar guifg=#353D51 gui=nocombine
+ "     highlight FloatermBorder guibg=None guifg=#10737B
+ "     highlight EndOfBuffer guibg=None guifg=#2e3440
+ "     highlight Underlined guifg=None
+ " endfunction
+
+ " augroup Colors
+ "     autocmd!
+ "     autocmd ColorScheme nord call NordOverrides()
+ " augroup END
+
 " ------------------------------------------------------------------------------------- "  
 "                                 Gruvbox Original                                      "
 " ------------------------------------------------------------------------------------- "  
@@ -138,5 +152,5 @@ require("onedarkpro").setup({
 })
 EOF
 
-syntax on
+" syntax on
 colorscheme onedarkpro

@@ -3,7 +3,7 @@
 " ------------------------------------------------------------------------------
     
     " Vim Polyglot 
-    Plug 'sheerun/vim-polyglot'
+    " Plug 'sheerun/vim-polyglot'
 
     " Bufferline
     Plug 'akinsho/bufferline.nvim'
@@ -110,6 +110,9 @@
     Plug 'onsails/lspkind-nvim'
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
 
+    " Nord Theme
+    Plug 'arcticicestudio/nord-vim'
+
     " One Dark Pro
     Plug 'olimorris/onedarkpro.nvim'
 
@@ -120,8 +123,8 @@
     Plug 'mvpopuk/inspired-github.vim'
 
     " Iceberg Theme
-    Plug 'cocopon/iceberg.vim'
-    
+    Plug 'cocopon/iceberg.vim', { 'branch': 'treesitter-support' }
+ 
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
  

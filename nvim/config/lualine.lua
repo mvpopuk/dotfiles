@@ -68,7 +68,7 @@ local onedarkpro = {
 --   magenta = '#df89dd'
 -- }
 
--- local iceberg_dark = {
+-- local iceberg = {
 --   normal = {
 --     a = { fg = colors.blk, bg = colors.cyan },
 --     b = { fg = colors.gray,  bg = colors.black },
@@ -106,6 +106,33 @@ local onedarkpro = {
 --   visual = { a = { fg = colors.white, bg = colors.cyan } },
 --   replace = { a = { fg = colors.black, bg = colors.green } },
 -- }
+--
+-- Nord Colors
+ -- local colors = {
+ --   red = '#bf6069',
+ --   grey = '#f5f5f5',
+ --   black = '#566179',
+ --   blk = '#000000',
+ --   white = '#ffffff',
+ --   transparent = '#2e3440',
+ --   green = '#a3be8b',
+ --   yellow = '#eacb8a',
+ --   cyan = '#8ab8c2',
+ --   blue = '#84a0c6',
+ --   magenta = '#df89dd'
+ -- }
+
+ -- local nord = {
+ --   normal = {
+ --     a = { fg = colors.blk, bg = colors.cyan },
+ --     b = { fg = colors.gray,  bg = colors.black },
+ --     c = { fg = colors.light_grey, bg = colors.transparent },
+ --     z = { fg = colors.gray, bg = colors.black },
+ --   },
+ --   insert = { a = { fg = colors.blk, bg = colors.yellow } },
+ --   visual = { a = { fg = colors.blk, bg = colors.green } },
+ --   replace = { a = { fg = colors.blk, bg = colors.green } },
+ -- }
 
 local empty = require('lualine.component'):extend()
 function empty:draw(default_highlight)
