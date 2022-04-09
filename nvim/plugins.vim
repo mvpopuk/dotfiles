@@ -110,14 +110,14 @@
     Plug 'onsails/lspkind-nvim'
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
 
+    " Dracula Theme
+    Plug 'dracula/vim', { 'as': 'dracula' }
+
     " Nord Theme
     Plug 'arcticicestudio/nord-vim'
 
-    " One Dark Pro
+    " One Dark Pro Theme
     Plug 'olimorris/onedarkpro.nvim'
-
-    " Gruvbox Original
-    Plug 'morhetz/gruvbox'
 
     " Inspired Github Theme
     Plug 'mvpopuk/inspired-github.vim'

@@ -1,56 +1,57 @@
+-- Dracula Colors
 local colors = {
-  white = '#ffffff',
-  red = '#e06c75',
+  white = '#feffff',
+  red = '#ff6d67',
   grey = '#abb2bf',
-  gray = '#495254',
+  gray = '#55596d',
   black = '#323844',
-  transparent = '#282c34',
-  green = '#98c379',
-  yellow = '#e5c07b',
+  transparent = '#282a36',
+  green = '#59f68d',
+  yellow = '#f3f89d',
   blue = '#61afef',
-  magenta = '#c678dd',
-  cyan = '#56b6c2',
+  magenta = '#ff92d0',
+  cyan = '#99ecfd',
   orange = '#ff8700',
 }
 
-local onedarkpro = {
+local dracula = {
   normal = {
     a = { fg = colors.grey, bg = colors.black },
     b = { fg = colors.grey,  bg = colors.black },
     c = { fg = colors.gray, bg = colors.transparent },
     z = { fg = colors.grey, bg = colors.black },
   },
-  insert = { a = { fg = colors.transparent, bg = colors.yellow } },
-  visual = { a = { fg = colors.transparent, bg = colors.green } },
-  replace = { a = { fg = colors.transparent, bg = colors.green } },
+  insert = { a = { fg = colors.transparent, bg = colors.green } },
+  visual = { a = { fg = colors.transparent, bg = colors.yellow } },
+  replace = { a = { fg = colors.transparent, bg = colors.red } },
 }
 
--- Gruvbox Colors
+-- One Dark Pro Colors
 -- local colors = {
 --   white = '#ffffff',
---   red = '#cc231c',
---   grey = '#808080',
---   black = '#3c3836',
---   transparent = '#1c1c1c',
---   green = '#989719',
---   yellow = '#d79920',
---   blue = '#448488',
---   magenta = '#b16185',
---   cyan = '#689d69',
+--   red = '#e06c75',
+--   grey = '#abb2bf',
+--   gray = '#495254',
+--   black = '#323844',
+--   transparent = '#282c34',
+--   green = '#98c379',
+--   yellow = '#e5c07b',
+--   blue = '#61afef',
+--   magenta = '#c678dd',
+--   cyan = '#56b6c2',
 --   orange = '#ff8700',
---   gold = '#E6D3A3'
 -- }
 
--- local gruvbox = {
+-- local onedarkpro = {
 --   normal = {
---     a = { fg = colors.transparent, bg = colors.gold },
---     b = { fg = colors.gray,  bg = colors.black },
---     c = { fg = colors.grey, bg = colors.transparent },
---     z = { fg = colors.gray, bg = colors.black },
+--     a = { fg = colors.grey, bg = colors.black },
+--     b = { fg = colors.grey,  bg = colors.black },
+--     c = { fg = colors.gray, bg = colors.transparent },
+--     z = { fg = colors.grey, bg = colors.black },
 --   },
 --   insert = { a = { fg = colors.transparent, bg = colors.yellow } },
---   visual = { a = { fg = colors.transparent, bg = colors.blue } },
---   replace = { a = { fg = colors.transparent, bg = colors.cyan } },
+--   visual = { a = { fg = colors.transparent, bg = colors.green } },
+--   replace = { a = { fg = colors.transparent, bg = colors.green } },
 -- }
 
 -- Iceberg Colors
@@ -106,33 +107,6 @@ local onedarkpro = {
 --   visual = { a = { fg = colors.white, bg = colors.cyan } },
 --   replace = { a = { fg = colors.black, bg = colors.green } },
 -- }
---
--- Nord Colors
- -- local colors = {
- --   red = '#bf6069',
- --   grey = '#f5f5f5',
- --   black = '#566179',
- --   blk = '#000000',
- --   white = '#ffffff',
- --   transparent = '#2e3440',
- --   green = '#a3be8b',
- --   yellow = '#eacb8a',
- --   cyan = '#8ab8c2',
- --   blue = '#84a0c6',
- --   magenta = '#df89dd'
- -- }
-
- -- local nord = {
- --   normal = {
- --     a = { fg = colors.blk, bg = colors.cyan },
- --     b = { fg = colors.gray,  bg = colors.black },
- --     c = { fg = colors.light_grey, bg = colors.transparent },
- --     z = { fg = colors.gray, bg = colors.black },
- --   },
- --   insert = { a = { fg = colors.blk, bg = colors.yellow } },
- --   visual = { a = { fg = colors.blk, bg = colors.green } },
- --   replace = { a = { fg = colors.blk, bg = colors.green } },
- -- }
 
 local empty = require('lualine.component'):extend()
 function empty:draw(default_highlight)
@@ -188,7 +162,7 @@ local git_blame = require('gitblame')
 
 require('lualine').setup {
     options = {
-    theme = onedarkpro,
+    theme = dracula,
     component_separators = '',
     globalstatus = true,
   },
@@ -216,7 +190,7 @@ require('lualine').setup {
         sections = { 'hint' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
-      { modified, color = { fg = colors.transparent, bg = colors.yellow } },
+      { modified, color = { fg = colors.transparent, bg = colors.green } },
     },
     lualine_c = {'aerial' },
     lualine_x = {{ git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available  }},

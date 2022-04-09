@@ -13,6 +13,7 @@ let g:neoformat_enabled_php = ['phpcsfixer']
 let g:neoformat_enabled_js = ['prettier']
 let g:neoformat_enabled_html = ['antlersformat']
 let g:neoformat_enabled_md = ['prettier']
+let g:neoformat_enabled_vue = ['prettier']
 
 augroup neoformat_on_save
     autocmd!
@@ -20,6 +21,7 @@ augroup neoformat_on_save
     autocmd BufWritePre *.js call RunNeoformat()
     autocmd BufWritePre *.antlers.html call RunNeoformat()
     autocmd BufWritePre *.md call RunNeoformat()
+    autocmd BufWritePre *.vue call RunNeoformat()
 augroup END
 
 " ------------------------------------------------------------------------------
