@@ -23,6 +23,9 @@
     " Close buffer without closing window or split
     Plug 'moll/vim-bbye'
 
+    " Nvim Tree
+    Plug 'kyazdani42/nvim-tree.lua'
+    
     " NERDTree 
     " Plug 'preservim/nerdtree' 
     " Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -115,7 +118,8 @@
 
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
-
+    " Plug 'Mofiqul/dracula.nvim'
+    
     " One Dark Pro Theme
     Plug 'olimorris/onedarkpro.nvim'
 
