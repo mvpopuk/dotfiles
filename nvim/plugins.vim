@@ -1,7 +1,10 @@
 " ------------------------------------------------------------------------------
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
-    
+ 
+    " Distraction Free Writing
+    Plug 'junegunn/goyo.vim'
+
     " Vim Polyglot 
     " Plug 'sheerun/vim-polyglot'
 
@@ -113,9 +116,6 @@
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
 
-    " Nord Theme
-    Plug 'arcticicestudio/nord-vim'
-
     " One Dark Pro Theme
     Plug 'olimorris/onedarkpro.nvim'
 
@@ -123,7 +123,7 @@
     Plug 'mvpopuk/inspired-github.vim'
 
     " Iceberg Theme
-    Plug 'cocopon/iceberg.vim', { 'branch': 'treesitter-support' }
+    Plug 'cocopon/iceberg.vim'
  
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'

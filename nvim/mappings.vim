@@ -56,10 +56,14 @@ nnoremap <leader><Left> :bp<CR>
 " Mappings: neoformat
 nmap <Leader><Leader>n :call ToggleNeoformat()<CR>
 
+" Mappings: goyo
+nnoremap <leader>1 :Goyo<cr>
+nnoremap <leader><leader>1 :Goyo!<cr>
+
 " Mappings: Git
 nnoremap <C-_> <cmd>:noh<cr>
 nnoremap <leader>ev :e ~/.dotfiles/nvim/init.vim<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr> 
+nnoremap <leader>sv :source $MYVIMRC <bar> runtime after/plugin/dracula.vim<cr> 
 nnoremap <leader>pl :e ~/.dotfiles/nvim/plugins.vim<cr>
 nnoremap <leader>mx :e ~/.dotfiles/tmux/.tmux.conf<cr>
 

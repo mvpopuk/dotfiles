@@ -1,7 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local trouble = require("trouble.providers.telescope")
-
 telescope.setup {
   defaults = {
     shorten_path = true,
