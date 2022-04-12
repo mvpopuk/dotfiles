@@ -10,6 +10,7 @@ function! s:goyo_enter()
   set noshowcmd
   set scrolloff=999
   set nocursorline
+  let g:indent_blankline_enabled = v:false
 endfunction
 
 function! s:goyo_leave()
@@ -21,6 +22,8 @@ function! s:goyo_leave()
   set showcmd
   set scrolloff=5
   set cursorline
+  runtime after/plugin/dracula.vim 
+  let g:indent_blankline_enabled = v:true
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

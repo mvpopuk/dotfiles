@@ -119,7 +119,7 @@
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
     " Plug 'Mofiqul/dracula.nvim'
-    
+
     " One Dark Pro Theme
     Plug 'olimorris/onedarkpro.nvim'
 
