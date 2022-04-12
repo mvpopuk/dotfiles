@@ -62,9 +62,9 @@ colorscheme dracula
         autocmd ColorScheme dracula highlight! TelescopePromptBorder guifg=#3b3e51
         autocmd ColorScheme dracula highlight! TelescopeResultsBorder guifg=#3b3e51
         autocmd ColorScheme dracula runtime after/plugin/dracula.vim
-        autocmd ColorScheme dracula syntax on
+        autocmd ColorScheme dracula syntax enable
     augroup end
 
 " -------------------------------------- Color Scheme --------------------------------- "
- 
+
 colorscheme dracula

@@ -22,7 +22,6 @@ function! s:goyo_leave()
   set showcmd
   set scrolloff=5
   set cursorline
-  runtime after/plugin/dracula.vim 
   let g:indent_blankline_enabled = v:true
 endfunction
 
