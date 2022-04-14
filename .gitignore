@@ -1,3 +1,4 @@
 .DS_Store
 .kitty.conf.swo
 nvim/colors/inspired-githubb.vim
+nvim/config/.php-cs-fixer.cache
