@@ -153,7 +153,7 @@ let g:floaterm_height=0.9
 let floaterm_title='($1/$2)'
 
 " Config: indent-blankline
-let g:indent_blankline_filetype_exclude = ['floaterm', 'Nvimvree', 'nerdtree', 'lspinfo', 'lsp-installer' ]
+let g:indent_blankline_filetype_exclude = ['floaterm', 'NvimTree', 'nerdtree', 'lspinfo', 'lsp-installer' ]
 let g:indent_blankline_use_treesitter = v:true
 
 " Config: vim-signify
