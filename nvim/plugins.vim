@@ -1,12 +1,15 @@
 " ------------------------------------------------------------------------------
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
- 
+
+    " Vim Pencil
+    Plug 'preservim/vim-pencil'
+
+    " Mardown Preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
     " Distraction Free Writing
     Plug 'junegunn/goyo.vim'
-
-    " Vim Polyglot 
-    " Plug 'sheerun/vim-polyglot'
 
     " Bufferline
     Plug 'akinsho/bufferline.nvim'
@@ -121,13 +124,13 @@
     " Plug 'Mofiqul/dracula.nvim'
 
     " One Dark Pro Theme
-    Plug 'olimorris/onedarkpro.nvim'
+    " Plug 'olimorris/onedarkpro.nvim'
 
     " Inspired Github Theme
-    Plug 'mvpopuk/inspired-github.vim'
+    " Plug 'mvpopuk/inspired-github.vim'
 
     " Iceberg Theme
-    Plug 'cocopon/iceberg.vim'
+    " Plug 'cocopon/iceberg.vim'
  
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
@@ -150,7 +153,7 @@ let g:floaterm_height=0.9
 let floaterm_title='($1/$2)'
 
 " Config: indent-blankline
-let g:indent_blankline_filetype_exclude = ['floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
+let g:indent_blankline_filetype_exclude = ['floaterm', 'Nvimvree', 'nerdtree', 'lspinfo', 'lsp-installer' ]
 let g:indent_blankline_use_treesitter = v:true
 
 " Config: vim-signify
