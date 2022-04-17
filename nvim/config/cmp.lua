@@ -128,9 +128,6 @@ require('lspconfig').tsserver.setup{
 }
 
 cmp.setup({
-    -- view = {
-    --     entries = 'native'
-    -- },
     experimental = {
         ghost_text = true,
     },
@@ -143,7 +140,7 @@ cmp.setup({
         -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
-    mapping = cmp.mapping.preset.insert ({
+    mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -153,7 +150,11 @@ cmp.setup({
         c = cmp.mapping.close(),
       }),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-      }),
+    ['<C-Space>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    },
+    }),
      formatting = {
         format = function(entry, item)
             item.kind = lsp_symbols[item.kind]

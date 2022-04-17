@@ -119,18 +119,21 @@
     Plug 'onsails/lspkind-nvim'
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
 
+    " Carbon Theme
+    Plug 'michaeldyrynda/carbon.vim'
+
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
     " Plug 'Mofiqul/dracula.nvim'
 
     " One Dark Pro Theme
-    " Plug 'olimorris/onedarkpro.nvim'
+    Plug 'olimorris/onedarkpro.nvim'
 
     " Inspired Github Theme
-    " Plug 'mvpopuk/inspired-github.vim'
+    Plug 'mvpopuk/inspired-github.vim'
 
     " Iceberg Theme
-    " Plug 'cocopon/iceberg.vim'
+    Plug 'cocopon/iceberg.vim'
  
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
