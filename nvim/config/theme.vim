@@ -69,30 +69,30 @@ colorscheme dracula
 
 " ------------------------------ Carbon Theme Overrides --------------------------- "
  
-function! CarbonOverrides() abort
-    highlight Normal guibg=None guifg=None
-    highlight NonText guibg=None guifg=None
-    highlight EndOfBuffer guifg=#1B253B
-    highlight CursorLine guibg=#1B253B
-    highlight CursorLineNr guibg=#1B253B guifg=#73a7a7
-    highlight VertSplit gui=NONE guibg=None guifg=#10737B
-    highlight IndentBlanklineChar guifg=#1B253B gui=nocombine
-    highlight IndentBlanklineContextChar guifg=#243353 gui=nocombine
-    highlight FloatermBorder guibg=None guifg=#10737B
-    highlight BufferLineSeparator guifg=#172030
-    highlight TroubleSignOther guibg=None guifg=green
-    highlight TroubleFoldIcon guifg=None
-    highlight TroubleCount guibg=None
-    highlight TelescopeBorder guifg=#243353
-    highlight TelescopePromptBorder guifg=#243353
-    highlight TelescopeResultsBorder guifg=#243353
-    highlight EndOfBuffer guifg=#172030
-endfunction
-augroup Colors
-    autocmd!
-    autocmd ColorScheme carbon call CarbonOverrides()
-augroup END
+" function! CarbonOverrides() abort
+"     highlight Normal guibg=None guifg=None
+"     highlight NonText guibg=None guifg=None
+"     highlight EndOfBuffer guifg=#1B253B
+"     highlight CursorLine guibg=#1B253B
+"     highlight CursorLineNr guibg=#1B253B guifg=#73a7a7
+"     highlight VertSplit gui=NONE guibg=None guifg=#10737B
+"     highlight IndentBlanklineChar guifg=#1B253B gui=nocombine
+"     highlight IndentBlanklineContextChar guifg=#243353 gui=nocombine
+"     highlight FloatermBorder guibg=None guifg=#10737B
+"     highlight BufferLineSeparator guifg=#172030
+"     highlight TroubleSignOther guibg=None guifg=green
+"     highlight TroubleFoldIcon guifg=None
+"     highlight TroubleCount guibg=None
+"     highlight TelescopeBorder guifg=#243353
+"     highlight TelescopePromptBorder guifg=#243353
+"     highlight TelescopeResultsBorder guifg=#243353
+"     highlight EndOfBuffer guifg=#172030
+" endfunction
+" augroup Colors
+"     autocmd!
+"     autocmd ColorScheme carbon call CarbonOverrides()
+" augroup END
 
 " -------------------------------------- Color Scheme --------------------------------- "
 
-colorscheme carbon
+colorscheme dracula
