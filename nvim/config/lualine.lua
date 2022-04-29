@@ -1,30 +1,57 @@
--- -- Dracula Colors
+-- Vscode Colors
 local colors = {
-  white = '#feffff',
-  red = '#ff6d67',
-  grey = '#abb2bf',
-  gray = '#55596d',
-  black = '#323844',
-  transparent = '#282a36',
-  green = '#59f68d',
-  yellow = '#f3f89d',
-  blue = '#61afef',
-  magenta = '#ff92d0',
-  cyan = '#99ecfd',
-  orange = '#ff8700',
+  red = '#f44747',
+  gray = '#666666',
+  black = '#282828',
+  blk = '#000000',
+  white = '#ffffff',
+  transparent = '#1e1e1e',
+  green = '#00c48b',
+  yellow = '#ffaf00',
+  cyan = '#4ec9b0',
+  blue = '#0a7aca',
+  magenta = '#df89dd'
 }
 
-local dracula = {
+local vscode = {
   normal = {
-    a = { fg = colors.grey, bg = colors.black },
-    b = { fg = colors.grey,  bg = colors.black },
+    a = { fg = colors.gray, bg = colors.black },
+    b = { fg = colors.gray,  bg = colors.black },
     c = { fg = colors.gray, bg = colors.transparent },
-    z = { fg = colors.grey, bg = colors.black },
+    z = { fg = colors.gray, bg = colors.black },
   },
-  insert = { a = { fg = colors.transparent, bg = colors.green } },
-  visual = { a = { fg = colors.transparent, bg = colors.yellow } },
-  replace = { a = { fg = colors.transparent, bg = colors.red } },
+  insert = { a = { fg = colors.blk, bg = colors.blue } },
+  visual = { a = { fg = colors.blk, bg = colors.green } },
+  replace = { a = { fg = colors.blk, bg = colors.green } },
 }
+
+-- -- Dracula Colors
+-- local colors = {
+--   white = '#feffff',
+--   red = '#ff6d67',
+--   grey = '#abb2bf',
+--   gray = '#55596d',
+--   black = '#323844',
+--   transparent = '#282a36',
+--   green = '#59f68d',
+--   yellow = '#f3f89d',
+--   blue = '#61afef',
+--   magenta = '#ff92d0',
+--   cyan = '#99ecfd',
+--   orange = '#ff8700',
+-- }
+
+-- local dracula = {
+--   normal = {
+--     a = { fg = colors.grey, bg = colors.black },
+--     b = { fg = colors.grey,  bg = colors.black },
+--     c = { fg = colors.gray, bg = colors.transparent },
+--     z = { fg = colors.grey, bg = colors.black },
+--   },
+--   insert = { a = { fg = colors.transparent, bg = colors.green } },
+--   visual = { a = { fg = colors.transparent, bg = colors.yellow } },
+--   replace = { a = { fg = colors.transparent, bg = colors.red } },
+-- }
 
 -- One Dark Pro Colors
 -- local colors = {
@@ -185,12 +212,12 @@ local function modified()
   return ''
 end
 
-vim.g.gitblame_display_virtual_text = 0
-local git_blame = require('gitblame')
+-- vim.g.gitblame_display_virtual_text = 1
+-- local git_blame = require('gitblame')
 
 require('lualine').setup {
     options = {
-    theme = dracula,
+    theme = vscode,
     component_separators = '',
     globalstatus = true,
   },
@@ -218,10 +245,10 @@ require('lualine').setup {
         sections = { 'hint' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
-      { modified, color = { fg = colors.transparent, bg = colors.green } },
+      { modified, color = { fg = colors.transparent, bg = colors.blue } },
     },
     lualine_c = {'aerial' },
-    lualine_x = {{ git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available  }},
+    lualine_x = {}, -- { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available  }
     lualine_y = { search_result, 'filetype' },
     lualine_z = { '%l:%c', '%p%%/%L' },
   },

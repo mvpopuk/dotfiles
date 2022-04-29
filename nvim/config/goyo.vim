@@ -11,6 +11,7 @@ function! s:goyo_enter()
   set scrolloff=999
   set nocursorline
   let g:indent_blankline_enabled = v:false
+  let g:blamer_enabled = 0
 endfunction
 
 function! s:goyo_leave()
@@ -23,6 +24,7 @@ function! s:goyo_leave()
   set scrolloff=5
   set cursorline
   let g:indent_blankline_enabled = v:true
+  let g:blamer_enabled = 1
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

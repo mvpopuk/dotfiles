@@ -31,6 +31,7 @@
 "     highlight FPerson guifg=#4c5375 guibg=#1E2132
 " endfunction
 
+
 " augroup Colors
 "     autocmd!
 "     autocmd ColorScheme iceberg call IcebergOverrides()
@@ -38,34 +39,34 @@
 
 " ------------------------------ Dracula Theme Overrides --------------------------- "
 
-colorscheme dracula
- augroup DraculaOverrides
-        autocmd!
-        autocmd ColorScheme dracula highlight! Normal ctermbg=NONE ctermfg=NONE guibg=None guifg=None
-        " autocmd ColorScheme dracula highlight! NonText guibg=None guifg=None
-        autocmd ColorScheme dracula highlight! SignColumn guibg=None guifg=None
-        autocmd ColorScheme dracula highlight! EndOfBuffer guifg=#282a36
-        autocmd ColorScheme dracula highlight! LineNr guibg=None guifg=#55596d
-        " highlight CursorLineNr guifg=#7d828d
-        autocmd ColorScheme dracula highlight! VertSplit gui=NONE guibg=None guifg=#3b3e51
-        autocmd ColorScheme dracula highlight! DraculaWinSeparator guibg=None guifg=#3b3e51
-        autocmd ColorScheme dracula highlight! IndentBlanklineChar guifg=#3b3e51 gui=nocombine
-        autocmd ColorScheme dracula highlight! IndentBlanklineContextChar guifg=#55596d gui=nocombine
-        autocmd ColorScheme dracula highlight! FloatermBorder guibg=NONE guifg=#3b3e51
-        autocmd ColorScheme dracula highlight! SignifySignAdd guibg=none guifg=green
-        autocmd ColorScheme dracula highlight! SignifySignChange guibg=none guifg=yellow
-        autocmd ColorScheme dracula highlight! SignifySignDelete guibg=none guifg=red
-        autocmd ColorScheme dracula highlight! TroubleSignOther guibg=None guifg=green
-        autocmd ColorScheme dracula highlight! TroubleFoldIcon guifg=None
-        autocmd ColorScheme dracula highlight! TroubleCount guibg=None
-        autocmd ColorScheme dracula highlight! TelescopeBorder guifg=#3b3e51
-        autocmd ColorScheme dracula highlight! TelescopePromptBorder guifg=#3b3e51
-        autocmd ColorScheme dracula highlight! TelescopeResultsBorder guifg=#3b3e51
-        " autocmd ColorScheme dracula highlight! CmpPmenu guibg=#000
-        " autocmd ColorScheme dracula highlight! CmpPmenuBorder guibg=#000
-        autocmd ColorScheme dracula runtime after/plugin/dracula.vim
-        autocmd ColorScheme dracula syntax enable
-    augroup end
+" colorscheme dracula
+ " augroup DraculaOverrides
+ "        autocmd!
+ "        autocmd ColorScheme dracula highlight! Normal ctermbg=NONE ctermfg=NONE guibg=None guifg=None
+ "        " autocmd ColorScheme dracula highlight! NonText guibg=None guifg=None
+ "        autocmd ColorScheme dracula highlight! SignColumn guibg=None guifg=None
+ "        autocmd ColorScheme dracula highlight! EndOfBuffer guifg=#282a36
+ "        autocmd ColorScheme dracula highlight! LineNr guibg=None guifg=#55596d
+ "        " highlight CursorLineNr guifg=#7d828d
+ "        autocmd ColorScheme dracula highlight! VertSplit gui=NONE guibg=None guifg=#3b3e51
+ "        autocmd ColorScheme dracula highlight! DraculaWinSeparator guibg=None guifg=#3b3e51
+ "        autocmd ColorScheme dracula highlight! IndentBlanklineChar guifg=#3b3e51 gui=nocombine
+ "        autocmd ColorScheme dracula highlight! IndentBlanklineContextChar guifg=#55596d gui=nocombine
+ "        autocmd ColorScheme dracula highlight! FloatermBorder guibg=NONE guifg=#3b3e51
+ "        autocmd ColorScheme dracula highlight! SignifySignAdd guibg=none guifg=green
+ "        autocmd ColorScheme dracula highlight! SignifySignChange guibg=none guifg=yellow
+ "        autocmd ColorScheme dracula highlight! SignifySignDelete guibg=none guifg=red
+ "        autocmd ColorScheme dracula highlight! TroubleSignOther guibg=None guifg=green
+ "        autocmd ColorScheme dracula highlight! TroubleFoldIcon guifg=None
+ "        autocmd ColorScheme dracula highlight! TroubleCount guibg=None
+ "        autocmd ColorScheme dracula highlight! TelescopeBorder guifg=#3b3e51
+ "        autocmd ColorScheme dracula highlight! TelescopePromptBorder guifg=#3b3e51
+ "        autocmd ColorScheme dracula highlight! TelescopeResultsBorder guifg=#3b3e51
+ "        " autocmd ColorScheme dracula highlight! CmpPmenu guibg=#000
+ "        " autocmd ColorScheme dracula highlight! CmpPmenuBorder guibg=#000
+ "        autocmd ColorScheme dracula runtime after/plugin/dracula.vim
+ "        autocmd ColorScheme dracula syntax enable
+ "    augroup end
 
 " ------------------------------ Carbon Theme Overrides --------------------------- "
  
@@ -93,6 +94,30 @@ colorscheme dracula
 "     autocmd ColorScheme carbon call CarbonOverrides()
 " augroup END
 
+" --------------------------------- VSCODE Theme Overrides ---------------------------- "                                  
+
+function! VscodeOverrides() abort
+    highlight Normal guibg=None guifg=None
+    highlight NonText guibg=None guifg=None
+    highlight IndentBlanklineChar guifg=#282828 gui=nocombine
+    highlight IndentBlanklineContextChar guifg=#3B3D3D gui=nocombine
+    highlight SignifySignAdd guibg=none guifg=green
+    highlight SignifySignChange guibg=none guifg=yellow
+    highlight SignifySignDelete guibg=none guifg=red
+    highlight VertSplit guibg=none guifg=#282828
+    highlight Blamer guifg=#666666
+    highlight EndOfBuffer guibg=#1e1e1e guifg=#1e1e1e
+endfunction
+
+augroup Colors
+    autocmd!
+    autocmd ColorScheme vscode call VscodeOverrides()
+augroup END
+
 " -------------------------------------- Color Scheme --------------------------------- "
 
-colorscheme dracula
+let g:vscode_style = "dark"
+let g:vscode_italic_comment = 1
+let g:vscode_disable_nvimtree_bg = v:true
+
+colorscheme vscode

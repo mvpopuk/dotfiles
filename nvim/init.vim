@@ -5,15 +5,20 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+if exists('g:vscode')
+    source ~/.config/nvim/mappings.vim
+    source ~/.config/nvim/vscode.vim
+endif
+
 " Source plugins
 call plug#begin()
 source ~/.dotfiles/nvim/plugins.vim
 call plug#end()
 
-call sourcery#source_defer('config/bufferline.lua')
-call sourcery#source_defer('config/cmp.lua')
+if !exists('g:vscode')
+    call sourcery#source_defer('config/bufferline.lua')
+    call sourcery#source_defer('config/cmp.lua')
 
-" Initialize sourcery
-call sourcery#init()
-
-
+    " Initialize sourcery
+    call sourcery#init()
+endif

@@ -12,7 +12,7 @@ require('bufferline').setup {
     show_close_icon = false,
     offsets = {
       {
-        filetype = 'nerdtree',
+        filetype = 'NvimTree',
         text = '  File Explorer',
         highlight = 'Directory',
         text_align = 'left',
@@ -25,12 +25,11 @@ require('bufferline').setup {
     custom_areas = {
       left = function()
         return {
-          { text = '    ', guifg = '#59f68d',  },
+          { text = '    ', guifg = '#6a9955',  },
         }
       end,
     },
   },
-  -- Highlight for Inspired Github
     highlights = {
         background = {
             guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },

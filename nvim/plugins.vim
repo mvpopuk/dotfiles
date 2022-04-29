@@ -2,6 +2,14 @@
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
 
+    " Vim Commentary
+    Plug 'tpope/vim-commentary'
+
+    " Smooth Scroll
+    Plug 'karb94/neoscroll.nvim'
+
+if !exists('g:vscode')
+ 
     " Vim Pencil
     Plug 'preservim/vim-pencil'
 
@@ -12,7 +20,7 @@
     Plug 'junegunn/goyo.vim'
 
     " Bufferline
-    Plug 'akinsho/bufferline.nvim'
+    " Plug 'akinsho/bufferline.nvim'
 
     " Git Messenger
     Plug 'rhysd/git-messenger.vim'
@@ -21,7 +29,8 @@
     Plug 'stevearc/aerial.nvim'
 
     " Inline git blame
-    Plug 'f-person/git-blame.nvim'
+    " Plug 'f-person/git-blame.nvim'
+    Plug 'APZelos/blamer.nvim'
 
     " Close buffer without closing window or split
     Plug 'moll/vim-bbye'
@@ -58,9 +67,6 @@
 
     "Vimux
     Plug 'preservim/vimux'
-
-    " Vim Commentary
-    Plug 'tpope/vim-commentary'
 
     " Tinkeray
     Plug 'jesseleite/vim-tinkeray'
@@ -121,6 +127,9 @@
 
     " Carbon Theme
     Plug 'michaeldyrynda/carbon.vim'
+    
+    " VSCode Theme
+    Plug 'Mofiqul/vscode.nvim'
 
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
@@ -141,6 +150,7 @@
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
 
+endif
 " ------------------------------------------------------------------------------
 " # Plugins Config
 " ------------------------------------------------------------------------------
@@ -232,10 +242,16 @@ let g:startify_custom_header = [
     \       '      Project Explorer     ',
     \ ]
 
-" Config: f-person
-let g:gitblame_enabled = 1
-let g:gitblame_highlight_group = "FPerson"
-let g:gitblame_date_format = '%r'
+" Config: blamer
+" let g:gitblame_enabled = 1
+" let g:gitblame_highlight_group = "FPerson"
+" let g:gitblame_date_format = '%r'
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_relative_time = 1
+let g:blamer_prefix = '    ■ '
+let g:blamer_template = '<committer>, <committer-time>: <summary>'
+let g:blamer_show_in_insert_modes = 0
 
 " Config: git-messenger
 let g:git_messenger_include_diff = 'none'

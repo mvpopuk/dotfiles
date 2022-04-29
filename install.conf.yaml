@@ -10,6 +10,8 @@
 
 - link:
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/mappings.vim: nvim/mappings.vim
+    ~/.config/nvim/vscode.vim: nvim/vscode.vim
     ~/.config/kitty: kitty
     ~/.tmux/iceberg.tmux.conf: tmux/iceberg.tmux.conf
     ~/.tmux/inspired_github.tmux.conf: tmux/inspired_github.tmux.conf
