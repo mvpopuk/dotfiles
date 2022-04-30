@@ -11,7 +11,7 @@ function! s:goyo_enter()
   set scrolloff=999
   set nocursorline
   let g:indent_blankline_enabled = v:false
-  let g:blamer_enabled = 0
+let g:gitblame_enabled = 0
 endfunction
 
 function! s:goyo_leave()

@@ -1,29 +1,29 @@
 -- Vscode Colors
-local colors = {
-  red = '#f44747',
-  gray = '#666666',
-  black = '#282828',
-  blk = '#000000',
-  white = '#ffffff',
-  transparent = '#1e1e1e',
-  green = '#00c48b',
-  yellow = '#ffaf00',
-  cyan = '#4ec9b0',
-  blue = '#0a7aca',
-  magenta = '#df89dd'
-}
+-- local colors = {
+--   red = '#f44747',
+--   gray = '#666666',
+--   black = '#282828',
+--   blk = '#000000',
+--   white = '#ffffff',
+--   transparent = '#1e1e1e',
+--   green = '#00c48b',
+--   yellow = '#ffaf00',
+--   cyan = '#4ec9b0',
+--   blue = '#0a7aca',
+--   magenta = '#df89dd'
+-- }
 
-local vscode = {
-  normal = {
-    a = { fg = colors.gray, bg = colors.black },
-    b = { fg = colors.gray,  bg = colors.black },
-    c = { fg = colors.gray, bg = colors.transparent },
-    z = { fg = colors.gray, bg = colors.black },
-  },
-  insert = { a = { fg = colors.blk, bg = colors.blue } },
-  visual = { a = { fg = colors.blk, bg = colors.green } },
-  replace = { a = { fg = colors.blk, bg = colors.green } },
-}
+-- local vscode = {
+--   normal = {
+--     a = { fg = colors.gray, bg = colors.black },
+--     b = { fg = colors.gray,  bg = colors.black },
+--     c = { fg = colors.gray, bg = colors.transparent },
+--     z = { fg = colors.gray, bg = colors.black },
+--   },
+--   insert = { a = { fg = colors.blk, bg = colors.blue } },
+--   visual = { a = { fg = colors.blk, bg = colors.green } },
+--   replace = { a = { fg = colors.blk, bg = colors.green } },
+-- }
 
 -- -- Dracula Colors
 -- local colors = {
@@ -54,32 +54,32 @@ local vscode = {
 -- }
 
 -- One Dark Pro Colors
--- local colors = {
---   white = '#ffffff',
---   red = '#e06c75',
---   grey = '#abb2bf',
---   gray = '#495254',
---   black = '#323844',
---   transparent = '#282c34',
---   green = '#98c379',
---   yellow = '#e5c07b',
---   blue = '#61afef',
---   magenta = '#c678dd',
---   cyan = '#56b6c2',
---   orange = '#ff8700',
--- }
+local colors = {
+  white = '#ffffff',
+  red = '#e06c75',
+  grey = '#abb2bf',
+  gray = '#495254',
+  black = '#323844',
+  transparent = '#282c34',
+  green = '#98c379',
+  yellow = '#e5c07b',
+  blue = '#61afef',
+  magenta = '#c678dd',
+  cyan = '#56b6c2',
+  orange = '#ff8700',
+}
 
--- local onedarkpro = {
---   normal = {
---     a = { fg = colors.grey, bg = colors.black },
---     b = { fg = colors.grey,  bg = colors.black },
---     c = { fg = colors.gray, bg = colors.transparent },
---     z = { fg = colors.grey, bg = colors.black },
---   },
---   insert = { a = { fg = colors.transparent, bg = colors.yellow } },
---   visual = { a = { fg = colors.transparent, bg = colors.green } },
---   replace = { a = { fg = colors.transparent, bg = colors.green } },
--- }
+local onedarkpro = {
+  normal = {
+    a = { fg = colors.grey, bg = colors.black },
+    b = { fg = colors.grey,  bg = colors.black },
+    c = { fg = colors.gray, bg = colors.transparent },
+    z = { fg = colors.grey, bg = colors.black },
+  },
+  insert = { a = { fg = colors.transparent, bg = colors.yellow } },
+  visual = { a = { fg = colors.transparent, bg = colors.green } },
+  replace = { a = { fg = colors.transparent, bg = colors.green } },
+}
 
 -- Iceberg Colors
 -- local colors = {
@@ -98,7 +98,7 @@ local vscode = {
 
 -- local iceberg = {
 --   normal = {
---     a = { fg = colors.blk, bg = colors.cyan },
+--     a = { fg = colors.gray, bg = colors.black },
 --     b = { fg = colors.gray,  bg = colors.black },
 --     c = { fg = colors.light_grey, bg = colors.transparent },
 --     z = { fg = colors.gray, bg = colors.black },
@@ -217,7 +217,7 @@ end
 
 require('lualine').setup {
     options = {
-    theme = vscode,
+    theme = onedarkpro,
     component_separators = '',
     globalstatus = true,
   },

@@ -20,7 +20,7 @@ if !exists('g:vscode')
     Plug 'junegunn/goyo.vim'
 
     " Bufferline
-    " Plug 'akinsho/bufferline.nvim'
+    Plug 'akinsho/bufferline.nvim'
 
     " Git Messenger
     Plug 'rhysd/git-messenger.vim'
@@ -29,8 +29,8 @@ if !exists('g:vscode')
     Plug 'stevearc/aerial.nvim'
 
     " Inline git blame
-    " Plug 'f-person/git-blame.nvim'
-    Plug 'APZelos/blamer.nvim'
+    Plug 'f-person/git-blame.nvim'
+    " Plug 'APZelos/blamer.nvim'
 
     " Close buffer without closing window or split
     Plug 'moll/vim-bbye'
@@ -150,7 +150,6 @@ if !exists('g:vscode')
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
 
-endif
 " ------------------------------------------------------------------------------
 " # Plugins Config
 " ------------------------------------------------------------------------------
@@ -242,19 +241,23 @@ let g:startify_custom_header = [
     \       '      Project Explorer     ',
     \ ]
 
-" Config: blamer
-" let g:gitblame_enabled = 1
-" let g:gitblame_highlight_group = "FPerson"
-" let g:gitblame_date_format = '%r'
-let g:blamer_enabled = 1
-let g:blamer_delay = 500
-let g:blamer_relative_time = 1
-let g:blamer_prefix = '    ■ '
-let g:blamer_template = '<committer>, <committer-time>: <summary>'
-let g:blamer_show_in_insert_modes = 0
+" Config: git-blame
+let g:gitblame_enabled = 1
+let g:gitblame_ignored_filetypes = ['nvimtree']
+let g:gitblame_highlight_group = "FPerson"
+let g:blamer_show_in_visual_modes = 0
+let g:gitblame_date_format = '%r'
+" let g:blamer_enabled = 1
+" let g:blamer_delay = 500
+" let g:blamer_relative_time = 1
+" let g:blamer_prefix = '    ■ '
+" let g:blamer_template = '<committer>, <committer-time>: <summary>'
+" let g:blamer_show_in_insert_modes = 0
 
 " Config: git-messenger
 let g:git_messenger_include_diff = 'none'
 let g:git_messenger_floating_win_opts = { 'border': 'single' }
 let g:git_messenger_popup_content_margins = v:false
 let g:git_messenger_always_into_popup = v:true
+
+endif
