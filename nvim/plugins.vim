@@ -10,6 +10,9 @@
 
 if !exists('g:vscode')
  
+    " Vim Debug for Xdebug
+    Plug 'vim-vdebug/vdebug'
+
     " Vim Pencil
     Plug 'preservim/vim-pencil'
 
@@ -20,7 +23,7 @@ if !exists('g:vscode')
     Plug 'junegunn/goyo.vim'
 
     " Bufferline
-    Plug 'akinsho/bufferline.nvim'
+    " Plug 'akinsho/bufferline.nvim'
 
     " Git Messenger
     Plug 'rhysd/git-messenger.vim'
@@ -259,5 +262,19 @@ let g:git_messenger_include_diff = 'none'
 let g:git_messenger_floating_win_opts = { 'border': 'single' }
 let g:git_messenger_popup_content_margins = v:false
 let g:git_messenger_always_into_popup = v:true
+
+" Config: vdebug
+let g:vdebug_options = {
+            \   "port" : 9003,
+            \   "on_close" : 'detach',
+            \   "break_on_open" : 1,
+            \   "debug_window_level" : 0,
+            \   "debug_file_level" : 2,
+            \   "debug_file" : '~/vdebug.log',
+            \   "watch_window_style" : 'compact',
+            \   "marker_default" : '⬦',
+            \   "marker_closed_tree" : '▸',
+            \   "marker_open_tree" : '▾',
+            \}
 
 endif
