@@ -149,6 +149,7 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
      formatting = {
         format = function(entry, item)
