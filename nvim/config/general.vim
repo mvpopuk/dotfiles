@@ -3,7 +3,7 @@ set laststatus=0
 set mouse=a
 set autowriteall
 set completeopt=menu,menuone,noselect
-" set colorcolumn=120
+set colorcolumn=120
 set expandtab
 set ignorecase
 set matchpairs+=<:>
@@ -28,6 +28,7 @@ set updatetime=300
 set lazyredraw
 set nocompatible
 set cursorline
+set cursorlineopt=number
 set scrolloff=8
 set encoding=utf8
 set tabstop=4
