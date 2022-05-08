@@ -1,4 +1,5 @@
 " -------------------------------- General Settings ----------------------------- "                                  
+set completeopt=menu,menuone,noselect
 set laststatus=0
 set mouse=a
 set autowriteall

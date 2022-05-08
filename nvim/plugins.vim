@@ -5,11 +5,11 @@
     " Vim Commentary
     Plug 'tpope/vim-commentary'
 
-    " Smooth Scroll
-    Plug 'karb94/neoscroll.nvim'
-
 if !exists('g:vscode')
  
+    " Smooth Scroll
+    Plug 'karb94/neoscroll.nvim'
+    
     " Vim Debug for Xdebug
     Plug 'vim-vdebug/vdebug'
 
@@ -32,19 +32,15 @@ if !exists('g:vscode')
     Plug 'stevearc/aerial.nvim'
 
     " Inline git blame
-    " Plug 'f-person/git-blame.nvim'
     Plug 'APZelos/blamer.nvim'
 
     " Close buffer without closing window or split
     Plug 'moll/vim-bbye'
-
-    " Nvim Tree
-    " Plug 'kyazdani42/nvim-tree.lua'
     
     " NERDTree 
-    " Plug 'preservim/nerdtree' 
-    " Plug 'Xuyuanp/nerdtree-git-plugin'
-    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'preservim/nerdtree' 
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
     " Neoformat
     Plug 'sbdchd/neoformat'
@@ -53,8 +49,8 @@ if !exists('g:vscode')
     Plug 'ray-x/lsp_signature.nvim'
     
     " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'tpope/vim-unimpaired'
+    " Plug 'jiangmiao/auto-pairs'
+    " Plug 'tpope/vim-unimpaired'
     
     " Vinegar
     Plug 'tpope/vim-vinegar'
@@ -68,7 +64,7 @@ if !exists('g:vscode')
     " Testing
     Plug 'vim-test/vim-test'
 
-    "Vimux
+    " Vimux
     Plug 'preservim/vimux'
 
     " Tinkeray
@@ -128,15 +124,13 @@ if !exists('g:vscode')
     Plug 'onsails/lspkind-nvim'
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
 
-    " Carbon Theme
-    Plug 'michaeldyrynda/carbon.vim'
-    
     " VSCode Theme
     Plug 'Mofiqul/vscode.nvim'
 
     " Darcula Theme
     Plug 'briones-gabriel/darcula-solid.nvim'
     Plug 'rktjmp/lush.nvim'
+    
     Plug 'doums/darcula'
  
     " Dracula Theme
@@ -173,7 +167,7 @@ let g:floaterm_height=0.9
 let floaterm_title='($1/$2)'
 
 " Config: indent-blankline
-let g:indent_blankline_filetype_exclude = ['floaterm', 'NvimTree', 'nerdtree', 'lspinfo', 'lsp-installer' ]
+let g:indent_blankline_filetype_exclude = ['floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
 let g:indent_blankline_use_treesitter = v:true
 
 " Config: vim-signify
@@ -224,37 +218,8 @@ augroup nerdtreehidecwd
 	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
 augroup end
 
-" Config:startify
-" autocmd VimEnter *
-"             \   if !argc()
-"             \ |   Startify
-"             \ |   NERDTree
-"             \ |   wincmd w
-"             \ | endif
-
-let g:startify_lists = [
-    \ { 'type': 'files',     'header': ['   Recently opened files']                    },
-    \ { 'type': 'dir',       'header': ['   Recently opened project files '. getcwd()] },
-    \ { 'type': 'sessions', 'header': ['   Sessions']                                 },
-    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                                },
-    \ { 'type': 'commands',  'header': ['   Commands']                                 },
-    \ ]
-
-let g:startify_bookmarks = [
-  \ '~/.dotfiles/tmux/.tmux.conf',
-  \ '~/.dotfiles/install.conf.yaml',
-\ ]
-
-let g:startify_custom_header = [
-    \       '      Project Explorer     ',
-    \ ]
-
-" Config: git-blame
-" let g:gitblame_enabled = 1
-" let g:gitblame_ignored_filetypes = ['nvimtree', 'netrw']
-" let g:gitblame_highlight_group = "FPerson"
+" Config: blamer
 let g:blamer_show_in_visual_modes = 0
-" let g:gitblame_date_format = '%r'
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
 let g:blamer_relative_time = 1
