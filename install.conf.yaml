@@ -16,6 +16,7 @@
     ~/.tmux/iceberg.tmux.conf: tmux/iceberg.tmux.conf
     ~/.tmux/inspired_github.tmux.conf: tmux/inspired_github.tmux.conf
     ~/.tmux/dracula.tmux.conf: tmux/dracula.tmux.conf
+    ~/.tmux/darcula.tmux.conf: tmux/darcula.tmux.conf
     ~/.tmux.conf: tmux/.tmux.conf
 
 - create:

@@ -95,27 +95,60 @@
 
 " --------------------------------- VSCODE Theme Overrides ---------------------------- "                                  
 
-function! VscodeOverrides() abort
+" function! VscodeOverrides() abort
+"     highlight Normal guibg=None guifg=None
+"     highlight NonText guibg=None guifg=None
+"     highlight IndentBlanklineChar guifg=#282828 gui=nocombine
+"     highlight IndentBlanklineContextChar guifg=#3B3D3D gui=nocombine
+"     highlight SignifySignAdd guibg=none guifg=green
+"     highlight SignifySignChange guibg=none guifg=yellow
+"     highlight SignifySignDelete guibg=none guifg=red
+"     highlight VertSplit guibg=none guifg=#282828
+"     highlight GitBlame guibg=#222222 guifg=#666666
+"     highlight EndOfBuffer guibg=#1e1e1e guifg=#1e1e1e
+"     highlight CursorLineNr guibg=#222222
+"     highlight TelescopeBorder guifg=#666666
+"     highlight TelescopePromptBorder guifg=#666666
+"     highlight TelescopeResultsBorder guifg=#666666
+"     highlight FloatermBorder guibg=None guifg=#666666
+" endfunction
+
+" augroup Colors
+"     autocmd!
+"     autocmd ColorScheme vscode call VscodeOverrides()
+" augroup END
+
+" ------------------------------ Darcula Theme Overrides --------------------------- "
+
+function! DarculaOverrides() abort
     highlight Normal guibg=None guifg=None
     highlight NonText guibg=None guifg=None
-    highlight IndentBlanklineChar guifg=#282828 gui=nocombine
-    highlight IndentBlanklineContextChar guifg=#3B3D3D gui=nocombine
+    highlight SignColumn guibg=None guifg=None
+    highlight LineNr guibg=None guifg=#3B3D3D
+    highlight IndentBlanklineChar guifg=#3B3D3D gui=nocombine
+    highlight IndentBlanklineContextChar guifg=#666666 gui=nocombine
     highlight SignifySignAdd guibg=none guifg=green
     highlight SignifySignChange guibg=none guifg=yellow
     highlight SignifySignDelete guibg=none guifg=red
-    highlight VertSplit guibg=none guifg=#282828
+    highlight VertSplit guibg=none guifg=#3B3D3D
     highlight GitBlame guibg=#222222 guifg=#666666
-    highlight EndOfBuffer guibg=#1e1e1e guifg=#1e1e1e
-    highlight CursorLineNr guibg=#222222
-    highlight TelescopeBorder guifg=#666666
-    highlight TelescopePromptBorder guifg=#666666
-    highlight TelescopeResultsBorder guifg=#666666
-    highlight FloatermBorder guibg=None guifg=#666666
+    highlight EndOfBuffer guibg=#232525 guifg=#232525
+    highlight CursorLineNr guibg=None guifg=#666666
+    highlight TelescopeBorder guifg=#3B3D3D
+    highlight TelescopePromptBorder guifg=#3B3D3D
+    highlight TelescopeResultsBorder guifg=#3B3D3D
+    highlight FloatermBorder guibg=None guifg=#3B3D3
+    highlight FPerson guibg=None 
+    highlight Pmenu guibg=#232525
+    
+    highlight CmpPmenu guifg=#3B3D3D
+    highlight CmpPmenuBorder guifg=#3B3D3D
+
 endfunction
 
 augroup Colors
     autocmd!
-    autocmd ColorScheme vscode call VscodeOverrides()
+    autocmd ColorScheme darcula call DarculaOverrides()
 augroup END
 
 " ------------------------------ One Dark Theme Overrides --------------------------- "
@@ -153,9 +186,9 @@ augroup END
 
 " -------------------------------------- Color Scheme --------------------------------- "
 
-let g:vscode_style = "dark"
-let g:vscode_italic_comment = 1
-let g:vscode_disable_nvimtree_bg = v:true
+" let g:vscode_style = "dark"
+" let g:vscode_italic_comment = 1
+" let g:vscode_disable_nvimtree_bg = v:true
 
 " lua << EOF
 " require("onedarkpro").setup({
@@ -185,4 +218,5 @@ let g:vscode_disable_nvimtree_bg = v:true
 " })
 " EOF
 
-colorscheme vscode
+colorscheme darcula
+set termguicolors
