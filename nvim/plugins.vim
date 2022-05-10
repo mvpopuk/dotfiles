@@ -49,8 +49,8 @@ if !exists('g:vscode')
     Plug 'ray-x/lsp_signature.nvim'
     
     " Auto pairs for '(' '[' '{'
-    " Plug 'jiangmiao/auto-pairs'
-    " Plug 'tpope/vim-unimpaired'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-unimpaired'
     
     " Vinegar
     Plug 'tpope/vim-vinegar'
