@@ -12,7 +12,7 @@ require('bufferline').setup {
     show_close_icon = false,
     offsets = {
       {
-        filetype = 'NvimTree',
+        filetype = 'nerdtree',
         text = '  File Explorer',
         highlight = 'Directory',
         text_align = 'left',

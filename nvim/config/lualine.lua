@@ -107,6 +107,7 @@
 local colors = {
   red = '#f44747',
   grey = '#f5f5f5',
+  gray = '#8e99ae',
   black = '#1e2132',
   blk = '#000000',
   white = '#ffffff',
@@ -206,8 +207,8 @@ local function process_sections(sections)
         comp = { comp }
         section[id] = comp
       end
-      -- comp.separator = left and { right = '' } or { left = '' }
-      comp.separator = left and { right = '' } or { left = '' }
+      comp.separator = left and { right = '' } or { left = '' }
+      -- comp.separator = left and { right = '' } or { left = '' }
     end
   end
   return sections

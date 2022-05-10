@@ -189,7 +189,7 @@ let g:netrw_localrmdir="rm -r"
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeWinPos = "right"
-:let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=40
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
@@ -205,7 +205,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ }
 
 let g:NERDTreeStatusline = '%#NonText#'
-let g:NERDTreeMinimalUI = 1
+" let g:NERDTreeMinimalUI = 1
 
 augroup nerdtreeconcealbrackets
       autocmd!
