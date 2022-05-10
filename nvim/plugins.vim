@@ -116,6 +116,7 @@ if !exists('g:vscode')
     " LSP
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer'
+
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
@@ -127,6 +128,7 @@ if !exists('g:vscode')
     Plug 'folke/trouble.nvim'
     Plug 'onsails/lspkind-nvim'
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
+    Plug 'windwp/nvim-autopairs'
 
     " Carbon Theme
     Plug 'michaeldyrynda/carbon.vim'
@@ -141,7 +143,6 @@ if !exists('g:vscode')
  
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
-    " Plug 'Mofiqul/dracula.nvim'
 
     " One Dark Pro Theme
     Plug 'olimorris/onedarkpro.nvim'

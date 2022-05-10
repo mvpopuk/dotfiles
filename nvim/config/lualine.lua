@@ -1,24 +1,24 @@
 -- Darcula Colors
-local colors = {
-  gray = '#808080',
-  black = '#303333',
-  blk = '#000000',
-  transparent = '#232525',
-  green = '#6a8759',
-  yellow = '#fdc46c',
-}
+-- local colors = {
+--   gray = '#808080',
+--   black = '#303333',
+--   blk = '#000000',
+--   transparent = '#232525',
+--   green = '#6a8759',
+--   yellow = '#fdc46c',
+-- }
 
-local darcula = {
-  normal = {
-    a = { fg = colors.gray, bg = colors.black },
-    b = { fg = colors.gray,  bg = colors.black },
-    c = { fg = colors.gray, bg = colors.transparent },
-    z = { fg = colors.gray, bg = colors.black },
-  },
-  insert = { a = { fg = colors.blk, bg = colors.yellow } },
-  visual = { a = { fg = colors.blk, bg = colors.green } },
-  replace = { a = { fg = colors.blk, bg = colors.green } },
-}
+-- local darcula = {
+--   normal = {
+--     a = { fg = colors.gray, bg = colors.black },
+--     b = { fg = colors.gray,  bg = colors.black },
+--     c = { fg = colors.gray, bg = colors.transparent },
+--     z = { fg = colors.gray, bg = colors.black },
+--   },
+--   insert = { a = { fg = colors.blk, bg = colors.yellow } },
+--   visual = { a = { fg = colors.blk, bg = colors.green } },
+--   replace = { a = { fg = colors.blk, bg = colors.green } },
+-- }
 
 -- Vscode Colors
 -- local colors = {
@@ -104,31 +104,31 @@ local darcula = {
 -- }
 
 -- Iceberg Colors
--- local colors = {
---   red = '#f44747',
---   grey = '#f5f5f5',
---   black = '#1e2132',
---   blk = '#000000',
---   white = '#ffffff',
---   transparent = '#161821',
---   green = '#b1bb80',
---   yellow = '#f2b589',
---   cyan = '#8ab8c2',
---   blue = '#84a0c6',
---   magenta = '#df89dd'
--- }
+local colors = {
+  red = '#f44747',
+  grey = '#f5f5f5',
+  black = '#1e2132',
+  blk = '#000000',
+  white = '#ffffff',
+  transparent = '#16171e',
+  green = '#b1bb80',
+  yellow = '#f2b589',
+  cyan = '#8ab8c2',
+  blue = '#84a0c6',
+  magenta = '#df89dd'
+}
 
--- local iceberg = {
---   normal = {
---     a = { fg = colors.gray, bg = colors.black },
---     b = { fg = colors.gray,  bg = colors.black },
---     c = { fg = colors.light_grey, bg = colors.transparent },
---     z = { fg = colors.gray, bg = colors.black },
---   },
---   insert = { a = { fg = colors.blk, bg = colors.yellow } },
---   visual = { a = { fg = colors.blk, bg = colors.green } },
---   replace = { a = { fg = colors.blk, bg = colors.green } },
--- }
+local iceberg = {
+  normal = {
+    a = { fg = colors.blk, bg = colors.cyan },
+    b = { fg = colors.gray,  bg = colors.black },
+    c = { fg = colors.light_grey, bg = colors.transparent },
+    z = { fg = colors.gray, bg = colors.black },
+  },
+  insert = { a = { fg = colors.blk, bg = colors.yellow } },
+  visual = { a = { fg = colors.blk, bg = colors.green } },
+  replace = { a = { fg = colors.blk, bg = colors.green } },
+}
 
 -- Inspired Github Colors
 -- local colors = {
@@ -239,7 +239,7 @@ end
 
 require('lualine').setup {
     options = {
-    theme = darcula,
+    theme = iceberg,
     component_separators = '',
     globalstatus = true,
   },

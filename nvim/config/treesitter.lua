@@ -16,7 +16,7 @@
          "vue",
      },
   highlight = {
-    enable = true,
+    enable = false,
     disable = { "html", "bash" },
   },
   indent = {
