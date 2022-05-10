@@ -122,9 +122,11 @@ require('lspconfig').html.setup{
 require('lspconfig').tailwindcss.setup{
     on_attach = require("aerial").on_attach,
 }
+
 require('lspconfig').stylelint_lsp.setup{
     on_attach = require("aerial").on_attach,
 }
+
 require('lspconfig').tsserver.setup{
     on_attach = require("aerial").on_attach,
 }
@@ -134,26 +136,21 @@ cmp.setup({
         ghost_text = true,
     },
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        expand = function(args)
         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      end,
+    end,
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<C-y>'] = cmp.mapping.confirm({
+        ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
-     formatting = {
+    formatting = {
         format = function(entry, item)
             item.kind = lsp_symbols[item.kind]
             item.menu = ({
@@ -162,30 +159,33 @@ cmp.setup({
                 luasnip = "[Snippet]",
                 neorg = "[Neorg]",
             })["intelephens"]
-
             return item
         end,
     },
     window = {
-    completion = {
-      border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
-      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+        completion = {
+            border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+            winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+        },
+        documentation = {
+            border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+            winhighlight = 'FloatBorder:CmpPmenuBorder',
+        },
     },
-    documentation = {
-      border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
-      winhighlight = 'FloatBorder:CmpPmenuBorder',
-    },
-    },
+
     min_length = 1;
     preselect = true;
+    
     sources = cmp.config.sources({
-      { name = 'nvim_lsp', priority = 1000 },
-     -- { name = 'intelephense', priority = 1000 },
-      { name = 'buffer', priority = 500 }, 
+        { name = 'nvim_lsp', priority = 1000 },
+        { name = 'intelephense', priority = 1000 },
+        { name = 'path', priority = 750 },
+        { name = 'buffer', priority = 500 }, 
     })
-  })
+})
+
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
+cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -199,13 +199,15 @@ cmp.setup({
             end
         end, { "i", "s" }),
     }),
+    
     sources = {
       { name = 'buffer' }
     }
-  })
+
+})
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
+cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -219,12 +221,12 @@ cmp.setup({
             end
         end, { "i", "s" }),
     }),
+    
     sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
+        { name = 'path' },
+        { name = 'cmdline' },
     })
-  })
+})
 
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -240,65 +242,3 @@ cmp.setup({
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end                                  
 
-  require("trouble").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-
-local lspsaga = require 'lspsaga'
-lspsaga.setup { -- defaults ...
-  debug = false,
-  use_saga_diagnostic_sign = true,
-  -- diagnostic sign
-  error_sign = "",
-  warn_sign = "",
-  hint_sign = "",
-  infor_sign = "",
-  diagnostic_header_icon = "   ",
-  -- code action title icon
-  code_action_icon = " ",
-  code_action_prompt = {
-    enable = true,
-    sign = true,
-    sign_priority = 40,
-    virtual_text = true,
-  },
-  finder_definition_icon = "  ",
-  finder_reference_icon = "  ",
-  max_preview_lines = 10,
-  finder_action_keys = {
-    open = "o",
-    vsplit = "s",
-    split = "i",
-    quit = "q",
-    scroll_down = "<C-f>",
-    scroll_up = "<C-b>",
-  },
-  code_action_keys = {
-    quit = "q",
-    exec = "<CR>",
-  },
-  rename_action_keys = {
-    quit = "<C-c>",
-    exec = "<CR>",
-  },
-  definition_preview_icon = "  ",
-  border_style = "single",
-  rename_prompt_prefix = "➤",
-  server_filetype_map = {},
-  diagnostic_prefix_format = "%d. ",
-}
-
-require("aerial").setup({
-  on_attach = function(bufnr)
-    -- Toggle the aerial window with <leader>a
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
-    -- Jump forwards/backwards with '{' and '}'
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
-    -- Jump up the tree with '[[' or ']]'
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
-  end
-})
