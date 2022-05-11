@@ -36,6 +36,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set modifiable
+filetype plugin on       " may already be in your .vimrc
 set clipboard=unnamed
 set foldmethod=manual
 augroup remember_folds

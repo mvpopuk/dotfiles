@@ -13,9 +13,6 @@ if !exists('g:vscode')
     " Vim Debug for Xdebug
     Plug 'vim-vdebug/vdebug'
 
-    " Vim Pencil
-    Plug 'preservim/vim-pencil'
-
     " Mardown Preview
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 

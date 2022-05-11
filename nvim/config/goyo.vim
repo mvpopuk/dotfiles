@@ -9,7 +9,7 @@ function! s:goyo_enter()
   set noshowmode
   set noshowcmd
   set scrolloff=999
-  set nocursorline
+  " set nocursorline
   let g:indent_blankline_enabled = v:false
 let g:blamer_enabled = 0
 endfunction
@@ -22,7 +22,7 @@ function! s:goyo_leave()
   set showmode
   set showcmd
   set scrolloff=5
-  set cursorline
+  " set cursorline
   let g:indent_blankline_enabled = v:true
   let g:blamer_enabled = 1
 endfunction
