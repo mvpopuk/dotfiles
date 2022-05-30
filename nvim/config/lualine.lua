@@ -126,9 +126,18 @@ local iceberg = {
     c = { fg = colors.light_grey, bg = colors.transparent },
     z = { fg = colors.gray, bg = colors.black },
   },
-  insert = { a = { fg = colors.blk, bg = colors.yellow } },
-  visual = { a = { fg = colors.blk, bg = colors.green } },
-  replace = { a = { fg = colors.blk, bg = colors.green } },
+  insert = { 
+        a = { fg = colors.blk, bg = colors.yellow },
+        z = { fg = colors.gray, bg = colors.black }
+    },
+  visual = { 
+        a = { fg = colors.blk, bg = colors.green },
+        z = { fg = colors.gray, bg = colors.black }
+    },
+  replace = { 
+        a = { fg = colors.blk, bg = colors.green },
+        z = { fg = colors.gray, bg = colors.black }
+    },
 }
 
 -- Inspired Github Colors
@@ -247,10 +256,9 @@ require('lualine').setup {
   -- process_sections
   sections = process_sections {
     lualine_a = { 'mode' },
-    lualine_b = {
-      'branch',  
+    lualine_b = { 
       { 'filename', file_status = false, path = 3 },
-      {
+      { 
         'diagnostics',
         source = { 'intelephense', 'quick-lint-js' },
         sections = { 'error' },
@@ -272,8 +280,8 @@ require('lualine').setup {
     },
     lualine_c = {'aerial' },
     lualine_x = {}, -- { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available  }
-    lualine_y = { search_result, 'filetype' },
-    lualine_z = { '%l:%c', '%p%%/%L' },
+    lualine_y = { search_result, },
+    lualine_z = { 'branch' },
   },
   inactive_sections = {
     lualine_c = { '%f %y %m' },

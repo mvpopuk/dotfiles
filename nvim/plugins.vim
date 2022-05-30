@@ -2,11 +2,12 @@
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
 
+    " Github Copilot
+    Plug 'github/copilot.vim'
+
     " Vim Commentary
     Plug 'tpope/vim-commentary'
 
-if !exists('g:vscode')
- 
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
     
@@ -185,7 +186,7 @@ let g:netrw_localrmdir="rm -r"
 " autocmd VimEnter * NERDTree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 let g:NERDTreeWinSize=40
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -245,4 +246,6 @@ let g:vdebug_options = {
             \   "marker_open_tree" : '▾',
             \}
 
-endif
+let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls']
+    \ }

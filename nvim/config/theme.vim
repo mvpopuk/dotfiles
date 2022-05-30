@@ -15,8 +15,8 @@ function! IcebergOverrides() abort
     highlight DiagnosticSignError guibg=NONE guifg=#e27878
     highlight DiagnosticSignWarn guibg=NONE guifg=#e27878
     highlight DiagnosticSignHint guibg=NONE
-    highlight IndentBlanklineChar guifg=#1C1F2D gui=nocombine
-    highlight IndentBlanklineContextChar guifg=#25293C gui=nocombine
+    highlight IndentBlanklineChar guifg=#25293C gui=nocombine
+    highlight IndentBlanklineContextChar guifg=#585B76 gui=nocombine
     highlight FloatermBorder guibg=NONE guifg=#33344A
     highlight SignifySignAdd guibg=none guifg=green
     highlight SignifySignChange guibg=none guifg=yellow

@@ -131,6 +131,16 @@ require('lspconfig').tsserver.setup{
     on_attach = require("aerial").on_attach,
 }
 
+require('lspconfig').volar.setup{
+    on_attach = require("aerial").on_attach,
+}
+
+require('lspconfig').vuels.setup{
+    on_attach = require("aerial").on_attach,
+}
+
+
+
 cmp.setup({
     experimental = {
         ghost_text = true,
