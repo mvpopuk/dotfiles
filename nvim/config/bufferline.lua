@@ -1,6 +1,6 @@
 require('bufferline').setup {
   options = {
-    indicator_icon = ' ',
+    indicator = ' ',
     numbers = "none",
     diagnostics = "nvim-cmp",
     diagnostics_update_in_insert = true,
@@ -25,45 +25,45 @@ require('bufferline').setup {
     custom_areas = {
       left = function()
         return {
-          { text = '    ', guifg = '#8ab8c2',  },
+          { text = '    ', guifg = '#72a5a5',  },
         }
       end,
     },
   },
     highlights = {
         background = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            fg = { attribute = 'fg', highlight = 'LineNr' },
         },
         fill = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            fg = { attribute = 'fg', highlight = 'EndOfBuffer' },
         },
         separator = {
-            guifg = { attribute = 'fg', highlight = 'EndOfBuffer' },
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            fg = { attribute = 'fg', highlight = 'EndOfBuffer' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
         },
         close_button = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            fg = { attribute = 'fg', highlight = 'LineNr' },
         },
         close_button_visible = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            fg = { attribute = 'fg', highlight = 'LineNr' },
         },
         close_button_selected = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            fg = { attribute = 'fg', highlight = 'LineNr' },
         },
         buffer_visible = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
-            guifg = { attribute = 'fg', highlight = 'LineNr' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            fg = { attribute = 'fg', highlight = 'LineNr' },
         },
         modified = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
         },
         modified_visible = {
-            guibg = { attribute = 'bg', highlight = 'EndOfBuffer' },
+            bg = { attribute = 'bg', highlight = 'EndOfBuffer' },
         },
     }
 }

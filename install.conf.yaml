@@ -10,17 +10,13 @@
 
 - link:
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/plugins.vim: nvim/plugins.vim
     ~/.config/nvim/mappings.vim: nvim/mappings.vim
-    ~/.config/nvim/vscode.vim: nvim/vscode.vim
-    ~/.config/kitty: kitty
     ~/.tmux/iceberg.tmux.conf: tmux/iceberg.tmux.conf
-    ~/.tmux/inspired_github.tmux.conf: tmux/inspired_github.tmux.conf
     ~/.tmux/dracula.tmux.conf: tmux/dracula.tmux.conf
-    ~/.tmux/darcula.tmux.conf: tmux/darcula.tmux.conf
     ~/.tmux.conf: tmux/.tmux.conf
 
 - create:
-    - ~/Code
     - ~/.config/nvim/undo
 
 - shell:

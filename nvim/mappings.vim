@@ -85,6 +85,7 @@ let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
 
 nnoremap <leader>git <cmd>:FloatermNew lazygit<cr>
+nnoremap <leader>df <cmd>:Gvdiffsplit<cr>
 
 " Mappings: tinkeray
 nmap <Leader>t <Plug>TinkerayOpen
@@ -120,15 +121,5 @@ nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
-
-" -------------------------------------- NERDTree --------------------------------- "                                  
-
-" Mappings: NERDTree
-
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-map <leader>r :NERDTreeFind<cr>
 
 endif

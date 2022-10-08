@@ -1,10 +1,9 @@
 " -------------------------------- General Settings ----------------------------- "                                  
-set completeopt=menu,menuone,noselect
 set laststatus=0
 set mouse=a
 set autowriteall
 set completeopt=menu,menuone,noselect
-set colorcolumn=120
+"set colorcolumn=120
 set expandtab
 set ignorecase
 set matchpairs+=<:>
@@ -68,5 +67,5 @@ augroup equalize_windows_on_resize
   autocmd VimResized * exec "normal \<c-w>="
 augroup END
 " Persistent undo
-let &undodir=sourcery#system_vimfiles_path('undo')
-set undofile
+" let &undodir=sourcery#system_vimfiles_path('undo')
+" set undofile

@@ -10,7 +10,7 @@
 
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
-    
+
     " Vim Debug for Xdebug
     Plug 'vim-vdebug/vdebug'
 
@@ -34,22 +34,17 @@
 
     " Close buffer without closing window or split
     Plug 'moll/vim-bbye'
-    
-    " NERDTree 
-    Plug 'preservim/nerdtree' 
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
     " Neoformat
     Plug 'sbdchd/neoformat'
-    
+
     " LSP Signature
     Plug 'ray-x/lsp_signature.nvim'
-    
+
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-unimpaired'
-    
+
     " Vinegar
     Plug 'tpope/vim-vinegar'
 
@@ -124,20 +119,8 @@
     Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
     Plug 'windwp/nvim-autopairs'
 
-    " VSCode Theme
-    Plug 'Mofiqul/vscode.nvim'
-
-    " Darcula Theme
-    Plug 'briones-gabriel/darcula-solid.nvim'
-    Plug 'rktjmp/lush.nvim'
-    
-    Plug 'doums/darcula'
- 
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
-
-    " One Dark Pro Theme
-    Plug 'olimorris/onedarkpro.nvim'
 
     " Inspired Github Theme
     Plug 'mvpopuk/inspired-github.vim'
@@ -145,15 +128,15 @@
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
  
+    " Carbon Theme
+    Plug 'michaeldyrynda/carbon'
+
     " Indent Guides
     Plug 'lukas-reineke/indent-blankline.nvim'
- 
-    " Smooth Scroll
-    Plug 'karb94/neoscroll.nvim'
 
-" ------------------------------------------------------------------------------
-" # Plugins Config
-" ------------------------------------------------------------------------------
+" " ------------------------------------------------------------------------------
+" " # Plugins Config
+" " ------------------------------------------------------------------------------
 
 " Config: vim-test
 let test#strategy = 'floaterm'
@@ -166,7 +149,7 @@ let g:floaterm_height=0.9
 let floaterm_title='($1/$2)'
 
 " Config: indent-blankline
-let g:indent_blankline_filetype_exclude = ['floaterm', 'nerdtree', 'lspinfo', 'lsp-installer' ]
+let g:indent_blankline_filetype_exclude = ['floaterm', 'lspinfo', 'lsp-installer']
 let g:indent_blankline_use_treesitter = v:true
 
 " Config: vim-signify
@@ -180,42 +163,6 @@ let g:signify_sign_delete = '▁'
 let g:netrw_keepdir = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_localrmdir="rm -r"
-
-" Config: nerdtree
-" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
-" autocmd VimEnter * NERDTree
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-let g:NERDTreeWinPos = "left"
-let g:NERDTreeWinSize=40
-let g:NERDTreeGitStatusUseNerdFonts = 1
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'✹',
-                \ 'Staged'    :'✚',
-                \ 'Untracked' :'✭',
-                \ 'Renamed'   :'➜',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'✖',
-                \ 'Dirty'     :'~',
-                \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
-                \ 'Unknown'   :'?',
-                \ }
-
-let g:NERDTreeStatusline = '%#NonText#'
-" let g:NERDTreeMinimalUI = 1
-
-augroup nerdtreeconcealbrackets
-      autocmd!
-      autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
-      autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
-      autocmd FileType nerdtree setlocal conceallevel=3
-      autocmd FileType nerdtree setlocal concealcursor=nvic
-augroup END
-augroup nerdtreehidecwd
-	autocmd!
-	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
-augroup end
 
 " Config: blamer
 let g:blamer_show_in_visual_modes = 0
