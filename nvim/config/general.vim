@@ -67,5 +67,5 @@ augroup equalize_windows_on_resize
   autocmd VimResized * exec "normal \<c-w>="
 augroup END
 " Persistent undo
-" let &undodir=sourcery#system_vimfiles_path('undo')
-" set undofile
+let &undodir=sourcery#system_vimfiles_path('undo')
+set undofile

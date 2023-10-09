@@ -1,3 +1,21 @@
+" -------------------------------- Nord Theme Overrides ---------------------------- "
+function! NordOverrides() abort
+    highlight SignifySignAdd guibg=none guifg=#A3BE8C
+    highlight SignifySignChange guibg=none guifg=#EBCB8B
+    highlight SignifySignDelete guibg=none guifg=#BF616A
+    highlight BufferLineSeparator guibg=None guifg=#2E3440
+    highlight CmpPmenuBorder guifg=#3B4252
+    highlight TelescopeBorder guifg=#434C5E
+    highlight TelescopePromptBorder guifg=#434C5E
+    highlight TelescopeResultsBorder guifg=#434C5E
+
+endfunction
+
+augroup Colors
+    autocmd!
+    autocmd ColorScheme nord call NordOverrides()
+augroup END
+
 " ------------------------------ Iceberg Theme Overrides --------------------------- "
 
 " function! IcebergOverrides() abort
@@ -15,7 +33,7 @@
 "     highlight DiagnosticSignError guibg=NONE guifg=#e27878
 "     highlight DiagnosticSignWarn guibg=NONE guifg=#e27878
 "     highlight DiagnosticSignHint guibg=NONE
-"     highlight IndentBlanklineChar guifg=#25293C gui=nocombine
+"     highlight IndentBlanklineChar guifg=#25293C gui=nocombine 
 "     highlight IndentBlanklineContextChar guifg=#585B76 gui=nocombine
 "     highlight FloatermBorder guibg=NONE guifg=#33344A
 "     highlight SignifySignAdd guibg=none guifg=green
@@ -59,28 +77,28 @@
 
 " --------------------------------- Carbon Theme Overrides ---------------------------- "                                  
 
-function! CarbonOverrides() abort
-    " highlight Normal guibg=None guifg=None
-    highlight EndOfBuffer guifg=#1B253B
-    highlight CursorLine guibg=#1B253B
-    highlight CursorLineNr guibg=#1B253B guifg=#73a7a7
-    highlight VertSplit gui=NONE guibg=None guifg=#243354
-    highlight IndentBlanklineChar guifg=#1B253B gui=nocombine
-    highlight IndentBlanklineContextChar guifg=#243353 gui=nocombine
-    highlight FloatermBorder guibg=None guifg=#10737B
-    highlight BufferLineSeparator guifg=#172030
-endfunction
+" function! CarbonOverrides() abort
+"     " highlight Normal guibg=None guifg=None
+"     highlight EndOfBuffer guifg=#1B253B
+"     highlight CursorLine guibg=#1B253B
+"     highlight CursorLineNr guibg=#1B253B guifg=#73a7a7
+"     highlight VertSplit gui=NONE guibg=None guifg=#243354
+"     highlight IndentBlanklineChar guifg=#1B253B gui=nocombine
+"     highlight IndentBlanklineContextChar guifg=#243353 gui=nocombine
+"     highlight FloatermBorder guibg=None guifg=#10737B
+"     highlight BufferLineSeparator guifg=#172030
+" endfunction
 
-augroup Colors
-    autocmd!
-    autocmd ColorScheme carbon call CarbonOverrides()
-augroup END
+" augroup Colors
+"     autocmd!
+"     autocmd ColorScheme carbon call CarbonOverrides()
+" augroup END
 
 " ------------------------------ Dracula Theme Overrides --------------------------- "
 
 " augroup DraculaOverrides
 "     autocmd!
-"     autocmd ColorScheme dracula highlight! Normal ctermbg=NONE ctermfg=NONE guibg=None guifg=None
+"     " autocmd ColorScheme dracula highlight! Normal ctermbg=NONE ctermfg=NONE guibg=None guifg=None
 "     " autocmd ColorScheme dracula highlight! NonText guibg=None guifg=None
 "     autocmd ColorScheme dracula highlight! SignColumn guibg=None guifg=None
 "     autocmd ColorScheme dracula highlight! EndOfBuffer guifg=#282a36
@@ -100,8 +118,8 @@ augroup END
 "     autocmd ColorScheme dracula highlight! TelescopeBorder guifg=#3b3e51
 "     autocmd ColorScheme dracula highlight! TelescopePromptBorder guifg=#3b3e51
 "     autocmd ColorScheme dracula highlight! TelescopeResultsBorder guifg=#3b3e51
-"     " autocmd ColorScheme dracula highlight! CmpPmenu guibg=#000
-"     " autocmd ColorScheme dracula highlight! CmpPmenuBorder guibg=#000
+"     autocmd ColorScheme dracula highlight! CmpPmenu guibg=#000
+"     autocmd ColorScheme dracula highlight! CmpPmenuBorder guibg=#000
 "     autocmd ColorScheme dracula runtime after/plugin/dracula.vim
 "     autocmd ColorScheme dracula syntax enable
 " augroup end
@@ -198,4 +216,4 @@ augroup END
 " })
 " EOF
 
-colorscheme carbon
+colorscheme nord

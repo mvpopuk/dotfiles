@@ -3,7 +3,7 @@
 " ------------------------------------------------------------------------------
 
     " Github Copilot
-    Plug 'github/copilot.vim'
+    " Plug 'github/copilot.vim'
 
     " Vim Commentary
     Plug 'tpope/vim-commentary'
@@ -21,13 +21,10 @@
     Plug 'junegunn/goyo.vim'
 
     " Bufferline
-    Plug 'akinsho/bufferline.nvim'
+    Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
 
     " Git Messenger
     Plug 'rhysd/git-messenger.vim'
-
-    " Aerial Symbols
-    Plug 'stevearc/aerial.nvim'
 
     " Inline git blame
     Plug 'APZelos/blamer.nvim'
@@ -37,9 +34,6 @@
 
     " Neoformat
     Plug 'sbdchd/neoformat'
-
-    " LSP Signature
-    Plug 'ray-x/lsp_signature.nvim'
 
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
@@ -72,6 +66,10 @@
     " Telescope
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'airblade/vim-rooter'
+
+    " RipGrep
+    Plug 'duane9/nvim-rg'
 
     " Terminal
     Plug 'voldikss/vim-floaterm'
@@ -95,7 +93,8 @@
 
     " Web Dev Icons
     Plug 'kyazdani42/nvim-web-devicons'
-
+    " Plug 'nvim-tree/nvim-web-devicons' 
+    
     " File Icons
     Plug 'ryanoasis/vim-devicons'
 
@@ -105,7 +104,6 @@
     " LSP
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer'
-
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
@@ -116,23 +114,29 @@
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'folke/trouble.nvim'
     Plug 'onsails/lspkind-nvim'
-    Plug 'tami5/lspsaga.nvim', { 'branch':'nvim6.0' }
+    Plug 'tami5/lspsaga.nvim', { 'branch':'main' }
     Plug 'windwp/nvim-autopairs'
+
+    "Nord Theme
+    Plug 'shaunsingh/nord.nvim'
+
+    " Indent Guides
+    " Plug 'lukas-reineke/indent-blankline.nvim'
 
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
 
     " Inspired Github Theme
-    Plug 'mvpopuk/inspired-github.vim'
+    " Plug 'mvpopuk/inspired-github.vim'
 
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
- 
-    " Carbon Theme
-    Plug 'michaeldyrynda/carbon'
 
-    " Indent Guides
-    Plug 'lukas-reineke/indent-blankline.nvim'
+    " One Dark Pro Theme
+    Plug 'olimorris/onedarkpro.nvim'
+
+    " VSCode Theme
+    Plug 'Mofiqul/vscode.nvim'
 
 " " ------------------------------------------------------------------------------
 " " # Plugins Config
