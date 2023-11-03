@@ -14,7 +14,7 @@ telescope.setup {
 pickers = {
     find_files = {
       prompt_title = 'All Files',
-      find_command = {'rg', '--files', '--no-ignore', '--hidden'},
+      find_command = {'rg', '--files' },
       theme = 'dropdown',
     },
     git_files = {

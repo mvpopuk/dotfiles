@@ -9,9 +9,11 @@ function! s:goyo_enter()
   set noshowmode
   set noshowcmd
   set scrolloff=999
-  " set nocursorline
+  set nocursorline
+  :lua require('lualine').hide()
   let g:indent_blankline_enabled = v:false
-let g:blamer_enabled = 0
+  let g:blamer_enabled = 0
+  
 endfunction
 
 function! s:goyo_leave()
@@ -22,10 +24,11 @@ function! s:goyo_leave()
   set showmode
   set showcmd
   set scrolloff=5
-  " set cursorline
+  :lua require('lualine').hide({unhide=true})
   let g:indent_blankline_enabled = v:true
   let g:blamer_enabled = 1
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+

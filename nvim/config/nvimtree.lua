@@ -8,12 +8,25 @@
 -- require'nvim-tree'.setup {
 --       view = {
 --         width = 35,
---         side = "right",
---         signcolumn = "yes",
+--         side = "left",
+--         signcolumn = "no",
 --     },
 --     renderer = {
---         root_folder_label = false,
+--         root_folder_label = true,
+--         icons = {
+--             show = {
+--                 file = true,
+--                 folder = true,
+--                 folder_arrow = true,
+--                 git = false
+--             }
+--   }
 --     },
+--     git = {
+--   enable = true,
+--   ignore = false,
+--   timeout = 500,
+-- },
 --     diagnostics = {
 --     enable = true,
 --     show_on_dirs = true,

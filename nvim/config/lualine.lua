@@ -26,69 +26,69 @@
 --   replace = { a = { fg = colors.transparent, bg = colors.red } },
 -- }
 
--- Nord Colors
-local colors = {
-  red = '#f44747',
-  grey = '#f5f5f5',
-  gray = '#8e99ae',
-  black = '#3B4252',
-  blk = '#000000',
-  white = '#ffffff',
-  transparent = '#2E3440',
-  green = '#b1bb80',
-  yellow = '#f2b589',
-  cyan = '#8ab8c2',
-  blue = '#84a0c6',
-  magenta = '#df89dd'
-}
+-- Iceberg Colors
+-- local colors = {
+--   red = '#f44747',
+--   grey = '#f5f5f5',
+--   gray = '#8e99ae',
+--   black = '#1e2132',
+--   blk = '#000000',
+--   white = '#ffffff',
+--   transparent = '#161821',
+--   green = '#b1bb80',
+--   yellow = '#f2b589',
+--   cyan = '#8ab8c2',
+--   blue = '#84a0c6',
+--   magenta = '#df89dd'
+-- }
 
-local Nrd = {
-  normal = {
-    a = { fg = colors.blk, bg = colors.cyan },
-    b = { fg = colors.gray,  bg = colors.black },
-    c = { fg = colors.green, bg = colors.transparent },
-    z = { fg = colors.gray, bg = colors.black },
-  },
-  insert = { 
-        a = { fg = colors.blk, bg = colors.yellow },
-        z = { fg = colors.gray, bg = colors.black }
-  },
-  visual = { 
-        a = { fg = colors.blk, bg = colors.green },
-        z = { fg = colors.gray, bg = colors.black }
-  },
-  replace = { 
-        a = { fg = colors.blk, bg = colors.green },
-        z = { fg = colors.gray, bg = colors.black } 
-  },
-}
+-- local iceberg = {
+--   normal = {
+--     a = { fg = colors.blk, bg = colors.cyan, gui='bold' },
+--     b = { fg = colors.gray,  bg = colors.black, gui='bold', },
+--     c = { fg = colors.light_grey, bg = colors.transparent },
+--     z = { fg = colors.gray, bg = colors.black, gui='bold' },
+--   },
+--   insert = { 
+--         a = { fg = colors.blk, bg = colors.yellow },
+--         z = { fg = colors.gray, bg = colors.black }
+--     },
+--   visual = { 
+--         a = { fg = colors.blk, bg = colors.green },
+--         z = { fg = colors.gray, bg = colors.black }
+--     },
+--   replace = { 
+--         a = { fg = colors.blk, bg = colors.green },
+--         z = { fg = colors.gray, bg = colors.black }
+--     },
+-- }
 
 -- Inspired Github Colors
--- local colors = {
---   red = '#ca1243',
---   grey = '#f5f5f5',
---   light_grey = '#979BAC',
---   black = '#383a42',
---   white = '#ffffff',
---   transparent = '#ffffff',
---   light_green = '#83a598',
---   orange = '#fe8019',
---   green = '#8ec07c',
---   yellow = '#f8eec7',
---   cyan = '#489FC1',
--- }
+local colors = {
+  red = '#ca1243',
+  grey = '#f5f5f5',
+  light_grey = '#979BAC',
+  black = '#383a42',
+  white = '#ffffff',
+  transparent = '#ffffff',
+  light_green = '#83a598',
+  orange = '#fe8019',
+  green = '#8ec07c',
+  yellow = '#f8eec7',
+  cyan = '#489FC1',
+}
 
--- local inspired_github = {
---   normal = {
---     a = { fg = colors.white, bg = colors.red },
---     b = { fg = colors.black,  bg = colors.grey },
---     c = { fg = colors.light_grey, bg = colors.white },
---     z = { fg = colors.white, bg = colors.black },
---   },
---   insert = { a = { fg = colors.black, bg = colors.yellow } },
---   visual = { a = { fg = colors.white, bg = colors.cyan } },
---   replace = { a = { fg = colors.black, bg = colors.green } },
--- }
+local inspired_github = {
+  normal = {
+    a = { fg = colors.white, bg = colors.red },
+    b = { fg = colors.black,  bg = colors.grey },
+    c = { fg = colors.light_grey, bg = colors.white },
+    z = { fg = colors.white, bg = colors.black },
+  },
+  insert = { a = { fg = colors.black, bg = colors.yellow } },
+  visual = { a = { fg = colors.white, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors.green } },
+}
 
 local empty = require('lualine.component'):extend()
 function empty:draw(default_highlight)
@@ -144,15 +144,17 @@ end
 
 require('lualine').setup {
     options = {
-    theme = Nrd,
+    theme = inspired_github,
     component_separators = '',
     globalstatus = true,
   },
+  disabled_filetypes = { 'goyo' },
   -- process_sections
   sections = process_sections {
     lualine_a = { 'mode' },
     lualine_b = { 
       { 'filename', file_status = false, path = 4 },
+      -- { 'aerial' },
       { 
         'diagnostics',
         source = { 'intelephense', 'quick-lint-js' },

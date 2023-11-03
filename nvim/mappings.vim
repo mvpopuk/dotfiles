@@ -1,10 +1,11 @@
-" ------------------------------------------------------------------------------
-" # Mappings
-" ------------------------------------------------------------------------------
+" -------------------------------- Mappings --------------------------- "
 
 let mapleader = ' '
 
-" Repeat macros for all selected lines
+inoremap <Tab<<Tab> <Esc>
+vnoremap <Tab><Tab> <Esc>
+inoremap <Tab><Tab> <Esc>
+
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
     echo '@'.getcmdline()
@@ -35,6 +36,12 @@ nnoremap <silent> <leader>fr <cmd>lua require'telescope.builtin'.lsp_references{
 nnoremap <silent> <leader>f <cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>
 nnoremap <silent> <leader>fm <cmd>lua require'telescope.builtin'.lsp_document_symbols{symbols="method"}<cr>
 nnoremap <silent> <leader>dg :Telescope diagnostics bufnr=0<cr>
+nnoremap <leader>fG :execute 'Telescope live_grep default_text=' . expand('<cword>')<cr>
+nnoremap <leader>fS :execute 'Telescope grep_string default_text=' . expand('<cword>')<cr>
+nnoremap <leader>fF :execute 'Telescope find_files default_text=' . "" . expand('<cword>')<cr>
+
+" Mapping: NERDTreeToggle
+nnoremap <leader>b <cmd>:NERDTreeToggle<cr>
 
 " Mapping: Folding
 inoremap <F9> <C-O>za
@@ -56,11 +63,11 @@ nmap <silent> <leader>tl :w<cr>:TestLast<cr>
 nmap <silent> <leader>tv :w<cr>:TestVisit<cr>
 
 " Mappings: Tabs
-nnoremap <leader>2 <cmd>:tabnew<cr>
+nnoremap <leader>2 <cmd>:vsplit<cr>
 nnoremap <leader>w <cmd>:Bdelete<cr>
 nnoremap <leader>q <cmd>:bd!<cr>
-nnoremap <leader><Right> :bn<CR>
-nnoremap <leader><Left> :bp<CR>
+nnoremap <leader><right> :bn<CR>
+nnoremap <leader><left> :bp<CR>
 
 " Mappings: neoformat
 nmap <Leader><Leader>n :call ToggleNeoformat()<CR>
@@ -72,9 +79,9 @@ nnoremap <leader><leader>1 :Goyo!<cr>
 " ngs  Mappings: Git
 nnoremap <C-_> <cmd>:noh<cr>
 nnoremap <leader>ev :e ~/.dotfiles/nvim/init.vim<cr>
-" nnoremap <leader>sv :source $MYVIMRC \| runtime after/plugin/dracula.vim \| syntax on<cr> 
+" nnoremap <leader>sv :source $MYVIMRC \| runtime after/plugin/dracula.vim \| syntax on<cr>
 
-nnoremap <leader>sv :source $MYVIMRC<cr> 
+nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>pl :e ~/.dotfiles/nvim/plugins.vim<cr>
 nnoremap <leader>mx :e ~/.dotfiles/tmux/.tmux.conf<cr>
 
@@ -82,7 +89,7 @@ nnoremap <leader>mx :e ~/.dotfiles/tmux/.tmux.conf<cr>
 let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
-let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_keymap_toggle = '<leader>§'
 
 nnoremap <leader>git <cmd>:FloatermNew lazygit<cr>
 nnoremap <leader>df <cmd>:Gvdiffsplit<cr>
@@ -96,7 +103,7 @@ function! SourceryMappings()
   nmap <buffer> gc <Plug>SourceryGoToRelatedConfig
 endfunction
 
-" -------------------------------- LSP Saga Mappings --------------------------- "                                  
+" -------------------------------- LSP Saga Mappings --------------------------- "
 
 " Mappings: lspsaga
 nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
@@ -112,7 +119,7 @@ nnoremap <silent><leader>cc <cmd>lua require('lspsaga.diagnostic').sahow_cursor_
 nnoremap <silent> [e <cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>
 nnoremap <silent> ]e <cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_next()<CR>
 
-" -------------------------------- Trouble Mappings ---------------------------- "                                  
+" -------------------------------- Trouble Mappings ---------------------------- "
 
 " Mappings: TroubleToggle
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
@@ -121,5 +128,9 @@ nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+" Moving blocks of code up and down
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
 
 endif

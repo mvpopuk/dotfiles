@@ -1,5 +1,7 @@
+local highlight = { Number },
 require("ibl").setup { 
-    -- scope = { enabled = false },
+    scope = { enabled = false },
+    indent = { highlight = highlight, char = "│" },
     exclude = {
         filetypes = {
             'lspinfo',
@@ -10,7 +12,10 @@ require("ibl").setup {
             'gitcommit',
             'TelescopePrompt',
             'TelescopeResults',
-            '',
+            'lua',
+            'vim',
+            'startify',
+            'goyo'
         },
     },
 }

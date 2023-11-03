@@ -92,9 +92,11 @@
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " Web Dev Icons
-    Plug 'kyazdani42/nvim-web-devicons'
-    " Plug 'nvim-tree/nvim-web-devicons' 
-    
+    " Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'nvim-tree/nvim-web-devicons' 
+    " Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
     " File Icons
     Plug 'ryanoasis/vim-devicons'
 
@@ -103,6 +105,7 @@
 
     " LSP
     Plug 'neovim/nvim-lspconfig'
+    Plug 'SmiteshP/nvim-navic'
     Plug 'williamboman/nvim-lsp-installer'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -117,30 +120,79 @@
     Plug 'tami5/lspsaga.nvim', { 'branch':'main' }
     Plug 'windwp/nvim-autopairs'
 
-    "Nord Theme
+    " Nord Theme
     Plug 'shaunsingh/nord.nvim'
-
-    " Indent Guides
-    " Plug 'lukas-reineke/indent-blankline.nvim'
 
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
 
     " Inspired Github Theme
-    " Plug 'mvpopuk/inspired-github.vim'
+    Plug 'mvpopuk/inspired-github.vim'
 
     " Iceberg Theme
     Plug 'cocopon/iceberg.vim'
 
-    " One Dark Pro Theme
-    Plug 'olimorris/onedarkpro.nvim'
-
     " VSCode Theme
     Plug 'Mofiqul/vscode.nvim'
 
-" " ------------------------------------------------------------------------------
+    " Vim Polar Theme
+    Plug 'habamax/vim-polar'
+
+    " Github Theme
+    Plug 'projekt0n/github-nvim-theme'
+
+    " Nvim-Tree
+    " Plug 'nvim-tree/nvim-tree.lua'
+
+    " Nerdtree
+    Plug 'preservim/nerdtree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    
+    " Startify
+    Plug 'mhinz/vim-startify'
+
+    " Vim Illuminate
+    Plug 'RRethy/vim-illuminate'
+
+    " Indent Blankline
+    Plug 'lukas-reineke/indent-blankline.nvim'    
+
+    "Vimade
+    " Plug 'TaDaa/vimade'
+
+" ------------------------------------------------------------------------------
 " " # Plugins Config
 " " ------------------------------------------------------------------------------
+
+" Config:vimade
+let g:vimade = {}
+let g:vimade.fadelevel = 0.3
+let g:vimade.enablesigns = 0
+
+" Config:startify
+autocmd VimEnter *
+            \   if !argc()
+            \ |   Startify
+            \ |   NERDTree
+            \ |   wincmd w
+            \ | endif
+
+let g:startify_lists = [
+    \ { 'type': 'files',     'header': ['   Recently opened files']                    },
+    \ { 'type': 'dir',       'header': ['   Recently opened project files '. getcwd()] },
+    \ { 'type': 'sessions', 'header': ['   Sessions']                                 },
+    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                                },
+    \ { 'type': 'commands',  'header': ['   Commands']                                 },
+    \ ]
+
+let g:startify_bookmarks = [
+  \ '~/.dotfiles/tmux/.tmux.conf',
+  \ '~/.dotfiles/install.conf.yaml',
+\ ]
+
+let g:startify_custom_header = [
+    \       '      Project Explorer     ',
+    \ ]
 
 " Config: vim-test
 let test#strategy = 'floaterm'
@@ -167,6 +219,35 @@ let g:signify_sign_delete = '▁'
 let g:netrw_keepdir = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_localrmdir="rm -r"
+
+" Config: nerdtree
+" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" autocmd VimEnter * NERDTree
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeWinPos = "left"
+:let g:NERDTreeWinSize=30
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'~',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+
+let g:NERDTreeStatusline = '%#NonText#'
+let NERDTreeMinimalUI=1
+
+augroup nerdtreehidecwd
+	autocmd!
+	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeHideCWD #^[</].*$# conceal
+augroup end
 
 " Config: blamer
 let g:blamer_show_in_visual_modes = 0

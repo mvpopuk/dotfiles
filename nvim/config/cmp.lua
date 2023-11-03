@@ -7,6 +7,11 @@ cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex 
   local on_attach = function(_, bufnr)
     require('cmp').on_attach()
     --- In lsp attach function
+   
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
+
     local map = nvim_buf_set_keymap,
     map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
     map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
@@ -18,10 +23,12 @@ cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex 
     map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>")
     map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>")
   end
+  
+  local navic = require("nvim-navic")
   local servers = {'intelephense', 'tailwindcss', 'html' }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-      on_attach = on_attach,
+      on_attach = on_attach
     }
   end
 
@@ -71,6 +78,8 @@ require('lspconfig').stylelint_lsp.setup{}
 require('lspconfig').tsserver.setup{}
 
 require('lspconfig').vuels.setup{}
+
+require('lspconfig').antlersls.setup{}
 
 cmp.setup({
     experimental = {

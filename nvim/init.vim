@@ -1,3 +1,6 @@
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 " Source plugins
 call plug#begin()
  source ~/.dotfiles/nvim/plugins.vim
