@@ -13,6 +13,8 @@
          "scss",
          "vim",
          "vue",
+         "typescript",
+         "tsx",
      },
   highlight = {
     enable = true,
