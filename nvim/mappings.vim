@@ -22,7 +22,7 @@ else
 " Mappings: telescope
 nnoremap <Leader><Leader>v :Telescope sourcery<CR>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>p <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>g <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
@@ -132,5 +132,9 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 " Moving blocks of code up and down
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
+
+xnoremap <leader>p "_dP
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
 
 endif
