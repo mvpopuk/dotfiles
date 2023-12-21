@@ -8,7 +8,7 @@ require('bufferline').setup {
     local icon = level:match("error") and " " or " "
     return " " .. icon .. count
     end,
-    show_buffer_close_icons = true,
+    show_buffer_close_icons = false,
     show_close_icon = false,
     offsets = {
       {
@@ -25,7 +25,7 @@ require('bufferline').setup {
     custom_areas = {
       left = function()
         return {
-          { text = '    ', fg = '#128A27',  },
+          { text = '    ', fg = '#22da6e',  },
         }
       end,
     },
