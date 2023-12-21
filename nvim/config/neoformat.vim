@@ -22,6 +22,8 @@ augroup neoformat_on_save
     autocmd BufWritePre *.antlers.html call RunNeoformat()
     autocmd BufWritePre *.md call RunNeoformat()
     autocmd BufWritePre *.vue call RunNeoformat()
+    autocmd BufWritePre *.jsx call RunNeoformat()
+    autocmd BufWritePre *.tsx call RunNeoformat()
 augroup END
 
 " ------------------------------------------------------------------------------
