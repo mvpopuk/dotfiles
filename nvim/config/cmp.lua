@@ -2,6 +2,12 @@ local lspconfig = require('lspconfig')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require'cmp'
 
+require('mason').setup {}
+
+require('mason-lspconfig').setup {
+  automatic_installation = true,
+}
+
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
 
   local on_attach = function(_, bufnr)
@@ -66,20 +72,16 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require('lspconfig').html.setup{
-  capabilities = capabilities,
-    cmd = { "vscode-html-language-server", "--stdio" },
-    filetypes = { "html", "blade", "antlers" },
+    capabilities = capabilities,
+    filetypes = { 'html', 'blade', 'antlers' },
 }
 
 require('lspconfig').tailwindcss.setup{}
-
-require('lspconfig').stylelint_lsp.setup{}
-
 require('lspconfig').tsserver.setup{}
-
-require('lspconfig').vuels.setup{}
-
-require('lspconfig').antlersls.setup{}
+require('lspconfig').prismals.setup{}
+require('lspconfig').tsserver.setup{}
+require('lspconfig').volar.setup{}
+require('lspconfig').stylelint.setup{}
 
 cmp.setup({
     experimental = {
@@ -177,7 +179,6 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' },
     })
 })
-
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities() -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
     require('lspconfig')['intelephense'].setup {
