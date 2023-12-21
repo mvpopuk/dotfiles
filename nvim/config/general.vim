@@ -12,6 +12,7 @@ set noshowmode
 set noswapfile
 set nowrap
 set number
+" set nonumber
 set relativenumber
 set shiftround
 set showmatch
