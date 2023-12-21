@@ -3,16 +3,13 @@
 " ------------------------------------------------------------------------------
 
     " Github Copilot
-    " Plug 'github/copilot.vim'
+    Plug 'github/copilot.vim'
 
     " Vim Commentary
     Plug 'tpope/vim-commentary'
 
     " Smooth Scroll
     Plug 'karb94/neoscroll.nvim'
-
-    " Vim Debug for Xdebug
-    Plug 'vim-vdebug/vdebug'
 
     " Mardown Preview
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -36,7 +33,7 @@
     Plug 'sbdchd/neoformat'
 
     " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
+    Plug 'windwp/nvim-autopairs'
     Plug 'tpope/vim-unimpaired'
 
     " Vinegar
@@ -90,11 +87,9 @@
     
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'EmranMR/tree-sitter-blade'
 
-    " Web Dev Icons
-    " Plug 'kyazdani42/nvim-web-devicons'
     Plug 'nvim-tree/nvim-web-devicons' 
-    " Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
     " File Icons
@@ -106,7 +101,7 @@
     " LSP
     Plug 'neovim/nvim-lspconfig'
     Plug 'SmiteshP/nvim-navic'
-    Plug 'williamboman/nvim-lsp-installer'
+    " Plug 'williamboman/nvim-lsp-installer'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
@@ -120,9 +115,15 @@
     Plug 'tami5/lspsaga.nvim', { 'branch':'main' }
     Plug 'windwp/nvim-autopairs'
 
-    " Nord Theme
-    Plug 'shaunsingh/nord.nvim'
+    Plug 'williamboman/mason.nvim'
+    Plug 'williamboman/mason-lspconfig.nvim'
 
+    " Theme Poimandres
+    Plug 'olivercederborg/poimandres.nvim'
+
+    " Material Theme
+    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -134,15 +135,15 @@
 
     " VSCode Theme
     Plug 'Mofiqul/vscode.nvim'
-
-    " Vim Polar Theme
-    Plug 'habamax/vim-polar'
+    "
+    " Night Owl
+    Plug 'oxfist/night-owl.nvim'
+    "
+    " One Dark 
+    Plug 'olimorris/onedarkpro.nvim' 
 
     " Github Theme
     Plug 'projekt0n/github-nvim-theme'
-
-    " Nvim-Tree
-    " Plug 'nvim-tree/nvim-tree.lua'
 
     " Nerdtree
     Plug 'preservim/nerdtree'
@@ -156,11 +157,11 @@
 
     " Indent Blankline
     Plug 'lukas-reineke/indent-blankline.nvim'    
+    Plug 'HiPhish/rainbow-delimiters.nvim'
 
-    "Vimade
-    " Plug 'TaDaa/vimade'
+    Plug 'prisma/vim-prisma'
 
-" ------------------------------------------------------------------------------
+" " ------------------------------------------------------------------------------
 " " # Plugins Config
 " " ------------------------------------------------------------------------------
 
@@ -225,8 +226,8 @@ let g:netrw_localrmdir="rm -r"
 " autocmd VimEnter * NERDTree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
-let g:NERDTreeWinPos = "left"
-:let g:NERDTreeWinSize=30
+let g:NERDTreeWinPos = "right"
+:let g:NERDTreeWinSize=40
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
