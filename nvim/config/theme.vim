@@ -8,7 +8,8 @@
 "     " highlight iCursor guifg=white guibg=steelblue
 "     " highlight LineNr guibg=None guifg=#33344A
 "     " highlight CursorLineNr guibg=None 
-"     highlight WinSeparator gui=NONE guibg=None guifg=#1a1e29
+"     highlight WinSeparator guibg=None guifg=None
+"     highlight VertSplit guibg=None guifg=None
 "     " highlight GitGutterAdd guibg=NONE guifg=#b4be82
 "     " highlight GitGutterChange guibg=NONE guifg=#89b8c2
 "     " highlight GitGutterChangeDelete guibg=NONE guifg=#89b8c2
@@ -62,68 +63,7 @@
 "     autocmd!
 "     autocmd ColorScheme poimandres call PoimandresOverrides()
 " augroup END
-" ------------------------------ Embrak Theme Overrides --------------------------- "
-" function! EmbarkOverrides() abort
-"     highlight Normal guibg=None guifg=None
-"     highlight NonText guibg=None guifg=None
-"     highlight SignColumn guibg=None guifg=None
-"     highlight EndOfBuffer guifg=#1e1c33
-"     " highlight LineNr guibg=None guifg=#33344A
-"     highlight CursorLineNr guibg=None 
-"     highlight WinSeparator gui=NONE guibg=None guifg=#1e1c33
-"     highlight GitGutterAdd guibg=NONE guifg=#b4be82
-"     highlight GitGutterChange guibg=NONE guifg=#89b8c2
-"     highlight GitGutterChangeDelete guibg=NONE guifg=#89b8c2
-"     highlight GitGutterDelete guibg=NONE guifg=#e27878
-"     " highlight DiagnosticSignError guibg=NONE guifg=#e27878
-"     " highlight DiagnosticSignWarn guibg=NONE guifg=#e27878
-"     " highlight DiagnosticSignHint guibg=NONE
-"     " highlight IblIndent guifg=#000000 gui=nocombine 
-"     " " highlight IndentBlanklineContextChar guifg=#585B76 gui=nocombine
-"     " highlight FloatermBorder guibg=NONE guifg=#33344A
-"     " " highlight FloatBorder guibg=None guifg=#B5BD89
-"     highlight SignifySignAdd guibg=none guifg=green
-"     highlight SignifySignChange guibg=none guifg=yellow
-"     highlight SignifySignDelete guibg=none guifg=red
-"     " highlight BufferLineSeparator guibg=None guifg=#161821
-"     highlight DiagnosticError guibg=None
-"     highlight DiagnosticWarning guibg=None
-"     highlight DiagnosticInformation guibg=None
-"     highlight DiagnosticHint guibg=None
-"     " highlight TroubleSignOther guibg=None guifg=green
-"     " highlight TroubleFoldIcon guifg=None
-"     " highlight TroubleCount guibg=None
-"     " highlight TelescopeBorder guifg=#33344A
-"     " highlight TelescopePromptBorder guifg=#33344A
-"     " highlight TelescopeResultsBorder guifg=#33344A
-"     " highlight FPerson guifg=#4c5375 guibg=#1E2132
-"     " highlight Pmenu guibg=#161821
-    
-"     " highlight CmpPmenu guifg=#8ab8c2
-"     " highlight CmpPmenuBorder guifg=#33344A
 
-"      " gray
-"     " highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-"     " blue
-"     " highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-"     " highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-"     " light blue
-"     " highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-"     " highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
-"     " highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
-"     " pink
-"     " highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-"     " highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-"     " front
-"     " highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-"     " highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-"     " highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-" endfunction
-
-" augroup Colors
-"     autocmd!
-"     autocmd ColorScheme embark call EmbarkOverrides()
-" augroup END
 " ------------------------------ Iceberg Theme Overrides --------------------------- "
 " function! IcebergOverrides() abort
 "     highlight Normal guibg=None guifg=None
@@ -182,6 +122,7 @@
 "     autocmd!
 "     autocmd ColorScheme iceberg call IcebergOverrides()
 " augroup END
+
 " ------------------------------ Dracula Theme Overrides --------------------------- "
 " augroup DraculaOverrides
 "     autocmd!
@@ -209,6 +150,7 @@
 "     autocmd ColorScheme dracula runtime after/plugin/dracula.vim
 "     autocmd ColorScheme dracula syntax enable
 " augroup end
+
 " ------------------------------ One Dark Theme Overrides --------------------------- "
 " function! OneDarkProOverrides() abort
 "      highlight Normal guibg=None guifg=None
@@ -240,29 +182,7 @@
 "      autocmd!
 "      autocmd ColorScheme onedark call OneDarkProOverrides()
 "  augroup END
-" --------------------------------- VSCODE Theme Overrides ---------------------------- "                                  
-" function! VscodeOverrides() abort
-"     highlight Normal guibg=None guifg=None
-"     highlight NonText guibg=None guifg=None
-"     highlight IndentBlanklineChar guifg=#282828 gui=nocombine
-"     highlight IndentBlanklineContextChar guifg=#3B3D3D gui=nocombine
-"     highlight SignifySignAdd guibg=none guifg=green
-"     highlight SignifySignChange guibg=none guifg=yellow
-"     highlight SignifySignDelete guibg=none guifg=red
-"     highlight VertSplit guibg=none guifg=#282828
-"     highlight GitBlame guibg=#222222 guifg=#666666
-"     highlight EndOfBuffer guibg=#1e1e1e guifg=#1e1e1e
-"     highlight CursorLineNr guibg=#222222
-"     highlight TelescopeBorder guifg=#666666
-"     highlight TelescopePromptBorder guifg=#666666
-"     highlight TelescopeResultsBorder guifg=#666666
-"     highlight FloatermBorder guibg=None guifg=#666666
-" endfunction
 
-" augroup Colors
-"     autocmd!
-"     autocmd ColorScheme vscode call VscodeOverrides()
-" augroup END
 " ------------------------------ Nigh-Owl Theme Overrides --------------------------- "
 function! NightOwlOverrides() abort
     highlight Normal guibg=None guifg=None
@@ -271,7 +191,9 @@ function! NightOwlOverrides() abort
     highlight EndOfBuffer guifg=#001728
     " highlight LineNr guibg=None guifg=#33344A
     " highlight CursorLineNr guibg=None guifg=#BABBC7
-    highlight VertSplit gui=NONE guibg=None guifg=#001728
+    set fillchars=vert:\ 
+    highlight VertSplit ctermbg=NONE ctermfg=15 " Any value for ctermfg other than NONE works
+    " highlight WinSeparator guibg=None guifg=guifg=#141414
     highlight GitGutterAdd guibg=NONE guifg=#22da6e
     highlight GitGutterChange guibg=NONE guifg=#21c7a8
     highlight GitGutterChangeDelete guibg=NONE guifg=#ef5350
@@ -301,7 +223,13 @@ function! NightOwlOverrides() abort
 
     highlight statusline  guifg=#001625 guibg=#001625
     highlight statuslinenc guifg=#001625 guibg=#001625 
-    " highlight vertsplit    guifg=#161821 guibg=#161821 
+
+    highlight NvimTreeIndentMarker guifg=#4b6479
+    highlight NvimTreeEndOfBuffer guifg=#011627
+    highlight NvimTreeFolderArrowOpen guifg=#4b6479
+    highlight NvimTreeFolderArrowClosed guifg=#4b6479
+    highlight NvimTreeNormal guifg=#5f7e97
+    highlight NvimTreeCursorLine guibg=None
 
      " gray
     " highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
@@ -326,15 +254,58 @@ augroup Colors
     autocmd ColorScheme night-owl call NightOwlOverrides()
 augroup END
 " -------------------------------------- Color Scheme --------------------------------- "
-" let g:vscode_style = "dark"
-" let g:vscode_italic_comment = 1
-" let g:vscode_disable_nvimtree_bg = v:true
 
-" set background=dark
-" let g:material_theme_style = 'default-community'
-" let g:material_terminal_italics = 1
+" lua << EOF 
 
-" let g:embark_terminal_italics = 1
+" -- Lua:
+" -- For dark theme (neovim's default)
+" vim.o.background = 'dark'
+
+" local c = require('vscode.colors').get_colors()
+" require('vscode').setup({
+"     -- Alternatively set style in setup
+"     -- style = 'light'
+
+"     -- Enable transparent background
+"     transparent = true,
+
+"     -- Enable italic comment
+"     italic_comments = true,
+
+"     -- Disable nvim-tree background color
+"     disable_nvimtree_bg = true,
+
+"     -- Override colors (see ./lua/vscode/colors.lua)
+"     color_overrides = {
+"         vscLineNumber = '#FFFFFF',
+"     },
+
+"     -- Override highlight groups (see ./lua/vscode/theme.lua)
+"     group_overrides = {
+"         -- this supports the same val table as vim.api.nvim_set_hl
+"         -- use colors from this colorscheme by requiring vscode.colors!
+"         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+"         LineNr = { fg="#46647b" },
+"         SignifySignAdd = { fg=c.vscGreen },
+"         SignifySignChange = { fg=c.vscYellow }, 
+"         SignifySignDelete = { fg=c.vscRed }, 
+"         EndOfBuffer = { fg="#1f2839" },
+"         TelescopeBorder = { fg="#46647b" },
+"         TelescopePromptBorder = { fg="#46647b" },
+"         TelescopeResultsBorder = { fg="#46647b" }, 
+"         FloatBorder = { fg="#46647b" },
+"         WinSeparator = { bg=None, fg="#1f2839" },
+"         statusline = { bg=None },
+"         NvimTreeIndentMarker = { fg="#46647b" },
+"         NvimTreeEndOfBuffer = { fg="#1f2839" },
+"         NvimTreeFolderArrowOpen = { fg="#46647b" },
+"         NvimTreeFolderArrowClosed = { fg="#46647b" },
+"         NvimTreeCursorLine = { bg="#2a344c" },
+"     }
+" })
+" require('vscode').load()
+
+" EOF 
 
 " lua << EOF
 " require('poimandres').setup {

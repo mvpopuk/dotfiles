@@ -2,9 +2,9 @@
 
 let mapleader = ' '
 
-inoremap <Tab<<Tab> <Esc>
-vnoremap <Tab><Tab> <Esc>
-inoremap <Tab><Tab> <Esc>
+" inoremap <Tab<<Tab> <Esc>
+" vnoremap <Tab><Tab> <Esc>
+" inoremap <Tab><Tab> <Esc>
 
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
@@ -40,8 +40,8 @@ nnoremap <leader>fG :execute 'Telescope live_grep default_text=' . expand('<cwor
 nnoremap <leader>fS :execute 'Telescope grep_string default_text=' . expand('<cword>')<cr>
 nnoremap <leader>fF :execute 'Telescope find_files default_text=' . "" . expand('<cword>')<cr>
 
-" Mapping: NERDTreeToggle
-nnoremap <leader>b <cmd>:NERDTreeToggle<cr>
+" Mapping: NvimTreeToggle
+nnoremap <leader>b <cmd>:NvimTreeToggle<cr>
 
 " Mapping: Folding
 inoremap <F9> <C-O>za

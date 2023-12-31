@@ -186,6 +186,7 @@
 --   },
 -- }
 
+
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
@@ -196,13 +197,13 @@ local lualine = require('lualine')
 local colors = {
   bg       = None,
   fg       = '#45657b',
-  yellow   = '#ffeb95',
+  yellow   = '#ebc38e',
   cyan     = '#21c7a8',
   darkblue = '#081633',
-  green    = '#22da6e',
+  green    = '#aedb67',
   orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c792ea',
+  -- violet   = '#a9a1e1',
+  magenta  = '#c792eb',
   blue     = '#9ddcfe',
   red      = '#ef5350',
 }
@@ -235,6 +236,8 @@ local config = {
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
   },
+  disabled_filetypes = { 'NvimTree' },
+
   sections = {
     -- these are to remove the defaults
     lualine_a = {},
@@ -317,7 +320,7 @@ ins_left {
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.green, gui = 'bold' },
 }
 
 ins_left { 'location' }

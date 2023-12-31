@@ -146,9 +146,11 @@
     Plug 'projekt0n/github-nvim-theme'
 
     " Nerdtree
-    Plug 'preservim/nerdtree'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    
+    " Plug 'preservim/nerdtree'
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'nvim-tree/nvim-tree.lua'   
+    Plug 'nvim-tree/nvim-web-devicons'
+
     " Startify
     Plug 'mhinz/vim-startify'
 
@@ -157,8 +159,8 @@
 
     " Indent Blankline
     Plug 'lukas-reineke/indent-blankline.nvim'    
-    Plug 'HiPhish/rainbow-delimiters.nvim'
 
+    " Prisma Support
     Plug 'prisma/vim-prisma'
 
 " " ------------------------------------------------------------------------------
@@ -174,7 +176,6 @@ let g:vimade.enablesigns = 0
 autocmd VimEnter *
             \   if !argc()
             \ |   Startify
-            \ |   NERDTree
             \ |   wincmd w
             \ | endif
 

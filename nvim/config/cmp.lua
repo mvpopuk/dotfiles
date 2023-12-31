@@ -72,8 +72,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require('lspconfig').html.setup{
-    capabilities = capabilities,
-    filetypes = { 'html', 'blade', 'antlers' },
+  capabilities = capabilities,
+    filetypes = { "html", "blade", "antlers" },
 }
 
 require('lspconfig').tailwindcss.setup{}
@@ -81,7 +81,6 @@ require('lspconfig').tsserver.setup{}
 require('lspconfig').prismals.setup{}
 require('lspconfig').tsserver.setup{}
 require('lspconfig').volar.setup{}
-require('lspconfig').stylelint.setup{}
 
 cmp.setup({
     experimental = {

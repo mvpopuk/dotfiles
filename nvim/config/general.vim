@@ -32,8 +32,8 @@ set cursorline
 set cursorlineopt=number
 set scrolloff=8
 set encoding=utf8
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set modifiable
 filetype plugin on       " may already be in your .vimrc
