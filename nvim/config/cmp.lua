@@ -77,9 +77,13 @@ require('lspconfig').html.setup{
 }
 
 require('lspconfig').tailwindcss.setup{}
-require('lspconfig').tsserver.setup{}
 require('lspconfig').prismals.setup{}
-require('lspconfig').tsserver.setup{}
+require('lspconfig').tsserver.setup{
+  on_attach = function(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end,
+}
 require('lspconfig').volar.setup{}
 
 cmp.setup({
