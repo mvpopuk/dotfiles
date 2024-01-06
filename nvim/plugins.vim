@@ -112,7 +112,7 @@
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'folke/trouble.nvim'
     Plug 'onsails/lspkind-nvim'
-    Plug 'tami5/lspsaga.nvim', { 'branch':'main' }
+    Plug 'kkharji/lspsaga.nvim'
     Plug 'windwp/nvim-autopairs'
 
     Plug 'williamboman/mason.nvim'

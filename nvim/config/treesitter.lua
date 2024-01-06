@@ -15,6 +15,7 @@
          "vue",
          "typescript",
          "tsx",
+         "svelte",
      },
   highlight = {
     enable = true,

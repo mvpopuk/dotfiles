@@ -85,6 +85,7 @@ require('lspconfig').tsserver.setup{
   end,
 }
 require('lspconfig').volar.setup{}
+require('lspconfig').svelte.setup{}
 
 cmp.setup({
     experimental = {

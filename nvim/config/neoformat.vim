@@ -11,19 +11,22 @@ let g:neoformat_only_msg_on_error = 1
 
 let g:neoformat_enabled_php = ['phpcsfixer']
 let g:neoformat_enabled_js = ['prettier']
-let g:neoformat_enabled_html = ['antlersformat']
+let g:neoformat_enabled_html = ['prettier']
 let g:neoformat_enabled_md = ['prettier']
 let g:neoformat_enabled_vue = ['prettier']
+let g:neoformat_enabled_ts = ['prettier']
 
 augroup neoformat_on_save
     autocmd!
   autocmd BufWritePre *.php if expand('%:t') !~ '.blade.php' | call RunNeoformat()
     autocmd BufWritePre *.js call RunNeoformat()
     autocmd BufWritePre *.antlers.html call RunNeoformat()
+    autocmd BufWritePre *.html call RunNeoformat()
     autocmd BufWritePre *.md call RunNeoformat()
     autocmd BufWritePre *.vue call RunNeoformat()
     autocmd BufWritePre *.jsx call RunNeoformat()
     autocmd BufWritePre *.tsx call RunNeoformat()
+    autocmd BufWritePre *.ts call RunNeoformat()
 augroup END
 
 " ------------------------------------------------------------------------------

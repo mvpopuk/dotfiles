@@ -32,7 +32,7 @@ set cursorline
 set cursorlineopt=number
 set scrolloff=8
 set encoding=utf8
-set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set modifiable

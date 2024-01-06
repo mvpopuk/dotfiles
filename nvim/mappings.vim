@@ -40,6 +40,38 @@ nnoremap <leader>fG :execute 'Telescope live_grep default_text=' . expand('<cwor
 nnoremap <leader>fS :execute 'Telescope grep_string default_text=' . expand('<cword>')<cr>
 nnoremap <leader>fF :execute 'Telescope find_files default_text=' . "" . expand('<cword>')<cr>
 
+lua << EOF
+function vim.getVisualSelection()
+	vim.cmd('noau normal! "vy"')
+	local text = vim.fn.getreg('v')
+	vim.fn.setreg('v', {})
+
+	text = string.gsub(text, "\n", "")
+	if #text > 0 then
+		return text
+	else
+		return ''
+	end
+end
+
+
+local keymap = vim.keymap.set
+local tb = require('telescope.builtin')
+local opts = { noremap = true, silent = true }
+
+keymap('n', '<space>g', ':Telescope current_buffer_fuzzy_find<cr>', opts)
+keymap('v', '<space>g', function()
+	local text = vim.getVisualSelection()
+	tb.current_buffer_fuzzy_find({ default_text = text })
+end, opts)
+
+keymap('n', '<space>G', ':Telescope live_grep<cr>', opts)
+keymap('v', '<space>G', function()
+	local text = vim.getVisualSelection()
+	tb.live_grep({ default_text = text })
+end, opts)
+EOF
+
 " Mapping: NvimTreeToggle
 nnoremap <leader>b <cmd>:NvimTreeToggle<cr>
 
