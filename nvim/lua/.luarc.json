@@ -1,0 +1,9 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "floaterm_width",
+        "floaterm_height",
+        "floaterm_title",
+        "api"
+    ]
+}
