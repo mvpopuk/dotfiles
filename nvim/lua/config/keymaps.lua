@@ -72,6 +72,7 @@ map(
 	'<cmd>lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_cursor())<cr>',
 	opts
 )
+
 map("n", "<leader><leader>a", '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>', opts)
 map("n", "<leader>gd", '<cmd>lua require("telescope.builtin").lsp_definitions{}<cr>', opts)
 map("n", "<leader>gv", '<cmd>lua require("telescope.builtin").lsp_definitions{jump_type="vsplit"}<cr>', opts)
@@ -173,42 +174,6 @@ function _G.toggle_fold()
 	end
 end
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>tt",
-	':lua require("neotest").run().run()<CR>',
-	{ noremap = true, silent = true, desc = "Run nearest [t]est" }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>tf",
-	':lua require("neotest").run().run(vim.fn.expand("%"))<CR>',
-	{ noremap = true, silent = true, desc = "Run all tests in [f]ile" }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>tt",
-	':lua require("neotest").run().stop()<CR>',
-	{ noremap = true, silent = true, desc = "[S]top nearest test" }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>to",
-	':lua require("neotest").output.open()<CR>',
-	{ noremap = true, silent = true, desc = "Show test [o]utput" }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>tO",
-	':lua require("neotest").output.open({ enter = true })<CR>',
-	{ noremap = true, silent = true, desc = "Show test [O]utput and enter" }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>ts",
-	':lua require("neotest").summary.toggle()<CR>',
-	{ noremap = true, silent = true, desc = "Show test [s]ummary" }
-)
 -- Set keymap for creating a new floaterm
 vim.g.floaterm_keymap_new = "<F7>"
 

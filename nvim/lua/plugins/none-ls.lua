@@ -41,7 +41,6 @@ return {
 
 				-- Formatters based-off the new none-ls-extras plugin
 				require("none-ls.code_actions.eslint_d"),
-
 				require("none-ls.diagnostics.eslint_d"),
 				require("none-ls.formatting.eslint_d"),
 				require("none-ls.formatting.jq"),

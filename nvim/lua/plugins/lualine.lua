@@ -11,13 +11,13 @@ return {
 		local colors = {
 			bg = "None", -- Ensure this is a valid color or nil
 			fg = "#45657b",
-			yellow = "#ebc38e",
+			yellow = "#ecc58d",
 			cyan = "#21c7a8",
 			darkblue = "#081633",
 			green = "#aedb67",
 			orange = "#FF8800",
 			magenta = "#c792eb",
-			blue = "#9ddcfe",
+			blue = "#82aaff",
 			red = "#ef5350",
 		}
 

@@ -11,7 +11,7 @@ return {
 			-- Require and set up hooks
 			local hooks = require("ibl.hooks")
 			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-				vim.api.nvim_set_hl(0, "Highlight", { fg = "#263248" })
+				vim.api.nvim_set_hl(0, "Highlight", { fg = "#3a4261" })
 			end)
 
 			-- New configuration setup
