@@ -57,8 +57,16 @@ return {
 	-- 		vim.cmd("highlight NeoTreeWinSeparator guibg=None guifg=None")
 	-- 		vim.cmd("highlight NeoTreeVertSplit guibg=None guifg=None")
 	-- 	end,
+	-- {
+	-- 	"connorholyday/vim-snazzy",
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("snazzy")
+	--
+	-- 		vim.cmd("highlight Normal guibg=None guifg=None")
+	-- 		vim.cmd("highlight NonText guibg=None guifg=None")
+	-- 		vim.cmd("highlight SignColumn guibg=None guifg=None")
+	-- 	end,
 	-- },
-
 	-- {
 	-- 	"navarasu/onedark.nvim",
 	-- 	config = function()

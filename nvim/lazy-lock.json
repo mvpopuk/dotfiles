@@ -29,7 +29,6 @@
   "mini.pairs": { "branch": "main", "commit": "5c975d8f68dc1e11bf4b20ced71e7987ed782513" },
   "neo-tree.nvim": { "branch": "main", "commit": "5087dbda50ba178cc7920e35f51fc35995ebe261" },
   "neodev.nvim": { "branch": "main", "commit": "ce9a2e8eaba5649b553529c5498acb43a6c317cd" },
-  "neogen": { "branch": "main", "commit": "6de0add4805165317ab7d3d36b5cef48b1b865f3" },
   "neoscroll.nvim": { "branch": "master", "commit": "e78657719485c5663b88e5d96ffcfb6a2fe3eec0" },
   "noice.nvim": { "branch": "main", "commit": "9f6f6ba74f8bfbf7e43d6302cf86b070362f6203" },
   "none-ls-extras.nvim": { "branch": "main", "commit": "336e84b9e43c0effb735b08798ffac382920053b" },
@@ -54,7 +53,6 @@
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "0c12735d5aff6a48ffd8111bf144dc2ff44e5975" },
   "todo-comments.nvim": { "branch": "main", "commit": "a7e39ae9e74f2c8c6dc4eea6d40c3971ae84752d" },
-  "tokyonight.nvim": { "branch": "main", "commit": "7fc18e82575f5b482b758b6dddfe97b606819a20" },
   "trouble.nvim": { "branch": "main", "commit": "a8264a65a0b894832ea642844f5b7c30112c458f" },
   "typescript-tools.nvim": { "branch": "master", "commit": "c43d9580c3ff5999a1eabca849f807ab33787ea7" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
@@ -63,5 +61,6 @@
   "vim-fugitive": { "branch": "master", "commit": "4f59455d2388e113bd510e85b310d15b9228ca0d" },
   "vim-rhubarb": { "branch": "master", "commit": "ee69335de176d9325267b0fd2597a22901d927b1" },
   "vim-rooter": { "branch": "master", "commit": "45e53f01e4e1c4a3ee20814de232162713aff578" },
+  "vim-snazzy": { "branch": "master", "commit": "d979964b4dc0d6860f0803696c348c5a912afb9e" },
   "vim-test": { "branch": "master", "commit": "50824567721414915db71922db8dcb8f49893e9b" }
 }

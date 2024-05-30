@@ -40,7 +40,7 @@ return {
 				hide_cursor = true,
 				-- respect_scrolloff = true,
 				cursor_scrolls_alone = true,
-				-- performance_mode = false
+				performance_mode = true,
 			})
 		end,
 	},
