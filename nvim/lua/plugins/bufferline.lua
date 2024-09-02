@@ -22,7 +22,9 @@ return {
 					max_prefix_length = 15,
 					tab_size = 18,
 					diagnostics = "nvim_lsp",
-					diagnostics_update_in_insert = true,
+					vim.diagnostic.config({
+						update_in_insert = false,
+					}),
 					diagnostics_indicator = function(count, level, diagnostics_dict, context)
 						local icon = level:match("error") and " " or " "
 						return " " .. icon .. count

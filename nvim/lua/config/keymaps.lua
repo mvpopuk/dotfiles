@@ -193,7 +193,7 @@ vim.api.nvim_set_keymap("n", "<leader>git", "<cmd>:FloatermNew lazygit<CR>", { n
 vim.api.nvim_set_keymap("n", "<leader>df", "<cmd>:Gvdiffsplit<CR>", { noremap = true, silent = true })
 
 -- Normal mode: Map <leader>xx to toggle Trouble
-vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>TroubleToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { noremap = true, silent = true })
 
 -- Normal mode: Map <leader>xw to toggle workspace diagnostics in Trouble
 vim.api.nvim_set_keymap(
