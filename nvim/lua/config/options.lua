@@ -146,3 +146,9 @@ vim.api.nvim_create_autocmd("FileType", {
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
+
+-- Ensure line numbers are always enabled
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.numberwidth = 4
+vim.opt.signcolumn = "yes"

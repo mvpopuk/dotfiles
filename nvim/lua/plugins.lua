@@ -1,5 +1,8 @@
 return {
-	{ "airblade/vim-rooter" },
+	{
+		"airblade/vim-rooter",
+		enabled = false, -- Disable vim-rooter completely to fix directory issues
+	},
 	{
 		"famiu/bufdelete.nvim",
 		event = "VeryLazy",

@@ -12,8 +12,15 @@ return {
 	},
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>e", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
-		{ "<leader><tab>", ":Neotree toggle right<CR>", silent = true, desc = "Right File Explorer" },
+		{ "<leader>e", function()
+			require("neo-tree.command").execute({ toggle = true, position = "float", dir = vim.fn.getcwd() })
+		end, silent = true, desc = "Float File Explorer" },
+		{ "<leader><tab>", function()
+			require("neo-tree.command").execute({ toggle = true, position = "right", dir = vim.fn.getcwd() })
+		end, silent = true, desc = "Right File Explorer" },
+		{ "<leader>ec", ":Neotree dir=.<CR>", silent = true, desc = "Neo-tree Current Directory" },
+		{ "<leader>eh", ":Neotree dir=~<CR>", silent = true, desc = "Neo-tree Home Directory" },
+		{ "<leader>er", ":Neotree reveal<CR>", silent = true, desc = "Neo-tree Reveal Current File" },
 	},
 	config = function()
 		require("neo-tree").setup({
@@ -64,6 +71,15 @@ return {
 			},
 			filesystem = {
 				use_libuv_file_watcher = true,
+				follow_current_file = {
+					enabled = true, -- This will find and focus the file in the active buffer every time
+					leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+				},
+				hijack_netrw_behavior = "open_current", -- netrw disabled, opening a directory opens neo-tree in whatever position is specified in window.position
+				cwd_target = {
+					sidebar = "tab", -- sidebar will show the cwd of the tab
+					current = "window", -- current will show the cwd of the current window
+				},
 				filtered_items = {
 					hide_dotfiles = false,
 					hide_gitignored = false,
@@ -94,6 +110,18 @@ return {
 					end,
 				},
 			},
+		})
+
+		-- Auto-command to ensure Neo-tree respects current working directory
+		vim.api.nvim_create_autocmd("VimEnter", {
+			callback = function()
+				-- Set the initial directory for neo-tree to current working directory
+				if vim.fn.argc() == 0 then
+					-- Only if no files were opened
+					local cwd = vim.fn.getcwd()
+					vim.g.neo_tree_last_cwd = cwd
+				end
+			end,
 		})
 	end,
 }

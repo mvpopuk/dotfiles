@@ -1,67 +1,85 @@
 return {
-  "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    { "williamboman/mason.nvim", config = true },
-    "williamboman/mason-lspconfig.nvim",
-    "folke/neodev.nvim",
-    { "b0o/schemastore.nvim" },
-    { "hrsh7th/cmp-nvim-lsp" },
-  },
-  config = function()
-    require("mason").setup({
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
-    require("mason-lspconfig").setup({
-      ensure_installed = vim.tbl_keys(require("plugins.lsp.servers")),
-    })
-    require("lspconfig.ui.windows").default_options.border = "single"
+	"neovim/nvim-lspconfig",
+	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		{ "williamboman/mason.nvim", config = true },
+		"williamboman/mason-lspconfig.nvim",
+		"folke/neodev.nvim",
+		"b0o/schemastore.nvim",
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	config = function()
+		require("mason").setup({ ui = { border = "rounded" } })
+		local servers = {
+			lua_ls = {
+				settings = { Lua = { workspace = { checkThirdParty = false }, telemetry = { enable = false } } },
+			},
+			-- NOTE: tsserver was renamed to ts_ls in nvim-lspconfig
+			ts_ls = {},
+			jsonls = {
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
+					},
+				},
+			},
+			html = {},
+			cssls = {},
+		}
 
-    require("neodev").setup()
+		require("mason-lspconfig").setup({
+			ensure_installed = vim.tbl_keys(servers),
+			automatic_installation = true,
+		})
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		local ok, win = pcall(require, "lspconfig.ui.windows")
+		if ok and win and win.default_options then
+			win.default_options.border = "single"
+		end
 
-    local mason_lspconfig = require("mason-lspconfig")
+		require("neodev").setup({}) -- before lua_ls
 
-    mason_lspconfig.setup_handlers({
-      function(server_name)
-        require("lspconfig")[server_name].setup({
-          capabilities = capabilities,
-          on_attach = require("plugins.lsp.on_attach").on_attach,
-          settings = require("plugins.lsp.servers")[server_name],
-          filetypes = (require("plugins.lsp.servers")[server_name] or {}).filetypes,
-        })
-      end,
-    })
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    vim.diagnostic.config({
-      title = false,
-      underline = true,
-      virtual_text = true,
-      signs = true,
-      update_in_insert = false,
-      severity_sort = true,
-      float = {
-        source = "always",
-        style = "minimal",
-        border = "rounded",
-        header = "",
-        prefix = "",
-      },
-    })
+		-- Setup each server - using fallback approach for compatibility
+		for server, config in pairs(servers) do
+			-- Try new vim.lsp.config API first, fallback to lspconfig if needed
+			local success = pcall(function()
+				if vim.lsp.config and vim.lsp.config[server] then
+					vim.lsp.config[server] = vim.tbl_deep_extend("force", vim.lsp.config[server] or {}, {
+						capabilities = capabilities,
+						on_attach = require("plugins.lsp.on_attach").on_attach,
+						settings = config.settings or nil,
+						filetypes = config.filetypes or nil,
+					})
+				else
+					error("vim.lsp.config not available")
+				end
+			end)
 
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
-  end,
+			-- Fallback to traditional lspconfig if new API fails
+			if not success then
+				require("lspconfig")[server].setup({
+					capabilities = capabilities,
+					on_attach = require("plugins.lsp.on_attach").on_attach,
+					settings = config.settings or nil,
+					filetypes = config.filetypes or nil,
+				})
+			end
+		end
+
+		vim.diagnostic.config({
+			underline = true,
+			virtual_text = true,
+			signs = true,
+			update_in_insert = false,
+			severity_sort = true,
+			float = { source = "always", style = "minimal", border = "rounded", header = "", prefix = "" },
+		})
+		for type, icon in pairs({ Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }) do
+			local hl = "DiagnosticSign" .. type
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+		end
+	end,
 }

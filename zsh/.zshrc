@@ -71,10 +71,10 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    zsh-autosuggestions
-    vscode
-    )
+	git
+	zsh-autosuggestions
+	vscode
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,45 +101,80 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias a="php artisan"
 alias fresh="rm -rf storage/logs/laravel.log && rm -rf vendor/ && composer install && php artisan migrate:fresh --seed"
-alias analyse="vendor/bin/phpstan analyse"
+alias analyse="XDEBUG_MODE=off php -d memory_limit=1G vendor/bin/phpstan analyse"
+alias composer="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias pint="./vendor/bin/pint"
-alias t="php artisan test --filter=$1"
-alias phpactor="~/.local/bin/phpactor"
-alias cat="bat"
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
-export PATH=~/.composer/vendor/bin:$PATH
-export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:${PATH}
-export PATH=$PATH:/usr/share/php/bin
-export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
-export PATH=/opt/homebrew/bin/watchman:$PATH
+pest() {
+  if [[ "$*" == *"--no-parallel"* ]]; then
+    # If --no-parallel is included, run without --parallel
+    ./vendor/bin/pest "${@/--no-parallel/}"
+    return
+  fi
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+  if [ $# -eq 0 ]; then
+    ./vendor/bin/pest --parallel --coverage
+    return
+  fi
+
+  # If first argument is a flag, pass all with --parallel
+  if [[ "$1" == -* ]]; then
+    ./vendor/bin/pest "$@" --parallel
+    return
+  fi
+
+  file="tests/Feature/${1}Test.php"
+
+  if [ -f "$file" ]; then
+    ./vendor/bin/pest "$file" --parallel "${@:2}"
+  else
+    ./vendor/bin/pest --filter "$*" --parallel
+  fi
+}
+
+# Set Spaceship ZSH as a prompt
+# autoload -U promptinit; promptinit
+# prompt spaceship
 
 [[ $TMUX != "" ]] && export TERM="screen-256color-italic"
 export TERM="xterm-256color-italic"
 
+export NVM_DIR="/Users/mvpsoft/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/marian.pop/Library/Application Support/Herd/config/php/83/"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+fpath=($fpath "/Users/mvpsoft/.zfunctions")
 
+
+#Lunarvim
+export PATH="/Users/mvpsoft/.local/bin/":$PATH
 
 # Herd injected PHP binary.
-export PATH="/Users/marian.pop/Library/Application Support/Herd/bin/":$PATH
-
+export PATH="/Users/mvpsoft/Library/Application Support/Herd/bin/":$PATH
 
 # Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/marian.pop/Library/Application Support/Herd/config/php/82/"
+export HERD_PHP_82_INI_SCAN_DIR="/Users/mvpsoft/Library/Application Support/Herd/config/php/82/"
 
-export BAT_THEME="gruvbox-dark"
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza -n --tree --color=always {} | head -200'"
 
-eval "$(fzf --zsh)"
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/mvpsoft/Library/Application Support/Herd/config/php/83/"
+
+# bun completions
+[ -s "/Users/mvpsoft/.bun/_bun" ] && source "/Users/mvpsoft/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export GPG_TTY=$(tty)
+
+# Added by Windsurf
+export PATH="/Users/mvpsoft/.codeium/windsurf/bin:$PATH"

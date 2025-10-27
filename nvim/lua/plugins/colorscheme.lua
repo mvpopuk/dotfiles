@@ -1,5 +1,88 @@
 return {
 	-- {
+	-- 	"Mofiqul/dracula.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		local dracula = require("dracula")
+	-- 		dracula.setup({
+	-- 			-- customize dracula color palette
+	-- 			colors = {
+	-- 				bg = "#282A36",
+	-- 				fg = "#F8F8F2",
+	-- 				selection = "#44475A",
+	-- 				comment = "#6272A4",
+	-- 				red = "#FF5555",
+	-- 				orange = "#FFB86C",
+	-- 				yellow = "#F1FA8C",
+	-- 				green = "#50FA7B",
+	-- 				purple = "#BD93F9",
+	-- 				cyan = "#8BE9FD",
+	-- 				pink = "#FF79C6",
+	-- 				bright_red = "#FF6E6E",
+	-- 				bright_green = "#69FF94",
+	-- 				bright_yellow = "#FFFFA5",
+	-- 				bright_blue = "#D6ACFF",
+	-- 				bright_magenta = "#FF92DF",
+	-- 				bright_cyan = "#A4FFFF",
+	-- 				bright_white = "#FFFFFF",
+	-- 				menu = "#21222C",
+	-- 				visual = "#44475A",
+	-- 				gutter_fg = "#6272A4",
+	-- 				nontext = "#6272A4",
+	-- 				white = "#F8F8F2",
+	-- 				black = "#21222C",
+	-- 			},
+	-- 			-- show the '~' characters after the end of buffers
+	-- 			show_end_of_buffer = true, -- default false
+	-- 			-- use transparent background
+	-- 			transparent_bg = false, -- set to true for transparency
+	-- 			-- set custom lualine background color
+	-- 			lualine_bg_color = "#44475a", -- custom lualine background
+	-- 			-- set italic comment
+	-- 			italic_comment = true, -- default false
+	-- 			-- overrides for specific highlights
+	-- 			overrides = function(colors)
+	-- 				return {
+	-- 					-- Custom highlight overrides using theme colors
+	-- 					Comment = { fg = colors.comment, italic = true },
+	-- 					-- Make line numbers more subtle
+	-- 					LineNr = { fg = colors.gutter_fg },
+	-- 					CursorLineNr = { fg = colors.orange, bold = true },
+	-- 					-- Customize floating windows
+	-- 					FloatBorder = { fg = colors.purple, bg = colors.bg },
+	-- 					NormalFloat = { bg = colors.menu },
+	-- 					-- Telescope customizations
+	-- 					TelescopeBorder = { fg = colors.purple },
+	-- 					TelescopePromptBorder = { fg = colors.pink },
+	-- 					TelescopeResultsBorder = { fg = colors.cyan },
+	-- 					TelescopePreviewBorder = { fg = colors.green },
+	-- 					-- Neo-tree customizations
+	-- 					NeoTreeNormal = { bg = colors.menu },
+	-- 					NeoTreeNormalNC = { bg = colors.menu },
+	-- 					NeoTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
+	-- 					-- Diagnostic customizations
+	-- 					DiagnosticError = { fg = colors.red },
+	-- 					DiagnosticWarn = { fg = colors.yellow },
+	-- 					DiagnosticInfo = { fg = colors.cyan },
+	-- 					DiagnosticHint = { fg = colors.purple },
+	-- 					-- Git signs customizations
+	-- 					GitSignsAdd = { fg = colors.green },
+	-- 					GitSignsChange = { fg = colors.yellow },
+	-- 					GitSignsDelete = { fg = colors.red },
+	-- 					-- Indent blankline
+	-- 					IblIndent = { fg = colors.selection },
+	-- 					IblScope = { fg = colors.purple },
+	-- 					-- Completion menu
+	-- 					Pmenu = { bg = colors.menu, fg = colors.white },
+	-- 					PmenuSel = { bg = colors.selection, fg = colors.white },
+	-- 					PmenuBorder = { fg = colors.purple, bg = colors.menu },
+	-- 				}
+	-- 			end,
+	-- 		})
+	-- 		vim.cmd.colorscheme("dracula")
+	-- 	end,
+	-- },
+	-- {
 	-- 	"folke/tokyonight.nvim",
 	-- 	config = function()
 	-- 		require("tokyonight").setup({
@@ -105,8 +188,8 @@ return {
 			require("night-owl").setup()
 			vim.cmd.colorscheme("night-owl")
 
-			vim.cmd("highlight Normal guibg=None guifg=None")
-			vim.cmd("highlight NonText guibg=None guifg=None")
+			-- vim.cmd("highlight Normal guibg=None guifg=None")
+			-- vim.cmd("highlight NonText guibg=None guifg=None")
 			vim.cmd("highlight SignColumn guibg=None guifg=None")
 			vim.cmd("highlight EndOfBuffer guifg=#001728")
 			-- vim.cmd('highlight VertSplit ctermbg=NONE ctermfg=15')
