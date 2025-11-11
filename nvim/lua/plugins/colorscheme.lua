@@ -240,6 +240,26 @@ return {
 			vim.cmd("highlight NeoTreeTabSeparatorInactive guifg=#011627")
 			vim.cmd("highlight NeoTreeTabSeparatorActive guifg=#011627")
 			vim.cmd("highlight NeoTreeNormal guibg=None guifg=None")
+
+			-- Set explicit background for EndOfBuffer (used by bufferline)
+			vim.cmd("highlight EndOfBuffer guifg=#001728 guibg=#011627")
+
+			-- Set explicit background for WinBar (used by barbecue)
+			vim.cmd("highlight WinBar guibg=#011627")
+			vim.cmd("highlight WinBarNC guibg=#011627")
+
+			-- Keep Normal transparent
+			vim.cmd("highlight Normal guibg=None guifg=None")
+
+			-- Barbecue specific backgrounds
+			vim.cmd("highlight BarbecueNormal guibg=#011627 guifg=#5f7e97")
+			vim.cmd("highlight BarbecueSeparator guibg=#011627 guifg=#4b6479")
+			vim.cmd("highlight BarbecueEllipsis guibg=#011627 guifg=#4b6479")
+
+			-- Force bufferline active buffer highlight
+			vim.cmd("highlight BufferLineBufferSelected guifg=#ffffff gui=bold")
+			vim.cmd("highlight BufferLineCloseButtonSelected guifg=#ffffff")
+			vim.cmd("highlight BufferLineModifiedSelected guifg=#ffeb95")
 		end,
 	},
 }

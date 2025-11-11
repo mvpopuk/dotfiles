@@ -54,18 +54,31 @@ return {
 					sort_by = "extension",
 					highlights = {
 						background = {
-							guibg = { attribute = "bg", highlight = "WinSeparator" },
+							guibg = { attribute = "bg", highlight = "EndOfBuffer" },
+						},
+						-- Active buffer with a different background color
+						buffer_selected = {
+							guibg = "#011627",
+							guifg = "#ffffff", -- Pure white
+							gui = "bold",
+						},
+						buffer_visible = {
+							guibg = { attribute = "bg", highlight = "EndOfBuffer" },
 						},
 						close_button = {
 							guibg = { attribute = "bg", highlight = "WinSeparator" },
+						},
+						close_button_selected = {
+							guibg = "#011627",
+							guifg = "#d6deeb", -- Bright text for close button too
 						},
 						separator = {
 							guifg = { attribute = "fg", highlight = "WinSeparator" },
 							guibg = { attribute = "bg", highlight = "WinSeparator" },
 						},
 						separator_selected = {
-							guifg = { attribute = "fg", highlight = "WinSeparator" },
-							guibg = { attribute = "bg", highlight = "WinSeparator" },
+							guifg = "#011627", -- Make separator blend with the inactive buffers
+							guibg = "#1e222a", -- Match buffer_selected
 						},
 						separator_visible = {
 							guifg = { attribute = "fg", highlight = "WinSeparator" },
@@ -75,7 +88,8 @@ return {
 							guifg = { attribute = "fg", highlight = "WinSeparator" },
 						},
 						modified_selected = {
-							guifg = { attribute = "fg", highlight = "WinSeparator" },
+							guifg = "#ffeb95", -- Bright yellow for modified indicator
+							guibg = "#011627",
 						},
 					},
 				},
