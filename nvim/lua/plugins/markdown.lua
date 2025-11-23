@@ -48,14 +48,26 @@ return {
 					buffer = source_buf,
 					callback = function()
 						if vim.api.nvim_win_is_valid(preview_win) then
-							local preview_buf = vim.api.nvim_win_get_buf(preview_win)
-							-- Clear and refresh the terminal
-							vim.api.nvim_buf_call(preview_buf, function()
-								vim.cmd("setlocal modifiable")
-								vim.cmd("%delete")
+							local old_buf = vim.api.nvim_win_get_buf(preview_win)
+
+							-- Create new terminal buffer
+							local new_buf = vim.api.nvim_create_buf(false, true)
+							vim.api.nvim_win_set_buf(preview_win, new_buf)
+
+							-- Run glow in the new buffer
+							vim.api.nvim_buf_call(new_buf, function()
 								vim.fn.termopen(glow_cmd)
+								vim.api.nvim_buf_set_name(0, "Markdown Preview: " .. vim.fn.fnamemodify(current_file, ":t"))
+								vim.cmd("setlocal nomodified")
 								vim.cmd("setlocal nomodifiable")
+								vim.cmd("setlocal nonumber")
+								vim.cmd("setlocal norelativenumber")
 							end)
+
+							-- Delete old buffer
+							if vim.api.nvim_buf_is_valid(old_buf) then
+								vim.api.nvim_buf_delete(old_buf, { force = true })
+							end
 						end
 					end,
 				})
