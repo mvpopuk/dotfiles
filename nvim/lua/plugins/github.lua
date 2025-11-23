@@ -7,7 +7,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	keys = {
-		{ "<leader>go", "<cmd>Octo<cr>", desc = "Octo (GitHub)" },
+		{ "<leader>go", "<cmd>Octo actions<cr>", desc = "Octo Actions" },
 		{ "<leader>gpl", "<cmd>Octo pr list<cr>", desc = "List PRs" },
 		{ "<leader>gpc", "<cmd>Octo pr create<cr>", desc = "Create PR" },
 		{ "<leader>gps", "<cmd>Octo pr search<cr>", desc = "Search PRs" },
