@@ -188,7 +188,7 @@ return {
 			require("night-owl").setup()
 			vim.cmd.colorscheme("night-owl")
 
-			-- vim.cmd("highlight Normal guibg=None guifg=None")
+			vim.cmd("highlight Normal guibg=None guifg=None")
 			-- vim.cmd("highlight NonText guibg=None guifg=None")
 			vim.cmd("highlight SignColumn guibg=None guifg=None")
 			vim.cmd("highlight EndOfBuffer guifg=#001728")

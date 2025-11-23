@@ -1,99 +1,99 @@
 return {
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("bufferline").setup({
-				options = {
-					-- numbers = "",
-					mappings = true,
-					close_command = "bdelete! %d",
-					right_mouse_command = "bdelete! %d",
-					left_mouse_command = "buffer %d",
-					middle_mouse_command = nil,
-					indicator_icon = " ",
-					buffer_close_icon = "⨉",
-					modified_icon = "●",
-					close_icon = "⨉",
-					left_trunc_marker = "",
-					right_trunc_marker = "",
-					max_name_length = 18,
-					max_prefix_length = 15,
-					tab_size = 18,
-					diagnostics = "nvim_lsp",
-					vim.diagnostic.config({
-						update_in_insert = false,
-					}),
-					diagnostics_indicator = function(count, level, diagnostics_dict, context)
-						local icon = level:match("error") and " " or " "
-						return " " .. icon .. count
-					end,
-					offsets = {
-						{
-							filetype = "neo-tree",
-							text = "  File Explorer",
-							text_align = "left",
-						},
-					},
-					show_buffer_icons = true,
-					show_buffer_close_icons = true,
-					show_close_icon = false,
-					show_tab_indicators = true,
-					persist_buffer_sort = true,
-					separator_style = "blank",
-					-- custom_areas = {
-					-- 	left = function()
-					-- 		return {
-					-- 			{ text = "    ", guifg = "#18bd9d", guibg = "#1e222a" },
-					-- 		}
-					-- 	end,
-					-- },
-					enforce_regular_tabs = false,
-					always_show_bufferline = true,
-					sort_by = "extension",
-					highlights = {
-						background = {
-							guibg = { attribute = "bg", highlight = "EndOfBuffer" },
-						},
-						-- Active buffer with a different background color
-						buffer_selected = {
-							guibg = "#011627",
-							guifg = "#ffffff", -- Pure white
-							gui = "bold",
-						},
-						buffer_visible = {
-							guibg = { attribute = "bg", highlight = "EndOfBuffer" },
-						},
-						close_button = {
-							guibg = { attribute = "bg", highlight = "WinSeparator" },
-						},
-						close_button_selected = {
-							guibg = "#011627",
-							guifg = "#d6deeb", -- Bright text for close button too
-						},
-						separator = {
-							guifg = { attribute = "fg", highlight = "WinSeparator" },
-							guibg = { attribute = "bg", highlight = "WinSeparator" },
-						},
-						separator_selected = {
-							guifg = "#011627", -- Make separator blend with the inactive buffers
-							guibg = "#1e222a", -- Match buffer_selected
-						},
-						separator_visible = {
-							guifg = { attribute = "fg", highlight = "WinSeparator" },
-							guibg = { attribute = "bg", highlight = "WinSeparator" },
-						},
-						modified = {
-							guifg = { attribute = "fg", highlight = "WinSeparator" },
-						},
-						modified_selected = {
-							guifg = "#ffeb95", -- Bright yellow for modified indicator
-							guibg = "#011627",
-						},
-					},
-				},
-			})
-		end,
-	},
+	-- 	{
+	-- 		"akinsho/bufferline.nvim",
+	-- 		version = "*",
+	-- 		dependencies = "nvim-tree/nvim-web-devicons",
+	-- 		config = function()
+	-- 			require("bufferline").setup({
+	-- 				options = {
+	-- 					-- numbers = "",
+	-- 					mappings = true,
+	-- 					close_command = "bdelete! %d",
+	-- 					right_mouse_command = "bdelete! %d",
+	-- 					left_mouse_command = "buffer %d",
+	-- 					middle_mouse_command = nil,
+	-- 					indicator_icon = " ",
+	-- 					buffer_close_icon = "⨉",
+	-- 					modified_icon = "●",
+	-- 					close_icon = "⨉",
+	-- 					left_trunc_marker = "",
+	-- 					right_trunc_marker = "",
+	-- 					max_name_length = 18,
+	-- 					max_prefix_length = 15,
+	-- 					tab_size = 18,
+	-- 					diagnostics = "nvim_lsp",
+	-- 					vim.diagnostic.config({
+	-- 						update_in_insert = false,
+	-- 					}),
+	-- 					diagnostics_indicator = function(count, level, diagnostics_dict, context)
+	-- 						local icon = level:match("error") and " " or " "
+	-- 						return " " .. icon .. count
+	-- 					end,
+	-- 					offsets = {
+	-- 						{
+	-- 							filetype = "neo-tree",
+	-- 							text = "  File Explorer",
+	-- 							text_align = "left",
+	-- 						},
+	-- 					},
+	-- 					show_buffer_icons = true,
+	-- 					show_buffer_close_icons = true,
+	-- 					show_close_icon = false,
+	-- 					show_tab_indicators = true,
+	-- 					persist_buffer_sort = true,
+	-- 					separator_style = "blank",
+	-- 					custom_areas = {
+	-- 						left = function()
+	-- 							return {
+	-- 								{ text = "  ", guifg = "#18bd9d", guibg = "#1e222a" },
+	-- 							}
+	-- 						end,
+	-- 					},
+	-- 					enforce_regular_tabs = false,
+	-- 					always_show_bufferline = true,
+	-- 					sort_by = "extension",
+	-- 					highlights = {
+	-- 						background = {
+	-- 							guibg = { attribute = "bg", highlight = "EndOfBuffer" },
+	-- 						},
+	-- 						-- Active buffer with a different background color
+	-- 						buffer_selected = {
+	-- 							guibg = "#011627",
+	-- 							guifg = "#ffffff", -- Pure white
+	-- 							gui = "bold",
+	-- 						},
+	-- 						buffer_visible = {
+	-- 							guibg = { attribute = "bg", highlight = "EndOfBuffer" },
+	-- 						},
+	-- 						close_button = {
+	-- 							guibg = { attribute = "bg", highlight = "WinSeparator" },
+	-- 						},
+	-- 						close_button_selected = {
+	-- 							guibg = "#011627",
+	-- 							guifg = "#d6deeb", -- Bright text for close button too
+	-- 						},
+	-- 						separator = {
+	-- 							guifg = { attribute = "fg", highlight = "WinSeparator" },
+	-- 							guibg = { attribute = "bg", highlight = "WinSeparator" },
+	-- 						},
+	-- 						separator_selected = {
+	-- 							guifg = "#011627", -- Make separator blend with the inactive buffers
+	-- 							guibg = "#1e222a", -- Match buffer_selected
+	-- 						},
+	-- 						separator_visible = {
+	-- 							guifg = { attribute = "fg", highlight = "WinSeparator" },
+	-- 							guibg = { attribute = "bg", highlight = "WinSeparator" },
+	-- 						},
+	-- 						modified = {
+	-- 							guifg = { attribute = "fg", highlight = "WinSeparator" },
+	-- 						},
+	-- 						modified_selected = {
+	-- 							guifg = "#ffeb95", -- Bright yellow for modified indicator
+	-- 							guibg = "#011627",
+	-- 						},
+	-- 					},
+	-- 				},
+	-- 			})
+	-- 		end,
+	-- 	},
 }

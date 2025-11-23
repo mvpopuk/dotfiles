@@ -9,13 +9,13 @@ return {
 				panel = {
 					enabled = true,
 					auto_refresh = true,
-				keymap = {
-					jump_next = "<c-j>",
-					jump_prev = "<c-k>",
-					accept = "<M-l>", -- changed from <M-CR> to avoid duplicate
-					refresh = "r",
-					open = "<M-CR>",
-				},
+					keymap = {
+						jump_next = "<c-j>",
+						jump_prev = "<c-k>",
+						accept = "<M-l>", -- changed from <M-CR> to avoid duplicate
+						refresh = "r",
+						open = "<M-CR>",
+					},
 					layout = { position = "bottom", ratio = 0.4 },
 				},
 				suggestion = {
