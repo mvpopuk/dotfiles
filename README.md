@@ -59,9 +59,10 @@ The Neovim configuration includes:
 - `<leader>li` - Import PHP class under cursor
 
 **Formatting:**
-- `<leader>lf` - Manually format current buffer
-- `<leader>lp` - Run Pint on current PHP file
-- `<leader>le` - Fix ESLint issues
+- `<leader>lf` - Manually format current buffer (null-ls)
+- `<leader>lp` - Run Pint on current PHP file (async)
+- `<leader>le` - Fix all ESLint issues (code actions)
+- `<leader>lE` - Format with ESLint
 - `<leader>W` - Save without formatting
 
 **Navigation:**

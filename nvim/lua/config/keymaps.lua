@@ -234,10 +234,12 @@ vim.api.nvim_set_keymap("x", "<leader>d", '"_d', { noremap = true, silent = true
 -- Manual format current buffer (for PHP, JS, etc.)
 map("n", "<leader>lf", function()
 	vim.lsp.buf.format({
+		async = false,
 		filter = function(client)
 			return client.name == "null-ls"
 		end,
 	})
+	print("Formatted with null-ls")
 end, { desc = "Format current buffer" })
 
 -- Save without formatting (useful when auto-format is enabled)
@@ -247,20 +249,36 @@ map("n", "<leader>W", ":noautocmd w<CR>", { desc = "Save without formatting" })
 -- ESLint Keymaps
 -- ========================================
 
--- Fix ESLint issues in current file
+-- Fix ESLint issues using code actions
 map("n", "<leader>le", function()
-	vim.cmd("EslintFixAll")
+	vim.lsp.buf.code_action({
+		context = {
+			only = { "source.fixAll.eslint" },
+			diagnostics = {},
+		},
+		apply = true,
+	})
 end, { desc = "Fix all ESLint issues" })
+
+-- Format with ESLint (alternative)
+map("n", "<leader>lE", function()
+	vim.lsp.buf.format({
+		async = false,
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+	})
+end, { desc = "Format with ESLint" })
 
 -- ========================================
 -- PHP-specific Keymaps
 -- ========================================
 
--- Import PHP class under cursor
+-- Import PHP class under cursor (Intelephense uses "Add import" or "Import class")
 map("n", "<leader>li", function()
 	vim.lsp.buf.code_action({
 		filter = function(action)
-			return action.title and action.title:match("Import")
+			return action.title and (action.title:match("Import") or action.title:match("import"))
 		end,
 		apply = true,
 	})
@@ -268,5 +286,16 @@ end, { desc = "Import PHP class" })
 
 -- Run Pint formatter on current file
 map("n", "<leader>lp", function()
-	vim.cmd("!pint %")
+	local file = vim.fn.expand("%:p")
+	vim.cmd("write")
+	vim.fn.jobstart({ "pint", file }, {
+		on_exit = function(_, exit_code)
+			if exit_code == 0 then
+				vim.cmd("checktime")
+				print("Pint formatting complete")
+			else
+				print("Pint failed with exit code: " .. exit_code)
+			end
+		end,
+	})
 end, { desc = "Run Pint on current file" })
