@@ -55,9 +55,8 @@ The Neovim configuration includes:
 **Leader key:** `<Space>`
 
 **Code Actions & Imports:**
-- `<leader>ca` - Open code action menu
+- `<leader>ca` - Open code action menu (uses Telescope UI automatically)
 - `<leader>li` - Import PHP class under cursor
-- `<leader><leader>a` - Code actions with Telescope
 
 **Formatting:**
 - `<leader>lf` - Manually format current buffer

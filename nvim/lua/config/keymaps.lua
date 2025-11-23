@@ -65,8 +65,7 @@ map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>', op
 map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
 map("n", "<leader>k", '<cmd>lua require("telescope.builtin").oldfiles()<cr>', opts)
 -- Removed: <leader>ca is mapped below with vim.lsp.buf.code_action (supports both normal and visual mode)
-
-map("n", "<leader><leader>a", '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>', opts)
+-- Note: lsp_code_actions was removed from Telescope - use <leader>ca instead (automatically uses Telescope UI)
 map("n", "<leader>gd", '<cmd>lua require("telescope.builtin").lsp_definitions{}<cr>', opts)
 map("n", "<leader>gv", '<cmd>lua require("telescope.builtin").lsp_definitions{jump_type="vsplit"}<cr>', opts)
 map("n", "<leader>gi", '<cmd>lua require("telescope.builtin").lsp_implementations{}<cr>', opts)
