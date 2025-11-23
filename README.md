@@ -54,15 +54,14 @@ The Neovim configuration includes:
 
 **Leader key:** `<Space>`
 
-**Code Actions & Imports:**
-- `<leader>ca` - Open code action menu (uses Telescope UI automatically)
-- `<leader>li` - Import PHP class under cursor
+**Code Actions:**
+- `<leader>ca` - Open code action menu (includes imports, quick fixes, refactoring)
 
 **Formatting:**
 - `<leader>lf` - Manually format current buffer (null-ls)
-- `<leader>lp` - Run Pint on current PHP file (async)
+- `<leader>lp` - Run Pint on current PHP file (checks vendor/bin/pint first)
 - `<leader>le` - Fix all ESLint issues (code actions)
-- `<leader>lE` - Format with ESLint
+- `<leader>lE` - Format with ESLint (alternative)
 - `<leader>W` - Save without formatting
 
 **Navigation:**

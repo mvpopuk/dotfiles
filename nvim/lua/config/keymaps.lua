@@ -274,21 +274,23 @@ end, { desc = "Format with ESLint" })
 -- PHP-specific Keymaps
 -- ========================================
 
--- Import PHP class under cursor (Intelephense uses "Add import" or "Import class")
-map("n", "<leader>li", function()
-	vim.lsp.buf.code_action({
-		filter = function(action)
-			return action.title and (action.title:match("Import") or action.title:match("import"))
-		end,
-		apply = true,
-	})
-end, { desc = "Import PHP class" })
-
 -- Run Pint formatter on current file
 map("n", "<leader>lp", function()
 	local file = vim.fn.expand("%:p")
+
+	-- Check for Laravel's vendor/bin/pint first, then global pint
+	local pint_cmd = nil
+	if vim.fn.executable("./vendor/bin/pint") == 1 then
+		pint_cmd = "./vendor/bin/pint"
+	elseif vim.fn.executable("pint") == 1 then
+		pint_cmd = "pint"
+	else
+		print("Pint not found. Install it via: composer require laravel/pint --dev")
+		return
+	end
+
 	vim.cmd("write")
-	vim.fn.jobstart({ "pint", file }, {
+	vim.fn.jobstart({ pint_cmd, file }, {
 		on_exit = function(_, exit_code)
 			if exit_code == 0 then
 				vim.cmd("checktime")
