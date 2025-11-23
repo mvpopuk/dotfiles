@@ -13,7 +13,12 @@ return {
 					local buf = vim.api.nvim_win_get_buf(win)
 					local buf_name = vim.api.nvim_buf_get_name(buf)
 					if buf_name:match("Markdown Preview") then
-						vim.api.nvim_win_close(win, true)
+						-- Only close if there's more than one window
+						if #vim.api.nvim_list_wins() > 1 then
+							vim.api.nvim_win_close(win, true)
+						else
+							vim.api.nvim_buf_delete(buf, { force = true })
+						end
 						return
 					end
 				end
