@@ -6,7 +6,7 @@ return {
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		-- Adapters
-		"nvim-neotest/neotest-phpunit",
+		"olimorris/neotest-phpunit", -- Correct PHPUnit adapter
 		"nvim-neotest/neotest-jest",
 		"marilari88/neotest-vitest",
 	},
