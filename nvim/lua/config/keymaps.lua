@@ -28,9 +28,7 @@ map("v", "P", '"_dP')
 -- P puts text before the cursor.
 map("n", "YY", "va{Vy", opts)
 
--- Move line on the screen rather than by line in the file
-map("n", "j", "gj", opts)
-map("n", "k", "gk", opts)
+-- Removed duplicate: j/k are already mapped above with v:count logic
 
 -- Exit on jj and jk
 map("i", "jj", "<ESC>", opts)
@@ -50,8 +48,8 @@ map("n", "-", ":resize -5<CR>")
 map("n", "<CR>", "ciw", opts)
 map("n", "<BS>", "ci", opts)
 
-map("n", "n", "nzzv", opts)
-map("n", "N", "Nzzv", opts)
+map("n", "n", "nzz", opts)
+map("n", "N", "Nzz", opts)
 map("n", "*", "*zzv", opts)
 map("n", "#", "#zzv", opts)
 map("n", "g*", "g*zz", opts)
@@ -66,14 +64,8 @@ map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', 
 map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
 map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
 map("n", "<leader>k", '<cmd>lua require("telescope.builtin").oldfiles()<cr>', opts)
-map(
-	"n",
-	"<leader>ca",
-	'<cmd>lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_cursor())<cr>',
-	opts
-)
-
-map("n", "<leader><leader>a", '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>', opts)
+-- Removed: <leader>ca is mapped below with vim.lsp.buf.code_action (supports both normal and visual mode)
+-- Note: lsp_code_actions was removed from Telescope - use <leader>ca instead (automatically uses Telescope UI)
 map("n", "<leader>gd", '<cmd>lua require("telescope.builtin").lsp_definitions{}<cr>', opts)
 map("n", "<leader>gv", '<cmd>lua require("telescope.builtin").lsp_definitions{jump_type="vsplit"}<cr>', opts)
 map("n", "<leader>gi", '<cmd>lua require("telescope.builtin").lsp_implementations{}<cr>', opts)
@@ -159,11 +151,10 @@ vim.api.nvim_set_keymap("o", "<F9>", "<C-C>za", { noremap = true })
 -- Visual mode: Press F9 to create a fold from the selection
 vim.api.nvim_set_keymap("v", "<F9>", "zf", { noremap = true })
 
--- Normal mode: Press Space to toggle fold under the cursor if fold is present, otherwise insert a space
-vim.api.nvim_set_keymap("n", "<Space>", "v:lua.toggle_fold()", { noremap = true, expr = true })
-
--- Visual mode: Press Space to create a fold from the selection
-vim.api.nvim_set_keymap("v", "<Space>", "zf", { noremap = true })
+-- Removed: Space is the leader key, can't be used for fold toggle
+-- Use F9 or 'za' for fold toggling instead
+-- vim.api.nvim_set_keymap("n", "<Space>", "v:lua.toggle_fold()", { noremap = true, expr = true })
+-- vim.api.nvim_set_keymap("v", "<Space>", "zf", { noremap = true })
 
 -- Lua function for toggling folds with space in normal mode
 function _G.toggle_fold()
@@ -234,3 +225,87 @@ vim.api.nvim_set_keymap("n", "<leader>d", '"_d', { noremap = true, silent = true
 
 -- Visual mode: Map <leader>d to delete into the black hole register
 vim.api.nvim_set_keymap("x", "<leader>d", '"_d', { noremap = true, silent = true })
+
+-- ========================================
+-- Formatting Keymaps
+-- ========================================
+
+-- Manual format current buffer (for PHP, JS, etc.)
+map("n", "<leader>lf", function()
+	vim.lsp.buf.format({
+		async = false,
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+	})
+	print("Formatted with null-ls")
+end, { desc = "Format current buffer" })
+
+-- Save without formatting (useful when auto-format is enabled)
+map("n", "<leader>W", ":noautocmd w<CR>", { desc = "Save without formatting" })
+
+-- ========================================
+-- ESLint Keymaps
+-- ========================================
+
+-- Fix ESLint issues using code actions
+map("n", "<leader>le", function()
+	vim.lsp.buf.code_action({
+		context = {
+			only = { "source.fixAll.eslint" },
+			diagnostics = {},
+		},
+		apply = true,
+	})
+end, { desc = "Fix all ESLint issues" })
+
+-- Format with ESLint (alternative)
+map("n", "<leader>lE", function()
+	vim.lsp.buf.format({
+		async = false,
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+	})
+end, { desc = "Format with ESLint" })
+
+-- ========================================
+-- PHP-specific Keymaps
+-- ========================================
+
+-- Run Pint formatter on current file
+map("n", "<leader>lp", function()
+	local file = vim.fn.expand("%:p")
+
+	-- Check for Laravel's vendor/bin/pint first, then global pint
+	local pint_cmd = nil
+	local cwd = vim.fn.getcwd()
+	local vendor_pint = cwd .. "/vendor/bin/pint"
+
+	if vim.fn.filereadable(vendor_pint) == 1 then
+		pint_cmd = vendor_pint
+	elseif vim.fn.executable("pint") == 1 then
+		pint_cmd = "pint"
+	else
+		print("Pint not found. Install it via: composer require laravel/pint --dev")
+		return
+	end
+
+	vim.cmd("write")
+	print("Running Pint...")
+	vim.fn.jobstart({ pint_cmd, file }, {
+		on_exit = function(_, exit_code)
+			if exit_code == 0 then
+				vim.cmd("checktime")
+				print("Pint formatting complete ✓")
+			else
+				print("Pint failed with exit code: " .. exit_code)
+			end
+		end,
+		on_stderr = function(_, data)
+			if data and #data > 0 then
+				print("Pint error: " .. table.concat(data, "\n"))
+			end
+		end,
+	})
+end, { desc = "Run Pint on current file" })
