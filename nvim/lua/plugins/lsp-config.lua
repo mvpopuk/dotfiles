@@ -10,23 +10,14 @@ return {
 	},
 	config = function()
 		require("mason").setup({ ui = { border = "rounded" } })
-		local servers = {
-			lua_ls = {
-				settings = { Lua = { workspace = { checkThirdParty = false }, telemetry = { enable = false } } },
-			},
-			-- NOTE: tsserver was renamed to ts_ls in nvim-lspconfig
-			ts_ls = {},
-			jsonls = {
-				settings = {
-					json = {
-						schemas = require("schemastore").json.schemas(),
-						validate = { enable = true },
-					},
-				},
-			},
-			html = {},
-			cssls = {},
-		}
+
+		-- Load servers from separate config file
+		local servers = require("plugins.lsp.servers")
+
+		-- Add additional servers for web development
+		servers.ts_ls = servers.ts_ls or {}
+		servers.html = servers.html or {}
+		servers.cssls = servers.cssls or {}
 
 		require("mason-lspconfig").setup({
 			ensure_installed = vim.tbl_keys(servers),

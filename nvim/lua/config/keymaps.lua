@@ -28,9 +28,7 @@ map("v", "P", '"_dP')
 -- P puts text before the cursor.
 map("n", "YY", "va{Vy", opts)
 
--- Move line on the screen rather than by line in the file
-map("n", "j", "gj", opts)
-map("n", "k", "gk", opts)
+-- Removed duplicate: j/k are already mapped above with v:count logic
 
 -- Exit on jj and jk
 map("i", "jj", "<ESC>", opts)
@@ -66,12 +64,7 @@ map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', 
 map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
 map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
 map("n", "<leader>k", '<cmd>lua require("telescope.builtin").oldfiles()<cr>', opts)
-map(
-	"n",
-	"<leader>ca",
-	'<cmd>lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_cursor())<cr>',
-	opts
-)
+-- Removed: <leader>ca is mapped below with vim.lsp.buf.code_action (supports both normal and visual mode)
 
 map("n", "<leader><leader>a", '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>', opts)
 map("n", "<leader>gd", '<cmd>lua require("telescope.builtin").lsp_definitions{}<cr>', opts)
@@ -234,3 +227,47 @@ vim.api.nvim_set_keymap("n", "<leader>d", '"_d', { noremap = true, silent = true
 
 -- Visual mode: Map <leader>d to delete into the black hole register
 vim.api.nvim_set_keymap("x", "<leader>d", '"_d', { noremap = true, silent = true })
+
+-- ========================================
+-- Formatting Keymaps
+-- ========================================
+
+-- Manual format current buffer (for PHP, JS, etc.)
+map("n", "<leader>lf", function()
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+	})
+end, { desc = "Format current buffer" })
+
+-- Save without formatting (useful when auto-format is enabled)
+map("n", "<leader>W", ":noautocmd w<CR>", { desc = "Save without formatting" })
+
+-- ========================================
+-- ESLint Keymaps
+-- ========================================
+
+-- Fix ESLint issues in current file
+map("n", "<leader>le", function()
+	vim.cmd("EslintFixAll")
+end, { desc = "Fix all ESLint issues" })
+
+-- ========================================
+-- PHP-specific Keymaps
+-- ========================================
+
+-- Import PHP class under cursor
+map("n", "<leader>li", function()
+	vim.lsp.buf.code_action({
+		filter = function(action)
+			return action.title and action.title:match("Import")
+		end,
+		apply = true,
+	})
+end, { desc = "Import PHP class" })
+
+-- Run Pint formatter on current file
+map("n", "<leader>lp", function()
+	vim.cmd("!pint %")
+end, { desc = "Run Pint on current file" })
