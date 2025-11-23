@@ -280,8 +280,11 @@ map("n", "<leader>lp", function()
 
 	-- Check for Laravel's vendor/bin/pint first, then global pint
 	local pint_cmd = nil
-	if vim.fn.executable("./vendor/bin/pint") == 1 then
-		pint_cmd = "./vendor/bin/pint"
+	local cwd = vim.fn.getcwd()
+	local vendor_pint = cwd .. "/vendor/bin/pint"
+
+	if vim.fn.filereadable(vendor_pint) == 1 then
+		pint_cmd = vendor_pint
 	elseif vim.fn.executable("pint") == 1 then
 		pint_cmd = "pint"
 	else
@@ -290,13 +293,19 @@ map("n", "<leader>lp", function()
 	end
 
 	vim.cmd("write")
+	print("Running Pint...")
 	vim.fn.jobstart({ pint_cmd, file }, {
 		on_exit = function(_, exit_code)
 			if exit_code == 0 then
 				vim.cmd("checktime")
-				print("Pint formatting complete")
+				print("Pint formatting complete ✓")
 			else
 				print("Pint failed with exit code: " .. exit_code)
+			end
+		end,
+		on_stderr = function(_, data)
+			if data and #data > 0 then
+				print("Pint error: " .. table.concat(data, "\n"))
 			end
 		end,
 	})
