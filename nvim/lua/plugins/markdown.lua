@@ -1,7 +1,10 @@
 return {
 	"iamcco/markdown-preview.nvim",
 	ft = { "markdown" },
-	build = "cd app && npm install",
+	build = function()
+		local install_path = vim.fn.stdpath("data") .. "/lazy/markdown-preview.nvim/app"
+		vim.fn.system({ "bash", "-c", "cd " .. install_path .. " && npm install" })
+	end,
 	keys = {
 		{ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" },
 	},
