@@ -151,11 +151,10 @@ vim.api.nvim_set_keymap("o", "<F9>", "<C-C>za", { noremap = true })
 -- Visual mode: Press F9 to create a fold from the selection
 vim.api.nvim_set_keymap("v", "<F9>", "zf", { noremap = true })
 
--- Normal mode: Press Space to toggle fold under the cursor if fold is present, otherwise insert a space
-vim.api.nvim_set_keymap("n", "<Space>", "v:lua.toggle_fold()", { noremap = true, expr = true })
-
--- Visual mode: Press Space to create a fold from the selection
-vim.api.nvim_set_keymap("v", "<Space>", "zf", { noremap = true })
+-- Removed: Space is the leader key, can't be used for fold toggle
+-- Use F9 or 'za' for fold toggling instead
+-- vim.api.nvim_set_keymap("n", "<Space>", "v:lua.toggle_fold()", { noremap = true, expr = true })
+-- vim.api.nvim_set_keymap("v", "<Space>", "zf", { noremap = true })
 
 -- Lua function for toggling folds with space in normal mode
 function _G.toggle_fold()
