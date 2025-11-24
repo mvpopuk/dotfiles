@@ -59,6 +59,8 @@ if [ -d "$DOTFILES_DIR/tmux" ]; then
     # Check if there's a tmux.conf file in the tmux directory
     if [ -f "$DOTFILES_DIR/tmux/tmux.conf" ]; then
         create_symlink "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
+    elif [ -f "$DOTFILES_DIR/tmux/.tmux.conf" ]; then
+        create_symlink "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
     else
         # Otherwise link the entire directory
         create_symlink "$DOTFILES_DIR/tmux" "$HOME/.config/tmux"
