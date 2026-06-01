@@ -59,7 +59,7 @@ map("n", "g#", "g#zz", opts)
 -- map("n", ";", "<cmd>Telescope resume<cr>", opts)
 
 map("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
-map("n", "<leader>g", '<cmd>lua require("telescope.builtin").git_files()<cr>', opts)
+-- map("n", "<leader>g", '<cmd>lua require("telescope.builtin").git_files()<cr>', opts)
 map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
 map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
 map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)

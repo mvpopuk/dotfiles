@@ -228,7 +228,7 @@ return {
 			vim.cmd("highlight NvimTreeNormal guifg=#5f7e97")
 			vim.cmd("highlight NvimTreeCursorLine guibg=None")
 			-- vim.cmd('highlight WinSeparator guifg=#4b6479')
-			vim.cmd("highlight WinSeparator guifg=#011627")
+			vim.cmd("highlight WinSeparator guifg=#23303e")
 
 			vim.cmd("highlight NeoTreeIndentMarker guifg=#4b6479")
 			vim.cmd("highlight NeoTreeGitIgnored guifg=#4b6479")
